@@ -12,6 +12,8 @@ Pods/
 ###FILES###
 .DS_Store
 Config.xcconfig
+jungeun12
+jungeun12.pub
 
 ### fastlane ###
 # fastlane - A streamlined workflow tool for Cocoa deployment
