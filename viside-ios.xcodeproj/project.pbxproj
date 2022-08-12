@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */; };
 		D57224E328A6645400112751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E228A6645400112751 /* AppDelegate.swift */; };
 		D57224E528A6645400112751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E428A6645400112751 /* SceneDelegate.swift */; };
 		D57224E728A6645400112751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E628A6645400112751 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viside_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.debug.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.release.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.release.xcconfig"; sourceTree = "<group>"; };
 		D57224DF28A6645400112751 /* viside-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viside-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57224E228A6645400112751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D57224E428A6645400112751 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3856F61E359BCF8DB8658957 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4466D3BE272E18B5A6CB82D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */,
+				B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D57224D628A6645400112751 = {
 			isa = PBXGroup;
 			children = (
 				D57224E128A6645400112751 /* viside-ios */,
 				D57224E028A6645400112751 /* Products */,
+				4466D3BE272E18B5A6CB82D0 /* Pods */,
+				3856F61E359BCF8DB8658957 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D57224F328A6645700112751 /* Build configuration list for PBXNativeTarget "viside-ios" */;
 			buildPhases = (
+				62CFBBBBE410D0E7F49F4718 /* [CP] Check Pods Manifest.lock */,
 				D57224DB28A6645400112751 /* Sources */,
 				D57224DC28A6645400112751 /* Frameworks */,
 				D57224DD28A6645400112751 /* Resources */,
+				5584157078E5128EE6DB107C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5584157078E5128EE6DB107C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-viside-ios/Pods-viside-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-viside-ios/Pods-viside-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-viside-ios/Pods-viside-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62CFBBBBE410D0E7F49F4718 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-viside-ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D57224DB28A6645400112751 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		D57224F428A6645700112751 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		D57224F528A6645700112751 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
