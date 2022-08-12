@@ -14,6 +14,15 @@
 		D57224EA28A6645400112751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57224E828A6645400112751 /* Main.storyboard */; };
 		D57224EC28A6645700112751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57224EB28A6645700112751 /* Assets.xcassets */; };
 		D57224EF28A6645700112751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57224ED28A6645700112751 /* LaunchScreen.storyboard */; };
+		D572250428A6756400112751 /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */; };
+		D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */; };
+		D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */; };
+		D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */; };
+		D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */; };
+		D572250A28A6774700112751 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250928A6774700112751 /* R.generated.swift */; };
+		D572250E28A678D400112751 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250D28A678D400112751 /* Font.swift */; };
+		D572251028A6794700112751 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250F28A6794700112751 /* Color.swift */; };
+		D572251328A67A5D00112751 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572251228A67A5D00112751 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +37,15 @@
 		D57224EB28A6645700112751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D57224EE28A6645700112751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D57224F028A6645700112751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
+		D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
+		D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
+		D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
+		D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
+		D572250928A6774700112751 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D572250D28A678D400112751 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		D572250F28A6794700112751 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		D572251228A67A5D00112751 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +74,13 @@
 				9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */,
 				B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		D57224D628A6645400112751 = {
 			isa = PBXGroup;
 			children = (
+				D572250928A6774700112751 /* R.generated.swift */,
 				D57224E128A6645400112751 /* viside-ios */,
 				D57224E028A6645400112751 /* Products */,
 				4466D3BE272E18B5A6CB82D0 /* Pods */,
@@ -81,15 +99,87 @@
 		D57224E128A6645400112751 /* viside-ios */ = {
 			isa = PBXGroup;
 			children = (
-				D57224E228A6645400112751 /* AppDelegate.swift */,
-				D57224E428A6645400112751 /* SceneDelegate.swift */,
-				D57224E628A6645400112751 /* ViewController.swift */,
-				D57224E828A6645400112751 /* Main.storyboard */,
-				D57224EB28A6645700112751 /* Assets.xcassets */,
-				D57224ED28A6645700112751 /* LaunchScreen.storyboard */,
+				D57224FA28A6748B00112751 /* Global */,
+				D57224FB28A674CC00112751 /* Screens */,
 				D57224F028A6645700112751 /* Info.plist */,
 			);
 			path = "viside-ios";
+			sourceTree = "<group>";
+		};
+		D57224FA28A6748B00112751 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D572250B28A678BF00112751 /* Utils */,
+				D57224FC28A6752E00112751 /* Delegate */,
+				D57224FD28A6753800112751 /* Resources */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		D57224FB28A674CC00112751 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D57224ED28A6645700112751 /* LaunchScreen.storyboard */,
+				D57224E628A6645400112751 /* ViewController.swift */,
+				D57224E828A6645400112751 /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D57224FC28A6752E00112751 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				D57224E228A6645400112751 /* AppDelegate.swift */,
+				D57224E428A6645400112751 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		D57224FD28A6753800112751 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D57224FE28A6754600112751 /* Font */,
+				D57224EB28A6645700112751 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D57224FE28A6754600112751 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */,
+				D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */,
+				D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */,
+				D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */,
+				D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		D572250B28A678BF00112751 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D572251128A67A5400112751 /* String */,
+				D572250C28A678C500112751 /* Design */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D572250C28A678C500112751 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				D572250D28A678D400112751 /* Font.swift */,
+				D572250F28A6794700112751 /* Color.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		D572251128A67A5400112751 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				D572251228A67A5D00112751 /* Strings.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,6 +190,7 @@
 			buildConfigurationList = D57224F328A6645700112751 /* Build configuration list for PBXNativeTarget "viside-ios" */;
 			buildPhases = (
 				62CFBBBBE410D0E7F49F4718 /* [CP] Check Pods Manifest.lock */,
+				D57224F728A673C900112751 /* ShellScript */,
 				D57224DB28A6645400112751 /* Sources */,
 				D57224DC28A6645400112751 /* Frameworks */,
 				D57224DD28A6645400112751 /* Resources */,
@@ -152,7 +243,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */,
+				D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */,
+				D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */,
+				D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				D57224EF28A6645700112751 /* LaunchScreen.storyboard in Resources */,
+				D572250428A6756400112751 /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				D57224EC28A6645700112751 /* Assets.xcassets in Resources */,
 				D57224EA28A6645400112751 /* Main.storyboard in Resources */,
 			);
@@ -200,6 +296,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D57224F728A673C900112751 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -209,7 +324,11 @@
 			files = (
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
+				D572250E28A678D400112751 /* Font.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
+				D572250A28A6774700112751 /* R.generated.swift in Sources */,
+				D572251028A6794700112751 /* Color.swift in Sources */,
+				D572251328A67A5D00112751 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
