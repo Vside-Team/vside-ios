@@ -23,6 +23,9 @@
 		D572250E28A678D400112751 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250D28A678D400112751 /* Font.swift */; };
 		D572251028A6794700112751 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250F28A6794700112751 /* Color.swift */; };
 		D572251328A67A5D00112751 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572251228A67A5D00112751 /* Strings.swift */; };
+		D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */; };
+		D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */; };
+		D59E013528A7DEA40071E0CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,11 @@
 		D572250D28A678D400112751 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D572250F28A6794700112751 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D572251228A67A5D00112751 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D59E012728A7C84D0071E0CA /* viside-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "viside-ios.entitlements"; sourceTree = "<group>"; };
+		D59E012A28A7D2470071E0CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
+		D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +107,10 @@
 		D57224E128A6645400112751 /* viside-ios */ = {
 			isa = PBXGroup;
 			children = (
+				D59E012728A7C84D0071E0CA /* viside-ios.entitlements */,
 				D57224FA28A6748B00112751 /* Global */,
 				D57224FB28A674CC00112751 /* Screens */,
+				D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */,
 				D57224F028A6645700112751 /* Info.plist */,
 			);
 			path = "viside-ios";
@@ -109,9 +119,11 @@
 		D57224FA28A6748B00112751 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				D592198628A812BB0067BD7E /* Models */,
 				D572250B28A678BF00112751 /* Utils */,
 				D57224FC28A6752E00112751 /* Delegate */,
 				D57224FD28A6753800112751 /* Resources */,
+				D592198228A811850067BD7E /* Config */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -182,6 +194,23 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		D592198228A811850067BD7E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D59E012A28A7D2470071E0CA /* Config.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		D592198628A812BB0067BD7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */,
+				D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */,
+				D59E013528A7DEA40071E0CA /* GoogleService-Info.plist in Resources */,
 				D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */,
@@ -323,10 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
+				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
 				D572250E28A678D400112751 /* Font.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
+				D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */,
 				D572251028A6794700112751 /* Color.swift in Sources */,
 				D572251328A67A5D00112751 /* Strings.swift in Sources */,
 			);
@@ -356,6 +388,7 @@
 /* Begin XCBuildConfiguration section */
 		D57224F128A6645700112751 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59E012A28A7D2470071E0CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -404,7 +437,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -416,6 +449,7 @@
 		};
 		D57224F228A6645700112751 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59E012A28A7D2470071E0CA /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -458,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -474,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "viside-ios/viside-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
@@ -503,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "viside-ios/viside-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
