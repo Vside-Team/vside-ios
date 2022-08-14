@@ -25,7 +25,7 @@
 		D572251328A67A5D00112751 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572251228A67A5D00112751 /* Strings.swift */; };
 		D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */; };
 		D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */; };
-		D59E013528A7DEA40071E0CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */; };
+		D5E9242D28A915D8001E7560 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,7 +53,7 @@
 		D59E012A28A7D2470071E0CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
-		D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +110,8 @@
 				D59E012728A7C84D0071E0CA /* viside-ios.entitlements */,
 				D57224FA28A6748B00112751 /* Global */,
 				D57224FB28A674CC00112751 /* Screens */,
-				D59E013428A7DEA40071E0CA /* GoogleService-Info.plist */,
 				D57224F028A6645700112751 /* Info.plist */,
+				D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */,
 			);
 			path = "viside-ios";
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */,
-				D59E013528A7DEA40071E0CA /* GoogleService-Info.plist in Resources */,
 				D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */,
+				D5E9242D28A915D8001E7560 /* GoogleService-Info.plist in Resources */,
 				D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				D57224EF28A6645700112751 /* LaunchScreen.storyboard in Resources */,
