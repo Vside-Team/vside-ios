@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  viside-ios
+//
+//  Created by 김정은 on 2022/08/13.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+KAKAO_NATIVE_APP_KEY = e20ec75ca7af711c440a6a61dd7ebb58
