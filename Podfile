@@ -13,6 +13,7 @@ pod 'KakaoSDKUser'
 pod 'SnapKit'
 pod 'FirebaseAuth'
 pod 'FirebaseDatabase'
+pod 'FirebaseFirestore'
 pod 'Then'
 pod 'R.swift'
 end

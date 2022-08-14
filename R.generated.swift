@@ -209,8 +209,21 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 5 files.
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
     /// Resource file `SpoqaHanSansNeo-Bold.otf`.
     static let spoqaHanSansNeoBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Bold", pathExtension: "otf")
     /// Resource file `SpoqaHanSansNeo-Light.otf`.
@@ -221,6 +234,12 @@ struct R: Rswift.Validatable {
     static let spoqaHanSansNeoRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Regular", pathExtension: "otf")
     /// Resource file `SpoqaHanSansNeo-Thin.otf`.
     static let spoqaHanSansNeoThinOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Thin", pathExtension: "otf")
+
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "SpoqaHanSansNeo-Bold", withExtension: "otf")`
     static func spoqaHanSansNeoBoldOtf(_: Void = ()) -> Foundation.URL? {
@@ -304,10 +323,19 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
+    /// Image `ic_apple 1`.
+    static let ic_apple1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "ic_apple 1")
     /// Image `kakao`.
     static let kakao = Rswift.ImageResource(bundle: R.hostingBundle, name: "kakao")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "ic_apple 1", bundle: ..., traitCollection: ...)`
+    static func ic_apple1(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.ic_apple1, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "kakao", bundle: ..., traitCollection: ...)`
