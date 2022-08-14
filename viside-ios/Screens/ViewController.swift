@@ -96,7 +96,7 @@ class ViewController: UIViewController {
     //MARK: -버튼액션
     @objc func kakaoLoginBtnTapped(){
         print("kakaoLoginBtnTapped() called")
-        // kakaoAuthVM.KaKaoLogin()
+         kakaoAuthVM.KaKaoLogin()
     }
     @objc func appleLoginBtnTappled(){
         print("appleLoginBtnTappled() called")
