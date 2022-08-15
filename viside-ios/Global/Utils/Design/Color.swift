@@ -9,4 +9,5 @@ import UIKit
 
 struct Color {
     static let main: UIColor? = R.color.main()
+    static let kakao: UIColor? = R.color.yellow()
 }

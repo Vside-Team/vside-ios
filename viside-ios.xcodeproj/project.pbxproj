@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */; };
+		6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053028A9415300B899A5 /* LoginViewController.swift */; };
+		6BA8053528A9418700B899A5 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053428A9418700B899A5 /* LoginType.swift */; };
+		6BA8053728A941DA00B899A5 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053628A941DA00B899A5 /* Layout.swift */; };
+		6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053928A9424B00B899A5 /* LoginButton.swift */; };
+		6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053B28A9E80700B899A5 /* Utils.swift */; };
+		6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */; };
 		D57224E328A6645400112751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E228A6645400112751 /* AppDelegate.swift */; };
 		D57224E528A6645400112751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E428A6645400112751 /* SceneDelegate.swift */; };
 		D57224E728A6645400112751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E628A6645400112751 /* ViewController.swift */; };
@@ -30,6 +36,12 @@
 
 /* Begin PBXFileReference section */
 		1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viside_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BA8053028A9415300B899A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6BA8053428A9418700B899A5 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
+		6BA8053628A941DA00B899A5 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		6BA8053928A9424B00B899A5 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		6BA8053B28A9E80700B899A5 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.debug.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.release.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.release.xcconfig"; sourceTree = "<group>"; };
 		D57224DF28A6645400112751 /* viside-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viside-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +97,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		6BA8052D28A9413200B899A5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8052E28A9413C00B899A5 /* ViewModel */,
+				6BA8052F28A9414300B899A5 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6BA8052E28A9413C00B899A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BA8052F28A9414300B899A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8053028A9415300B899A5 /* LoginViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		6BA8053228A9415B00B899A5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8053628A941DA00B899A5 /* Layout.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		6BA8053328A9416200B899A5 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8053428A9418700B899A5 /* LoginType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		6BA8053828A9423D00B899A5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6BA8053928A9424B00B899A5 /* LoginButton.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		D57224D628A6645400112751 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				D592198628A812BB0067BD7E /* Models */,
+				6BA8053228A9415B00B899A5 /* Protocol */,
+				6BA8053328A9416200B899A5 /* Enum */,
 				D572250B28A678BF00112751 /* Utils */,
 				D57224FC28A6752E00112751 /* Delegate */,
 				D57224FD28A6753800112751 /* Resources */,
@@ -131,6 +194,8 @@
 		D57224FB28A674CC00112751 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6BA8053828A9423D00B899A5 /* Common */,
+				6BA8052D28A9413200B899A5 /* Login */,
 				D57224ED28A6645700112751 /* LaunchScreen.storyboard */,
 				D57224E628A6645400112751 /* ViewController.swift */,
 				D57224E828A6645400112751 /* Main.storyboard */,
@@ -173,6 +238,7 @@
 			children = (
 				D572251128A67A5400112751 /* String */,
 				D572250C28A678C500112751 /* Design */,
+				6BA8053B28A9E80700B899A5 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -355,11 +421,17 @@
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
 				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
+				6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */,
 				D572250E28A678D400112751 /* Font.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
+				6BA8053728A941DA00B899A5 /* Layout.swift in Sources */,
+				6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */,
+				6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
 				D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */,
 				D572251028A6794700112751 /* Color.swift in Sources */,
+				6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */,
+				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
 				D572251328A67A5D00112751 /* Strings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
