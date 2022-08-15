@@ -12,6 +12,11 @@ import FirebaseAuth
 import AuthenticationServices
 
 class ViewController: UIViewController {
+    private lazy var button = UIButton().then {
+        $0.setTitle("Move to LoginViewController", for: .normal)
+        $0.backgroundColor = .systemBlue
+        $0.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
+    }
     private lazy var KakaoLoginBtn = UIButton().then {
         $0.layer.backgroundColor = UIColor(red: 0.957, green: 0.886, blue: 0.31, alpha: 1).cgColor
         $0.layer.cornerRadius = 4
@@ -38,7 +43,7 @@ class ViewController: UIViewController {
     }
     
     private lazy var appleImage = UIImageView().then {
-        $0.image = UIImage(named: "ic_apple 1")
+        $0.image = UIImage(named: "apple")
         $0.contentMode = .scaleAspectFit
     }
     private lazy var appleLabel = UILabel().then {
@@ -71,11 +76,17 @@ class ViewController: UIViewController {
     }//viewDidLoad
     
     private func setView(){
+        view.addSubview(button)
         view.addSubview(btnStackView)
         view.addSubview(kakaoStackView)
         view.addSubview(appleStackView)
     }
     private func setConstraints(){
+        button.snp.makeConstraints {
+            $0.top.equalTo(safeArea).offset(100)
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(CGSize(width: 250, height: 50))
+        }
         KakaoLoginBtn.snp.makeConstraints {
             $0.height.equalTo(60)
             $0.width.equalTo(272)
@@ -94,6 +105,10 @@ class ViewController: UIViewController {
         }
     }
     //MARK: -버튼액션
+    @objc
+    private func buttonDidTap() {
+        Utils.setRootViewController(LoginViewController())
+    }
     @objc func kakaoLoginBtnTapped(){
         print("kakaoLoginBtnTapped() called")
          kakaoAuthVM.KaKaoLogin()

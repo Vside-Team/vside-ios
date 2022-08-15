@@ -16,4 +16,5 @@ pod 'FirebaseDatabase'
 pod 'FirebaseFirestore'
 pod 'Then'
 pod 'R.swift'
+pod 'SwiftKeychainWrapper'
 end
