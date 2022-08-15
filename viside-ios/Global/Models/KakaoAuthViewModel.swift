@@ -18,6 +18,7 @@ class KakaoAuthVM : ObservableObject {
     var firebaseDB : DatabaseReference!
     var subscriptions = Set<AnyCancellable>()
     @Published var isLoggedIn : Bool = false
+    
     //카카오 앱으로 로그인 인증
     func kakaoLoginWithApp() async -> Bool {
         await withCheckedContinuation{ continuation in

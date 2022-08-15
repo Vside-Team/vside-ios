@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import AuthenticationServices
 
 final class LoginViewController: UIViewController, Layout {
     
@@ -21,6 +22,8 @@ final class LoginViewController: UIViewController, Layout {
                      action: #selector(appleButtonDidTap),
                      for: .touchUpInside)
     }
+    private let viewModel = LoginViewModel()
+    private lazy var kakaoAuth = KakaoAuthVM()
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     override func viewDidLoad() {
@@ -50,10 +53,39 @@ final class LoginViewController: UIViewController, Layout {
     }
     @objc
     private func kakaoButtonDidTap() {
-        
+        self.viewModel.setLoginType(.kakao)
+        self.kakaoAuth.KaKaoLogin()
     }
     @objc
     private func appleButtonDidTap() {
-        
+        self.viewModel.setLoginType(.apple)
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+              
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
+    }
+}
+// MARK: - Apple
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        let alert = UIAlertController(title: "Error",
+                                      message: "다시 시도해주세요 어쩌고",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .cancel,
+                                      handler: nil))
+        self.present(alert, animated: true)
+    }
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        self.viewModel.appleAuth(authorization.credential)
+    }
+}
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return self.view.window!
     }
 }
