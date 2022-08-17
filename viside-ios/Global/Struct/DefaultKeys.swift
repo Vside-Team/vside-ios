@@ -1,10 +1,9 @@
 //
-//  DefaultKeys.swift
+//  Struct.swift
 //  viside-ios
 //
-//  Created by 김정은 on 2022/08/13.
+//  Created by 김정은 on 2022/08/18.
 //
-
 
 import Foundation
 struct DefaultKeys {

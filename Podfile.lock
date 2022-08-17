@@ -735,6 +735,7 @@ PODS:
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
   - SnapKit (5.6.0)
+  - SwiftKeychainWrapper (4.0.1)
   - Then (3.0.0)
 
 DEPENDENCIES:
@@ -746,6 +747,7 @@ DEPENDENCIES:
   - KakaoSDKUser
   - R.swift
   - SnapKit
+  - SwiftKeychainWrapper
   - Then
 
 SPEC REPOS:
@@ -774,6 +776,7 @@ SPEC REPOS:
     - R.swift
     - R.swift.Library
     - SnapKit
+    - SwiftKeychainWrapper
     - Then
 
 SPEC CHECKSUMS:
@@ -801,8 +804,9 @@ SPEC CHECKSUMS:
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 93436df9ecfca5dae0d82d88101792a4508df40c
+PODFILE CHECKSUM: bb5d7810fec3cb2a642c4afe29f1f379df3c7175
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

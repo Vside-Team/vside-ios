@@ -29,7 +29,7 @@
 		D572250E28A678D400112751 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250D28A678D400112751 /* Font.swift */; };
 		D572251028A6794700112751 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250F28A6794700112751 /* Color.swift */; };
 		D572251328A67A5D00112751 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572251228A67A5D00112751 /* Strings.swift */; };
-		D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */; };
+		D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C64D928AD6D1F00B07C9C /* DefaultKeys.swift */; };
 		D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */; };
 		D5E9242D28A915D8001E7560 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -61,9 +61,9 @@
 		D572250D28A678D400112751 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D572250F28A6794700112751 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D572251228A67A5D00112751 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D58C64D928AD6D1F00B07C9C /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		D59E012728A7C84D0071E0CA /* viside-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "viside-ios.entitlements"; sourceTree = "<group>"; };
 		D59E012A28A7D2470071E0CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthViewModel.swift; sourceTree = "<group>"; };
 		D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +109,7 @@
 		6BA8052E28A9413C00B899A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */,
 				6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
@@ -180,7 +181,7 @@
 		D57224FA28A6748B00112751 /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				D592198628A812BB0067BD7E /* Models */,
+				D58C64DB28AD6D2600B07C9C /* Struct */,
 				6BA8053228A9415B00B899A5 /* Protocol */,
 				6BA8053328A9416200B899A5 /* Enum */,
 				D572250B28A678BF00112751 /* Utils */,
@@ -260,21 +261,20 @@
 			path = String;
 			sourceTree = "<group>";
 		};
+		D58C64DB28AD6D2600B07C9C /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				D58C64D928AD6D1F00B07C9C /* DefaultKeys.swift */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
 		D592198228A811850067BD7E /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				D59E012A28A7D2470071E0CA /* Config.xcconfig */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		D592198628A812BB0067BD7E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D59E012D28A7D7B70071E0CA /* DefaultKeys.swift */,
-				D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +421,7 @@
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
 				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
+				D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */,
 				6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */,
 				D572250E28A678D400112751 /* Font.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
@@ -428,7 +429,6 @@
 				6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */,
 				6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
-				D59E012E28A7D7B70071E0CA /* DefaultKeys.swift in Sources */,
 				D572251028A6794700112751 /* Color.swift in Sources */,
 				6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
