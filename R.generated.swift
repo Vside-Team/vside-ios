@@ -115,14 +115,12 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 4 colors.
+  /// This `R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
     /// Color `gray`.
     static let gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "gray")
-    /// Color `main`.
-    static let main = Rswift.ColorResource(bundle: R.hostingBundle, name: "main")
     /// Color `yellow`.
     static let yellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "yellow")
 
@@ -141,15 +139,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.gray, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "main", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.main, compatibleWith: traitCollection)
     }
     #endif
 
@@ -179,14 +168,6 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "main", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func main(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.main.name)
-    }
-    #endif
-
-    #if os(watchOS)
     /// `UIColor(named: "yellow", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
     static func yellow(_: Void = ()) -> UIKit.UIColor? {
@@ -194,17 +175,138 @@ struct R: Rswift.Validatable {
     }
     #endif
 
-    /// This `R.color.lemon` struct is generated, and contains static references to 1 colors.
-    struct lemon {
+    /// This `R.color.grayscale` struct is generated, and contains static references to 12 colors.
+    struct grayscale {
       /// Color `_100`.
-      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "lemon/_100")
+      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_100")
+      /// Color `_200`.
+      static let _200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_200")
+      /// Color `_25`.
+      static let _25 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_25")
+      /// Color `_300`.
+      static let _300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_300")
+      /// Color `_400`.
+      static let _400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_400")
+      /// Color `_500`.
+      static let _500 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_500")
+      /// Color `_50`.
+      static let _50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_50")
+      /// Color `_600`.
+      static let _600 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_600")
+      /// Color `_700`.
+      static let _700 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_700")
+      /// Color `_800`.
+      static let _800 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_800")
+      /// Color `_900`.
+      static let _900 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_900")
+      /// Color `_950`.
+      static let _950 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_950")
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(tvOS 11.0, *)
       @available(iOS 11.0, *)
       static func _100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.lemon._100, compatibleWith: traitCollection)
+        return UIKit.UIColor(resource: R.color.grayscale._100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._200, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_25", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._25, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._300, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._400, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_50", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._50, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _500(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._500, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_600", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _600(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._600, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_700", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _700(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._700, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_800", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _800(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._800, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_900", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _900(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._900, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_950", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _950(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._950, compatibleWith: traitCollection)
       }
       #endif
 
@@ -212,24 +314,156 @@ struct R: Rswift.Validatable {
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(watchOSApplicationExtension 4.0, *)
       static func _100(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.lemon._100.name)
+        return UIKit.UIColor(named: R.color.grayscale._100.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _200(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._200.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_25", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _25(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._25.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _300(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._300.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _400(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._400.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_50", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _50(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._50.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _500(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._500.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_600", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _600(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._600.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_700", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _700(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._700.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_800", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _800(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._800.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_900", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _900(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._900.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_950", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _950(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._950.name)
       }
       #endif
 
       fileprivate init() {}
     }
 
-    /// This `R.color.red` struct is generated, and contains static references to 1 colors.
-    struct red {
+    /// This `R.color.main` struct is generated, and contains static references to 5 colors.
+    struct main {
       /// Color `_100`.
-      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "red/_100")
+      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_100")
+      /// Color `_200`.
+      static let _200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_200")
+      /// Color `_300`.
+      static let _300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_300")
+      /// Color `_400`.
+      static let _400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_400")
+      /// Color `_500`.
+      static let _500 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_500")
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(tvOS 11.0, *)
       @available(iOS 11.0, *)
       static func _100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.red._100, compatibleWith: traitCollection)
+        return UIKit.UIColor(resource: R.color.main._100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._200, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._300, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._400, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _500(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._500, compatibleWith: traitCollection)
       }
       #endif
 
@@ -237,7 +471,39 @@ struct R: Rswift.Validatable {
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(watchOSApplicationExtension 4.0, *)
       static func _100(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.red._100.name)
+        return UIKit.UIColor(named: R.color.main._100.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _200(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._200.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _300(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._300.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _400(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._400.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _500(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._500.name)
       }
       #endif
 
