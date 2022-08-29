@@ -8,37 +8,31 @@
 import UIKit
 import Then
 import SnapKit
+import FirebaseAuth
+import AuthenticationServices
 
-class ViewController: UIViewController {
-
-    
-    private lazy var titleLabel = UILabel().then {
-        $0.font = R.font.spoqaHanSansNeoBold(size: 12)
-        $0.textColor = Color.main
-        $0.text = Strings.Main.title
-        
+class ViewController: UIViewController ,Layout{
+    private lazy var button = UIButton().then {
+        $0.setTitle("Move to LoginViewController", for: .normal)
+        $0.backgroundColor = .systemBlue
+        $0.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
     }
-    private let imageView = UIImageView().then {
-        $0.image = R.image.kakao()
-    }
-    
-    private lazy var safeArea = self.view.safeAreaLayoutGuide
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setView()
-        self.setConstraints()
+        setViews()
+        setConstraints()
+    }//viewDidLoad
+    func setViews() {
+        self.view.addSubview(button)
     }
-
-    private func setView() {
-        self.view.addSubview(titleLabel)
-        self.view.addSubview(imageView)
-    }
-    private func setConstraints() {
-        titleLabel.snp.makeConstraints {
-            $0.centerX.equalTo(safeArea)
-            $0.top.equalTo(safeArea).inset(30)
+    func setConstraints() {
+        button.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
+    //MARK: -버튼액션
+    @objc
+    private func buttonDidTap() {
+        Utils.setRootViewController(LoginViewController())
+    }
 }
-
