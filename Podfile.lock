@@ -603,27 +603,27 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.24):
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
-  - FirebaseAuth (9.4.0):
+  - FirebaseAuth (9.5.0):
     - FirebaseCore (~> 9.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
     - GoogleUtilities/Environment (~> 7.7)
     - GTMSessionFetcher/Core (< 3.0, >= 1.7)
-  - FirebaseCore (9.4.0):
+  - FirebaseCore (9.5.0):
     - FirebaseCoreDiagnostics (~> 9.0)
     - FirebaseCoreInternal (~> 9.0)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
-  - FirebaseCoreDiagnostics (9.4.0):
+  - FirebaseCoreDiagnostics (9.5.0):
     - GoogleDataTransport (< 10.0.0, >= 9.1.4)
     - GoogleUtilities/Environment (~> 7.7)
     - GoogleUtilities/Logger (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCoreInternal (9.4.0):
+  - FirebaseCoreInternal (9.5.0):
     - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - FirebaseDatabase (9.4.0):
+  - FirebaseDatabase (9.5.0):
     - FirebaseCore (~> 9.0)
     - leveldb-library (~> 1.22)
-  - FirebaseFirestore (9.4.0):
+  - FirebaseFirestore (9.5.0):
     - abseil/algorithm (~> 1.20211102.0)
     - abseil/base (~> 1.20211102.0)
     - abseil/container/flat_hash_map (~> 1.20211102.0)
@@ -706,7 +706,7 @@ PODS:
     - gRPC-Core/Interface (= 1.44.0)
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
-  - GTMSessionFetcher/Core (2.0.0)
+  - GTMSessionFetcher/Core (2.1.0)
   - KakaoSDKAuth (2.11.1):
     - KakaoSDKCommon (= 2.11.1)
   - KakaoSDKCommon (2.11.1):
@@ -725,6 +725,10 @@ PODS:
   - Libuv-gRPC/Implementation (0.0.10):
     - Libuv-gRPC/Interface (= 0.0.10)
   - Libuv-gRPC/Interface (0.0.10)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
   - nanopb (2.30909.0):
     - nanopb/decode (= 2.30909.0)
     - nanopb/encode (= 2.30909.0)
@@ -739,12 +743,14 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FirebaseAuth
   - FirebaseDatabase
   - FirebaseFirestore
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
+  - Moya
   - R.swift
   - SnapKit
   - SwiftKeychainWrapper
@@ -771,6 +777,7 @@ SPEC REPOS:
     - KakaoSDKUser
     - leveldb-library
     - Libuv-gRPC
+    - Moya
     - nanopb
     - PromisesObjC
     - R.swift
@@ -783,22 +790,23 @@ SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
-  FirebaseAuth: ae5d4402e1516497357d909162b091b3ca2a2e9c
-  FirebaseCore: 9a2b10270a854731c4d4d8a97d0aa8380ec3458d
-  FirebaseCoreDiagnostics: aaa87098082c4d4bdd1a9557b1186d18ca85ce8c
-  FirebaseCoreInternal: a13302b0088fbf5f38b79b6ece49c2af7d3e05d6
-  FirebaseDatabase: e93f5441b549ea4492a8d8a0c7d612ac46c1b12a
-  FirebaseFirestore: 945196dd78f4e92de6fc47b38569a1e7088af81f
+  FirebaseAuth: 741918f1fa62ed23246a509279f91d42d79a713f
+  FirebaseCore: 25c0400b670fd1e2f2104349cd3b5dcce8d9418f
+  FirebaseCoreDiagnostics: 17cbf4e72b1dbd64bfdc33d4b1f07bce4f16f1d8
+  FirebaseCoreInternal: 50a8e39cae8abf72d5145d07ea34c3244f70862b
+  FirebaseDatabase: 0e2d3b1c935bb5ae704afc2f5c0adda365102312
+  FirebaseFirestore: e4136560a4bdd1de5f02bc79ccb8414325b08823
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
-  GTMSessionFetcher: 681175626052e03fdde7952f7e9c7a9785719506
+  GTMSessionFetcher: ffbb25ec00ebcb5201adab0a56d808f6f1902d9f
   KakaoSDKAuth: bb2dfa7be30daa8403c9cfc8001aa6fde7a5b779
   KakaoSDKCommon: 555e1bb46595b842ded01cf7888cc17bbae4e113
   KakaoSDKUser: 08c0a4f40bebdebdf948a9e3d0e44ed5c2754f99
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
@@ -807,6 +815,6 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: bb5d7810fec3cb2a642c4afe29f1f379df3c7175
+PODFILE CHECKSUM: 2941956f4fdbb81e7bc4988dd7689b3a7dcbc6d7
 
 COCOAPODS: 1.11.3

@@ -13,7 +13,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let nativeAppKey = Bundle.main.infoDictionary?["KAKAO_NATIVE_APP_KEY"] ?? ""

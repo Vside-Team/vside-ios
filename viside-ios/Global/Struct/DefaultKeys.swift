@@ -6,11 +6,19 @@
 //
 
 import Foundation
-struct DefaultKeys {
-    static let userID = "userID"
-    static let firstName = "firstName"
-    static let lastName = "lastName"
-    static let email = "email"
-    static let accessToken = "accessToken"
-    static let isAppleLogin = "isAppleLogin"
+
+extension Const{
+    struct DefaultKeys {
+        static let userId = "userId"
+        static let firstName = "firstName"
+        static let lastName = "lastName"
+        static let email = "email"
+        static let name = "name"
+        static let gender = "gender"
+        static let ageRange = "ageRange"
+        static let isAppleLogin = "isAppleLogin"
+        static let isKakaoLogin = "isKakaoLogin"
+        static let provider = "provider"
+       static let  jwtToken = "jwtToken"
+    }
 }

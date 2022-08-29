@@ -17,4 +17,6 @@ pod 'FirebaseFirestore'
 pod 'Then'
 pod 'R.swift'
 pod 'SwiftKeychainWrapper'
+pod 'Moya'
+pod 'Alamofire'
 end
