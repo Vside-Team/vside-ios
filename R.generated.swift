@@ -115,12 +115,10 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 3 colors.
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
-    /// Color `gray`.
-    static let gray = Rswift.ColorResource(bundle: R.hostingBundle, name: "gray")
     /// Color `yellow`.
     static let yellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "yellow")
 
@@ -130,15 +128,6 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func accentColor(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.accentColor, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "gray", bundle: ..., traitCollection: ...)`
-    @available(tvOS 11.0, *)
-    @available(iOS 11.0, *)
-    static func gray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.gray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -156,14 +145,6 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func accentColor(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.accentColor.name)
-    }
-    #endif
-
-    #if os(watchOS)
-    /// `UIColor(named: "gray", bundle: ..., traitCollection: ...)`
-    @available(watchOSApplicationExtension 4.0, *)
-    static func gray(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.gray.name)
     }
     #endif
 
@@ -528,16 +509,16 @@ struct R: Rswift.Validatable {
   struct file {
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
-    /// Resource file `SpoqaHanSansNeo-Bold.otf`.
-    static let spoqaHanSansNeoBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Bold", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Light.otf`.
-    static let spoqaHanSansNeoLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Light", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Medium.otf`.
-    static let spoqaHanSansNeoMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Medium", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Regular.otf`.
-    static let spoqaHanSansNeoRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Regular", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Thin.otf`.
-    static let spoqaHanSansNeoThinOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Thin", pathExtension: "otf")
+    /// Resource file `Montserrat-ExtraBold.otf`.
+    static let montserratExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-ExtraBold", pathExtension: "otf")
+    /// Resource file `Montserrat-SemiBold.otf`.
+    static let montserratSemiBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-SemiBold", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Bold.otf`.
+    static let montserratSpoqaBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Bold", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Medium.otf`.
+    static let montserratSpoqaMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Medium", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Regular.otf`.
+    static let montserratSpoqaRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Regular", pathExtension: "otf")
 
     /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
     static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
@@ -545,33 +526,33 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Bold", withExtension: "otf")`
-    static func spoqaHanSansNeoBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoBoldOtf
+    /// `bundle.url(forResource: "Montserrat-ExtraBold", withExtension: "otf")`
+    static func montserratExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratExtraBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Light", withExtension: "otf")`
-    static func spoqaHanSansNeoLightOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoLightOtf
+    /// `bundle.url(forResource: "Montserrat-SemiBold", withExtension: "otf")`
+    static func montserratSemiBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSemiBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Medium", withExtension: "otf")`
-    static func spoqaHanSansNeoMediumOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoMediumOtf
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Bold", withExtension: "otf")`
+    static func montserratSpoqaBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Regular", withExtension: "otf")`
-    static func spoqaHanSansNeoRegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoRegularOtf
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Medium", withExtension: "otf")`
+    static func montserratSpoqaMediumOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaMediumOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Thin", withExtension: "otf")`
-    static func spoqaHanSansNeoThinOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoThinOtf
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Regular", withExtension: "otf")`
+    static func montserratSpoqaRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaRegularOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -580,48 +561,48 @@ struct R: Rswift.Validatable {
 
   /// This `R.font` struct is generated, and contains static references to 5 fonts.
   struct font: Rswift.Validatable {
-    /// Font `SpoqaHanSansNeo-Bold`.
-    static let spoqaHanSansNeoBold = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Bold")
-    /// Font `SpoqaHanSansNeo-Light`.
-    static let spoqaHanSansNeoLight = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Light")
-    /// Font `SpoqaHanSansNeo-Medium`.
-    static let spoqaHanSansNeoMedium = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Medium")
-    /// Font `SpoqaHanSansNeo-Regular`.
-    static let spoqaHanSansNeoRegular = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Regular")
-    /// Font `SpoqaHanSansNeo-Thin`.
-    static let spoqaHanSansNeoThin = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Thin")
+    /// Font `Montserrat-ExtraBold`.
+    static let montserratExtraBold = Rswift.FontResource(fontName: "Montserrat-ExtraBold")
+    /// Font `Montserrat-SemiBold`.
+    static let montserratSemiBold = Rswift.FontResource(fontName: "Montserrat-SemiBold")
+    /// Font `Montserrat-Spoqa-Bold`.
+    static let montserratSpoqaBold = Rswift.FontResource(fontName: "Montserrat-Spoqa-Bold")
+    /// Font `Montserrat-Spoqa-Medium`.
+    static let montserratSpoqaMedium = Rswift.FontResource(fontName: "Montserrat-Spoqa-Medium")
+    /// Font `Montserrat-Spoqa-Regular`.
+    static let montserratSpoqaRegular = Rswift.FontResource(fontName: "Montserrat-Spoqa-Regular")
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Bold", size: ...)`
-    static func spoqaHanSansNeoBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoBold, size: size)
+    /// `UIFont(name: "Montserrat-ExtraBold", size: ...)`
+    static func montserratExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratExtraBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Light", size: ...)`
-    static func spoqaHanSansNeoLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoLight, size: size)
+    /// `UIFont(name: "Montserrat-SemiBold", size: ...)`
+    static func montserratSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSemiBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Medium", size: ...)`
-    static func spoqaHanSansNeoMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoMedium, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Bold", size: ...)`
+    static func montserratSpoqaBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Regular", size: ...)`
-    static func spoqaHanSansNeoRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoRegular, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Medium", size: ...)`
+    static func montserratSpoqaMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaMedium, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Thin", size: ...)`
-    static func spoqaHanSansNeoThin(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoThin, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Regular", size: ...)`
+    static func montserratSpoqaRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaRegular, size: size)
     }
 
     static func validate() throws {
-      if R.font.spoqaHanSansNeoBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Bold' could not be loaded, is 'SpoqaHanSansNeo-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Light' could not be loaded, is 'SpoqaHanSansNeo-Light.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Medium' could not be loaded, is 'SpoqaHanSansNeo-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Regular' could not be loaded, is 'SpoqaHanSansNeo-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Thin' could not be loaded, is 'SpoqaHanSansNeo-Thin.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-ExtraBold' could not be loaded, is 'Montserrat-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-SemiBold' could not be loaded, is 'Montserrat-SemiBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Bold' could not be loaded, is 'Montserrat-Spoqa-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Medium' could not be loaded, is 'Montserrat-Spoqa-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Regular' could not be loaded, is 'Montserrat-Spoqa-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}

@@ -14,4 +14,19 @@ public final class Utils {
         UIApplication.shared.windows.first?.rootViewController = viewController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
+    // MARK: - Font
+    class func setMontserratSpoqa(size: Typography.Size, weight: Typography.Weight) -> UIFont {
+        switch weight {
+        case .regular:
+            return R.font.montserratSpoqaRegular(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .regular)
+        case .medium:
+            return R.font.montserratSpoqaMedium(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .medium)
+        case .semiBold:
+            return R.font.montserratSemiBold(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .semibold)
+        case .bold:
+            return R.font.montserratSpoqaBold(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .bold)
+        case .extraBold:
+            return R.font.montserratExtraBold(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .bold)
+        }
+    }
 }
