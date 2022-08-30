@@ -49,7 +49,7 @@ final class LoginViewController: UIViewController, Layout {
         }
     }
     private func configure() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = Color.g950
     }
     @objc
     private func kakaoButtonDidTap() {

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */; };
+		6B849B7A28BE38B800A57222 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7528BE38B800A57222 /* Montserrat-SemiBold.otf */; };
+		6B849B7B28BE38B800A57222 /* Montserrat-Spoqa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7628BE38B800A57222 /* Montserrat-Spoqa-Bold.otf */; };
+		6B849B7C28BE38B800A57222 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7728BE38B800A57222 /* Montserrat-ExtraBold.otf */; };
+		6B849B7D28BE38B800A57222 /* Montserrat-Spoqa-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7828BE38B800A57222 /* Montserrat-Spoqa-Medium.otf */; };
+		6B849B7E28BE38B800A57222 /* Montserrat-Spoqa-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7928BE38B800A57222 /* Montserrat-Spoqa-Regular.otf */; };
 		6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053028A9415300B899A5 /* LoginViewController.swift */; };
 		6BA8053528A9418700B899A5 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053428A9418700B899A5 /* LoginType.swift */; };
 		6BA8053728A941DA00B899A5 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053628A941DA00B899A5 /* Layout.swift */; };
@@ -20,11 +25,6 @@
 		D57224EA28A6645400112751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57224E828A6645400112751 /* Main.storyboard */; };
 		D57224EC28A6645700112751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D57224EB28A6645700112751 /* Assets.xcassets */; };
 		D57224EF28A6645700112751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D57224ED28A6645700112751 /* LaunchScreen.storyboard */; };
-		D572250428A6756400112751 /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */; };
-		D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */; };
-		D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */; };
-		D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */; };
-		D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */; };
 		D572250A28A6774700112751 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250928A6774700112751 /* R.generated.swift */; };
 		D572250E28A678D400112751 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250D28A678D400112751 /* Font.swift */; };
 		D572251028A6794700112751 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250F28A6794700112751 /* Color.swift */; };
@@ -36,6 +36,11 @@
 
 /* Begin PBXFileReference section */
 		1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viside_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B849B7528BE38B800A57222 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		6B849B7628BE38B800A57222 /* Montserrat-Spoqa-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Bold.otf"; sourceTree = "<group>"; };
+		6B849B7728BE38B800A57222 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		6B849B7828BE38B800A57222 /* Montserrat-Spoqa-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Medium.otf"; sourceTree = "<group>"; };
+		6B849B7928BE38B800A57222 /* Montserrat-Spoqa-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Regular.otf"; sourceTree = "<group>"; };
 		6BA8053028A9415300B899A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6BA8053428A9418700B899A5 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		6BA8053628A941DA00B899A5 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
@@ -52,11 +57,6 @@
 		D57224EB28A6645700112751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D57224EE28A6645700112751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D57224F028A6645700112751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
-		D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
-		D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Regular.otf"; sourceTree = "<group>"; };
-		D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Bold.otf"; sourceTree = "<group>"; };
-		D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Thin.otf"; sourceTree = "<group>"; };
 		D572250928A6774700112751 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D572250D28A678D400112751 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D572250F28A6794700112751 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -225,11 +225,11 @@
 		D57224FE28A6754600112751 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				D572250228A6756300112751 /* SpoqaHanSansNeo-Bold.otf */,
-				D572250028A6756200112751 /* SpoqaHanSansNeo-Light.otf */,
-				D57224FF28A6756100112751 /* SpoqaHanSansNeo-Medium.otf */,
-				D572250128A6756200112751 /* SpoqaHanSansNeo-Regular.otf */,
-				D572250328A6756400112751 /* SpoqaHanSansNeo-Thin.otf */,
+				6B849B7728BE38B800A57222 /* Montserrat-ExtraBold.otf */,
+				6B849B7528BE38B800A57222 /* Montserrat-SemiBold.otf */,
+				6B849B7628BE38B800A57222 /* Montserrat-Spoqa-Bold.otf */,
+				6B849B7828BE38B800A57222 /* Montserrat-Spoqa-Medium.otf */,
+				6B849B7928BE38B800A57222 /* Montserrat-Spoqa-Regular.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -338,15 +338,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D572250528A6756400112751 /* SpoqaHanSansNeo-Light.otf in Resources */,
-				D572250828A6756400112751 /* SpoqaHanSansNeo-Thin.otf in Resources */,
+				6B849B7E28BE38B800A57222 /* Montserrat-Spoqa-Regular.otf in Resources */,
+				6B849B7D28BE38B800A57222 /* Montserrat-Spoqa-Medium.otf in Resources */,
+				6B849B7C28BE38B800A57222 /* Montserrat-ExtraBold.otf in Resources */,
 				D5E9242D28A915D8001E7560 /* GoogleService-Info.plist in Resources */,
-				D572250728A6756400112751 /* SpoqaHanSansNeo-Bold.otf in Resources */,
-				D572250628A6756400112751 /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				D57224EF28A6645700112751 /* LaunchScreen.storyboard in Resources */,
-				D572250428A6756400112751 /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				D57224EC28A6645700112751 /* Assets.xcassets in Resources */,
 				D57224EA28A6645400112751 /* Main.storyboard in Resources */,
+				6B849B7B28BE38B800A57222 /* Montserrat-Spoqa-Bold.otf in Resources */,
+				6B849B7A28BE38B800A57222 /* Montserrat-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,7 +583,7 @@
 				CODE_SIGN_ENTITLEMENTS = "viside-ios/viside-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "viside-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -613,7 +613,7 @@
 				CODE_SIGN_ENTITLEMENTS = "viside-ios/viside-ios.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZLLGCJ8XUL;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "viside-ios/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

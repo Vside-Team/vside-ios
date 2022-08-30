@@ -17,7 +17,7 @@ final class LoginButton: UIView, Layout {
     private lazy var titleLabel = UILabel().then {
         $0.text = type.title
         $0.textColor = type == .kakao ? .black : .white
-//        $0.font
+        $0.font = type == .kakao ? Font.base.medium : Font.lg.medium
     }
     private lazy var stackView = UIStackView().then {
         $0.axis = .horizontal
@@ -56,7 +56,9 @@ final class LoginButton: UIView, Layout {
     }
     private func configure() {
         self.layer.cornerRadius = 4
-        self.backgroundColor = self.type == .kakao ? Color.kakao : R.color.gray()
+        self.backgroundColor = self.type == .kakao ? Color.kakao : .clear
+        self.layer.borderWidth = 1
+        self.layer.borderColor = self.type == .kakao ? Color.kakao?.cgColor : Color.g700?.cgColor
     }
     func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
         self.button.addTarget(target,
