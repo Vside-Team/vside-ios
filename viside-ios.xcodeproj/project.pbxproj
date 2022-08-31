@@ -19,6 +19,10 @@
 		6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053928A9424B00B899A5 /* LoginButton.swift */; };
 		6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053B28A9E80700B899A5 /* Utils.swift */; };
 		6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */; };
+		D571105428B5DCBB00B24812 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105328B5DCBB00B24812 /* Const.swift */; };
+		D571105828B5E72F00B24812 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105728B5E72F00B24812 /* LogInResponse.swift */; };
+		D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105928B5E75600B24812 /* JoinResponse.swift */; };
+		D571105E28B5FCE800B24812 /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105D28B5FCE800B24812 /* MoyaLoggingPlugin.swift */; };
 		D57224E328A6645400112751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E228A6645400112751 /* AppDelegate.swift */; };
 		D57224E528A6645400112751 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E428A6645400112751 /* SceneDelegate.swift */; };
 		D57224E728A6645400112751 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57224E628A6645400112751 /* ViewController.swift */; };
@@ -29,6 +33,11 @@
 		D572250E28A678D400112751 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250D28A678D400112751 /* Font.swift */; };
 		D572251028A6794700112751 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572250F28A6794700112751 /* Color.swift */; };
 		D572251328A67A5D00112751 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D572251228A67A5D00112751 /* Strings.swift */; };
+		D575393F28B330F3006645F7 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575393E28B330F3006645F7 /* URL.swift */; };
+		D575394228B334F4006645F7 /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575394128B334F4006645F7 /* UserAPI.swift */; };
+		D575394428B33502006645F7 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575394328B33502006645F7 /* UserService.swift */; };
+		D575394728B3367A006645F7 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575394628B3367A006645F7 /* NetworkResult.swift */; };
+		D575395528B36338006645F7 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D575395428B36337006645F7 /* Header.swift */; };
 		D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C64D928AD6D1F00B07C9C /* DefaultKeys.swift */; };
 		D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59E012F28A7D7D50071E0CA /* KakaoAuthViewModel.swift */; };
 		D5E9242D28A915D8001E7560 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D5E9242C28A915D8001E7560 /* GoogleService-Info.plist */; };
@@ -49,6 +58,10 @@
 		6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.debug.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.release.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.release.xcconfig"; sourceTree = "<group>"; };
+		D571105328B5DCBB00B24812 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		D571105728B5E72F00B24812 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
+		D571105928B5E75600B24812 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
+		D571105D28B5FCE800B24812 /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		D57224DF28A6645400112751 /* viside-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "viside-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57224E228A6645400112751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D57224E428A6645400112751 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +74,11 @@
 		D572250D28A678D400112751 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		D572250F28A6794700112751 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D572251228A67A5D00112751 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D575393E28B330F3006645F7 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		D575394128B334F4006645F7 /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		D575394328B33502006645F7 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D575394628B3367A006645F7 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		D575395428B36337006645F7 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		D58C64D928AD6D1F00B07C9C /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		D59E012728A7C84D0071E0CA /* viside-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "viside-ios.entitlements"; sourceTree = "<group>"; };
 		D59E012A28A7D2470071E0CA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -147,6 +165,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		D571105228B5D98000B24812 /* ResponseModel */ = {
+			isa = PBXGroup;
+			children = (
+				D571105728B5E72F00B24812 /* LogInResponse.swift */,
+				D571105928B5E75600B24812 /* JoinResponse.swift */,
+			);
+			path = ResponseModel;
+			sourceTree = "<group>";
+		};
 		D57224D628A6645400112751 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +208,7 @@
 		D57224FA28A6748B00112751 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				D575393C28B32FFE006645F7 /* Network */,
 				D58C64DB28AD6D2600B07C9C /* Struct */,
 				6BA8053228A9415B00B899A5 /* Protocol */,
 				6BA8053328A9416200B899A5 /* Enum */,
@@ -259,6 +287,61 @@
 				D572251228A67A5D00112751 /* Strings.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		D575393C28B32FFE006645F7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D575395328B362C0006645F7 /* Resources */,
+				D575394528B3366F006645F7 /* NetworkModel */,
+				D575394028B333A2006645F7 /* NetworkService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D575394028B333A2006645F7 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				D571105D28B5FCE800B24812 /* MoyaLoggingPlugin.swift */,
+				D575395628B3667D006645F7 /* User */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		D575394528B3366F006645F7 /* NetworkModel */ = {
+			isa = PBXGroup;
+			children = (
+				D575394628B3367A006645F7 /* NetworkResult.swift */,
+				D575394828B336A6006645F7 /* User */,
+			);
+			path = NetworkModel;
+			sourceTree = "<group>";
+		};
+		D575394828B336A6006645F7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D571105228B5D98000B24812 /* ResponseModel */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		D575395328B362C0006645F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D571105328B5DCBB00B24812 /* Const.swift */,
+				D575393E28B330F3006645F7 /* URL.swift */,
+				D575395428B36337006645F7 /* Header.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D575395628B3667D006645F7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				D575394128B334F4006645F7 /* UserAPI.swift */,
+				D575394328B33502006645F7 /* UserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		D58C64DB28AD6D2600B07C9C /* Struct */ = {
@@ -419,20 +502,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
+				D575393F28B330F3006645F7 /* URL.swift in Sources */,
+				D575394428B33502006645F7 /* UserService.swift in Sources */,
 				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
+				D575394228B334F4006645F7 /* UserAPI.swift in Sources */,
 				D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */,
 				6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */,
 				D572250E28A678D400112751 /* Font.swift in Sources */,
+				D571105428B5DCBB00B24812 /* Const.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
 				6BA8053728A941DA00B899A5 /* Layout.swift in Sources */,
+				D575395528B36338006645F7 /* Header.swift in Sources */,
 				6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */,
 				6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
 				D572251028A6794700112751 /* Color.swift in Sources */,
+				D571105E28B5FCE800B24812 /* MoyaLoggingPlugin.swift in Sources */,
 				6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
+				D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */,
 				D572251328A67A5D00112751 /* Strings.swift in Sources */,
+				D571105828B5E72F00B24812 /* LogInResponse.swift in Sources */,
+				D575394728B3367A006645F7 /* NetworkResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,7 +601,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -564,7 +656,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

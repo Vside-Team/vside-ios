@@ -17,24 +17,19 @@ class ViewController: UIViewController ,Layout{
         $0.backgroundColor = .systemBlue
         $0.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
         setConstraints()
     }//viewDidLoad
-    
     func setViews() {
         self.view.addSubview(button)
     }
-    
     func setConstraints() {
         button.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
-    
-    
     //MARK: -버튼액션
     @objc
     private func buttonDidTap() {
