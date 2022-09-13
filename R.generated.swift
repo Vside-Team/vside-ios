@@ -629,6 +629,83 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.tab` struct is generated, and contains static references to 0 images.
+    struct tab {
+      /// This `R.image.tab.home` struct is generated, and contains static references to 2 images.
+      struct home {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/home/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/home/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.home.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.home.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.tab.my` struct is generated, and contains static references to 2 images.
+      struct my {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/my/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/my/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.my.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.my.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.tab.search` struct is generated, and contains static references to 2 images.
+      struct search {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/search/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/search/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.search.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.search.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
 

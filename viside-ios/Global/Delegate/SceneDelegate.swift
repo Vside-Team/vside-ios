@@ -18,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
         self.window = UIWindow()
+        window?.rootViewController = SplashViewController()
+        window?.makeKeyAndVisible()
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
