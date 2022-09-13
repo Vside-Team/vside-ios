@@ -119,8 +119,8 @@ struct R: Rswift.Validatable {
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
-    /// Color `main`.
-    static let main = Rswift.ColorResource(bundle: R.hostingBundle, name: "main")
+    /// Color `yellow`.
+    static let yellow = Rswift.ColorResource(bundle: R.hostingBundle, name: "yellow")
 
     #if os(iOS) || os(tvOS)
     /// `UIColor(named: "AccentColor", bundle: ..., traitCollection: ...)`
@@ -132,11 +132,11 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIColor(named: "main", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "yellow", bundle: ..., traitCollection: ...)`
     @available(tvOS 11.0, *)
     @available(iOS 11.0, *)
-    static func main(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-      return UIKit.UIColor(resource: R.color.main, compatibleWith: traitCollection)
+    static func yellow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.yellow, compatibleWith: traitCollection)
     }
     #endif
 
@@ -149,24 +149,145 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(watchOS)
-    /// `UIColor(named: "main", bundle: ..., traitCollection: ...)`
+    /// `UIColor(named: "yellow", bundle: ..., traitCollection: ...)`
     @available(watchOSApplicationExtension 4.0, *)
-    static func main(_: Void = ()) -> UIKit.UIColor? {
-      return UIKit.UIColor(named: R.color.main.name)
+    static func yellow(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.yellow.name)
     }
     #endif
 
-    /// This `R.color.lemon` struct is generated, and contains static references to 1 colors.
-    struct lemon {
+    /// This `R.color.grayscale` struct is generated, and contains static references to 12 colors.
+    struct grayscale {
       /// Color `_100`.
-      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "lemon/_100")
+      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_100")
+      /// Color `_200`.
+      static let _200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_200")
+      /// Color `_25`.
+      static let _25 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_25")
+      /// Color `_300`.
+      static let _300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_300")
+      /// Color `_400`.
+      static let _400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_400")
+      /// Color `_500`.
+      static let _500 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_500")
+      /// Color `_50`.
+      static let _50 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_50")
+      /// Color `_600`.
+      static let _600 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_600")
+      /// Color `_700`.
+      static let _700 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_700")
+      /// Color `_800`.
+      static let _800 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_800")
+      /// Color `_900`.
+      static let _900 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_900")
+      /// Color `_950`.
+      static let _950 = Rswift.ColorResource(bundle: R.hostingBundle, name: "grayscale/_950")
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(tvOS 11.0, *)
       @available(iOS 11.0, *)
       static func _100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.lemon._100, compatibleWith: traitCollection)
+        return UIKit.UIColor(resource: R.color.grayscale._100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._200, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_25", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _25(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._25, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._300, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._400, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_50", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _50(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._50, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _500(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._500, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_600", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _600(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._600, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_700", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _700(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._700, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_800", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _800(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._800, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_900", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _900(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._900, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_950", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _950(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.grayscale._950, compatibleWith: traitCollection)
       }
       #endif
 
@@ -174,24 +295,156 @@ struct R: Rswift.Validatable {
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(watchOSApplicationExtension 4.0, *)
       static func _100(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.lemon._100.name)
+        return UIKit.UIColor(named: R.color.grayscale._100.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _200(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._200.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_25", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _25(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._25.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _300(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._300.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _400(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._400.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_50", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _50(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._50.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _500(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._500.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_600", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _600(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._600.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_700", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _700(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._700.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_800", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _800(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._800.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_900", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _900(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._900.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_950", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _950(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.grayscale._950.name)
       }
       #endif
 
       fileprivate init() {}
     }
 
-    /// This `R.color.red` struct is generated, and contains static references to 1 colors.
-    struct red {
+    /// This `R.color.main` struct is generated, and contains static references to 5 colors.
+    struct main {
       /// Color `_100`.
-      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "red/_100")
+      static let _100 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_100")
+      /// Color `_200`.
+      static let _200 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_200")
+      /// Color `_300`.
+      static let _300 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_300")
+      /// Color `_400`.
+      static let _400 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_400")
+      /// Color `_500`.
+      static let _500 = Rswift.ColorResource(bundle: R.hostingBundle, name: "main/_500")
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(tvOS 11.0, *)
       @available(iOS 11.0, *)
       static func _100(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.red._100, compatibleWith: traitCollection)
+        return UIKit.UIColor(resource: R.color.main._100, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _200(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._200, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _300(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._300, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _400(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._400, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func _500(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.main._500, compatibleWith: traitCollection)
       }
       #endif
 
@@ -199,7 +452,39 @@ struct R: Rswift.Validatable {
       /// `UIColor(named: "_100", bundle: ..., traitCollection: ...)`
       @available(watchOSApplicationExtension 4.0, *)
       static func _100(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.red._100.name)
+        return UIKit.UIColor(named: R.color.main._100.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_200", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _200(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._200.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_300", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _300(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._300.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_400", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _400(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._400.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "_500", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func _500(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.main._500.name)
       }
       #endif
 
@@ -209,46 +494,65 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 5 files.
+  /// This `R.entitlements` struct is generated, and contains static references to 1 properties.
+  struct entitlements {
+    struct comAppleDeveloperApplesignin {
+      static let `default` = infoPlistString(path: ["com.apple.developer.applesignin"], key: "Default") ?? "Default"
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 6 files.
   struct file {
-    /// Resource file `SpoqaHanSansNeo-Bold.otf`.
-    static let spoqaHanSansNeoBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Bold", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Light.otf`.
-    static let spoqaHanSansNeoLightOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Light", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Medium.otf`.
-    static let spoqaHanSansNeoMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Medium", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Regular.otf`.
-    static let spoqaHanSansNeoRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Regular", pathExtension: "otf")
-    /// Resource file `SpoqaHanSansNeo-Thin.otf`.
-    static let spoqaHanSansNeoThinOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "SpoqaHanSansNeo-Thin", pathExtension: "otf")
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `Montserrat-ExtraBold.otf`.
+    static let montserratExtraBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-ExtraBold", pathExtension: "otf")
+    /// Resource file `Montserrat-SemiBold.otf`.
+    static let montserratSemiBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-SemiBold", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Bold.otf`.
+    static let montserratSpoqaBoldOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Bold", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Medium.otf`.
+    static let montserratSpoqaMediumOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Medium", pathExtension: "otf")
+    /// Resource file `Montserrat-Spoqa-Regular.otf`.
+    static let montserratSpoqaRegularOtf = Rswift.FileResource(bundle: R.hostingBundle, name: "Montserrat-Spoqa-Regular", pathExtension: "otf")
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Bold", withExtension: "otf")`
-    static func spoqaHanSansNeoBoldOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoBoldOtf
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Light", withExtension: "otf")`
-    static func spoqaHanSansNeoLightOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoLightOtf
+    /// `bundle.url(forResource: "Montserrat-ExtraBold", withExtension: "otf")`
+    static func montserratExtraBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratExtraBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Medium", withExtension: "otf")`
-    static func spoqaHanSansNeoMediumOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoMediumOtf
+    /// `bundle.url(forResource: "Montserrat-SemiBold", withExtension: "otf")`
+    static func montserratSemiBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSemiBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Regular", withExtension: "otf")`
-    static func spoqaHanSansNeoRegularOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoRegularOtf
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Bold", withExtension: "otf")`
+    static func montserratSpoqaBoldOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaBoldOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
-    /// `bundle.url(forResource: "SpoqaHanSansNeo-Thin", withExtension: "otf")`
-    static func spoqaHanSansNeoThinOtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.spoqaHanSansNeoThinOtf
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Medium", withExtension: "otf")`
+    static func montserratSpoqaMediumOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaMediumOtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "Montserrat-Spoqa-Regular", withExtension: "otf")`
+    static func montserratSpoqaRegularOtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.montserratSpoqaRegularOtf
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -257,57 +561,66 @@ struct R: Rswift.Validatable {
 
   /// This `R.font` struct is generated, and contains static references to 5 fonts.
   struct font: Rswift.Validatable {
-    /// Font `SpoqaHanSansNeo-Bold`.
-    static let spoqaHanSansNeoBold = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Bold")
-    /// Font `SpoqaHanSansNeo-Light`.
-    static let spoqaHanSansNeoLight = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Light")
-    /// Font `SpoqaHanSansNeo-Medium`.
-    static let spoqaHanSansNeoMedium = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Medium")
-    /// Font `SpoqaHanSansNeo-Regular`.
-    static let spoqaHanSansNeoRegular = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Regular")
-    /// Font `SpoqaHanSansNeo-Thin`.
-    static let spoqaHanSansNeoThin = Rswift.FontResource(fontName: "SpoqaHanSansNeo-Thin")
+    /// Font `Montserrat-ExtraBold`.
+    static let montserratExtraBold = Rswift.FontResource(fontName: "Montserrat-ExtraBold")
+    /// Font `Montserrat-SemiBold`.
+    static let montserratSemiBold = Rswift.FontResource(fontName: "Montserrat-SemiBold")
+    /// Font `Montserrat-Spoqa-Bold`.
+    static let montserratSpoqaBold = Rswift.FontResource(fontName: "Montserrat-Spoqa-Bold")
+    /// Font `Montserrat-Spoqa-Medium`.
+    static let montserratSpoqaMedium = Rswift.FontResource(fontName: "Montserrat-Spoqa-Medium")
+    /// Font `Montserrat-Spoqa-Regular`.
+    static let montserratSpoqaRegular = Rswift.FontResource(fontName: "Montserrat-Spoqa-Regular")
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Bold", size: ...)`
-    static func spoqaHanSansNeoBold(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoBold, size: size)
+    /// `UIFont(name: "Montserrat-ExtraBold", size: ...)`
+    static func montserratExtraBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratExtraBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Light", size: ...)`
-    static func spoqaHanSansNeoLight(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoLight, size: size)
+    /// `UIFont(name: "Montserrat-SemiBold", size: ...)`
+    static func montserratSemiBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSemiBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Medium", size: ...)`
-    static func spoqaHanSansNeoMedium(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoMedium, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Bold", size: ...)`
+    static func montserratSpoqaBold(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaBold, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Regular", size: ...)`
-    static func spoqaHanSansNeoRegular(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoRegular, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Medium", size: ...)`
+    static func montserratSpoqaMedium(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaMedium, size: size)
     }
 
-    /// `UIFont(name: "SpoqaHanSansNeo-Thin", size: ...)`
-    static func spoqaHanSansNeoThin(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: spoqaHanSansNeoThin, size: size)
+    /// `UIFont(name: "Montserrat-Spoqa-Regular", size: ...)`
+    static func montserratSpoqaRegular(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: montserratSpoqaRegular, size: size)
     }
 
     static func validate() throws {
-      if R.font.spoqaHanSansNeoBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Bold' could not be loaded, is 'SpoqaHanSansNeo-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoLight(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Light' could not be loaded, is 'SpoqaHanSansNeo-Light.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Medium' could not be loaded, is 'SpoqaHanSansNeo-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Regular' could not be loaded, is 'SpoqaHanSansNeo-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
-      if R.font.spoqaHanSansNeoThin(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'SpoqaHanSansNeo-Thin' could not be loaded, is 'SpoqaHanSansNeo-Thin.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratExtraBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-ExtraBold' could not be loaded, is 'Montserrat-ExtraBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSemiBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-SemiBold' could not be loaded, is 'Montserrat-SemiBold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaBold(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Bold' could not be loaded, is 'Montserrat-Spoqa-Bold.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaMedium(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Medium' could not be loaded, is 'Montserrat-Spoqa-Medium.otf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.montserratSpoqaRegular(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'Montserrat-Spoqa-Regular' could not be loaded, is 'Montserrat-Spoqa-Regular.otf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 1 images.
+  /// This `R.image` struct is generated, and contains static references to 2 images.
   struct image {
+    /// Image `apple`.
+    static let apple = Rswift.ImageResource(bundle: R.hostingBundle, name: "apple")
     /// Image `kakao`.
     static let kakao = Rswift.ImageResource(bundle: R.hostingBundle, name: "kakao")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "apple", bundle: ..., traitCollection: ...)`
+    static func apple(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.apple, compatibleWith: traitCollection)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UIImage(named: "kakao", bundle: ..., traitCollection: ...)`
@@ -315,6 +628,83 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.kakao, compatibleWith: traitCollection)
     }
     #endif
+
+    /// This `R.image.tab` struct is generated, and contains static references to 0 images.
+    struct tab {
+      /// This `R.image.tab.home` struct is generated, and contains static references to 2 images.
+      struct home {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/home/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/home/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.home.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.home.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.tab.my` struct is generated, and contains static references to 2 images.
+      struct my {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/my/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/my/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.my.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.my.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.tab.search` struct is generated, and contains static references to 2 images.
+      struct search {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/search/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "tab/search/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.search.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.tab.search.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
 
     fileprivate init() {}
   }
@@ -333,7 +723,6 @@ struct R: Rswift.Validatable {
             static let _key = "Default Configuration"
             static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
             static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
 
             fileprivate init() {}
           }
@@ -399,7 +788,7 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
       let name = "Main"
