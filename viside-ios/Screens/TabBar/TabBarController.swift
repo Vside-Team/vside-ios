@@ -12,14 +12,22 @@ final class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configure()
         self.setItem()
     }
     
-    private func setItem() {
-        
-        self.tabBar.clipsToBounds = true
+    private func configure() {
+        UITabBar.clearShadow()
+        self.tabBar.layer.applyShadow(
+            color: Color.g500,
+            alpha: 0.1,
+            x: 0, y: -3,
+            blur: 10)
         self.tabBar.layer.cornerRadius = 20
-        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        self.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+    }
+    private func setItem() {
         let firstTab = HomeNavigationViewController()
         let secondTab = SearchNavigationViewController()
         let thirdTab = MyNavigationViewController()

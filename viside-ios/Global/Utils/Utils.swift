@@ -14,13 +14,6 @@ public final class Utils {
         UIApplication.shared.windows.first?.rootViewController = viewController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
-//    class func setRootViewController(vc: UIViewController) {
-//        DispatchQueue.main.async {
-//            let sceneDelegate = UIApplication.shared.delegate as! SceneDelegate
-//            sceneDelegate.window?.rootViewController = vc
-//            sceneDelegate.window?.makeKeyAndVisible()
-//        }
-//    }
     // MARK: - Font
     class func setMontserratSpoqa(size: Typography.Size, weight: Typography.Weight) -> UIFont {
         switch weight {

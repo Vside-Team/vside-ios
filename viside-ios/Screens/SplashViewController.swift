@@ -11,6 +11,9 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemMint
-        Utils.setRootViewController(TabBarController())
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            Utils.setRootViewController(TabBarController())
+        }
     }
 }

@@ -16,7 +16,6 @@ class BasicNavigationViewController: UINavigationController {
     }
     
     private func configure() {
-        self.view.backgroundColor = .white
         self.navigationBar.isHidden = true
     }
     
