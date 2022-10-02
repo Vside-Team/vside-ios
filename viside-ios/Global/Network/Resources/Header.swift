@@ -12,5 +12,8 @@ extension Const {
         static func applicationJsonHeader() -> [String: String] {
             ["Content-Type": "application/json"]
         }
+        static func bearerHeader() -> [String: String] {
+                    ["jwt": "Bearer \(UserDefaults.standard.string(forKey:Const.DefaultKeys.jwtToken) ?? "")"]
+                }
     }
 }
