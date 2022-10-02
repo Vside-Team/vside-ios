@@ -31,6 +31,13 @@
 		6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053928A9424B00B899A5 /* LoginButton.swift */; };
 		6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053B28A9E80700B899A5 /* Utils.swift */; };
 		6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */; };
+		D54312E028E9BB9000F0EAC8 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54312DF28E9BB9000F0EAC8 /* PaddingLabel.swift */; };
+		D5540FAB28E45410003737D7 /* HomeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FAA28E45410003737D7 /* HomeTitle.swift */; };
+		D5540FAD28E4543D003737D7 /* HomeBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FAC28E4543D003737D7 /* HomeBook.swift */; };
+		D5540FAF28E4545F003737D7 /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FAE28E4545F003737D7 /* SubView.swift */; };
+		D5540FB228E455B6003737D7 /* HomeUserNameAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FB128E455B6003737D7 /* HomeUserNameAPI.swift */; };
+		D5540FB428E455CB003737D7 /* HomeUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FB328E455CB003737D7 /* HomeUserService.swift */; };
+		D5540FB628E45A5D003737D7 /* HomeUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5540FB528E45A5D003737D7 /* HomeUserResponse.swift */; };
 		D571105428B5DCBB00B24812 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105328B5DCBB00B24812 /* Const.swift */; };
 		D571105828B5E72F00B24812 /* LogInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105728B5E72F00B24812 /* LogInResponse.swift */; };
 		D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571105928B5E75600B24812 /* JoinResponse.swift */; };
@@ -82,6 +89,13 @@
 		6BA8053D28A9F2AE00B899A5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		9D50FE2B9A382EC74E8A719F /* Pods-viside-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.debug.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		B9D96D0EE6CD481D80138A8A /* Pods-viside-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-viside-ios.release.xcconfig"; path = "Target Support Files/Pods-viside-ios/Pods-viside-ios.release.xcconfig"; sourceTree = "<group>"; };
+		D54312DF28E9BB9000F0EAC8 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		D5540FAA28E45410003737D7 /* HomeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitle.swift; sourceTree = "<group>"; };
+		D5540FAC28E4543D003737D7 /* HomeBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBook.swift; sourceTree = "<group>"; };
+		D5540FAE28E4545F003737D7 /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
+		D5540FB128E455B6003737D7 /* HomeUserNameAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserNameAPI.swift; sourceTree = "<group>"; };
+		D5540FB328E455CB003737D7 /* HomeUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserService.swift; sourceTree = "<group>"; };
+		D5540FB528E45A5D003737D7 /* HomeUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserResponse.swift; sourceTree = "<group>"; };
 		D571105328B5DCBB00B24812 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D571105728B5E72F00B24812 /* LogInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInResponse.swift; sourceTree = "<group>"; };
 		D571105928B5E75600B24812 /* JoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinResponse.swift; sourceTree = "<group>"; };
@@ -152,6 +166,10 @@
 			children = (
 				6B66169E28D0B2C100146E75 /* HomeNavigationViewController.swift */,
 				6B6616A428D0B32B00146E75 /* HomeViewController.swift */,
+				D5540FAA28E45410003737D7 /* HomeTitle.swift */,
+				D5540FAC28E4543D003737D7 /* HomeBook.swift */,
+				D5540FAE28E4545F003737D7 /* SubView.swift */,
+				D54312DF28E9BB9000F0EAC8 /* PaddingLabel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -233,6 +251,23 @@
 				6B6616A628D0B40B00146E75 /* BasicNavigationViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D5540FB028E45572003737D7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D5540FB128E455B6003737D7 /* HomeUserNameAPI.swift */,
+				D5540FB328E455CB003737D7 /* HomeUserService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D5540FB728E45DAA003737D7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D5540FB528E45A5D003737D7 /* HomeUserResponse.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		D571105228B5D98000B24812 /* ResponseModel */ = {
@@ -379,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				D571105D28B5FCE800B24812 /* MoyaLoggingPlugin.swift */,
+				D5540FB028E45572003737D7 /* Home */,
 				D575395628B3667D006645F7 /* User */,
 			);
 			path = NetworkService;
@@ -388,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				D575394628B3367A006645F7 /* NetworkResult.swift */,
+				D5540FB728E45DAA003737D7 /* Home */,
 				D575394828B336A6006645F7 /* User */,
 			);
 			path = NetworkModel;
@@ -580,12 +617,14 @@
 				6B6616B428D0C2B500146E75 /* CALayer+Extension.swift in Sources */,
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
 				6B66169928D0AF6C00146E75 /* TabBarController.swift in Sources */,
+				D5540FB428E455CB003737D7 /* HomeUserService.swift in Sources */,
 				D575393F28B330F3006645F7 /* URL.swift in Sources */,
 				D575394428B33502006645F7 /* UserService.swift in Sources */,
 				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				6B6616A528D0B32B00146E75 /* HomeViewController.swift in Sources */,
 				D57224E328A6645400112751 /* AppDelegate.swift in Sources */,
 				D575394228B334F4006645F7 /* UserAPI.swift in Sources */,
+				D54312E028E9BB9000F0EAC8 /* PaddingLabel.swift in Sources */,
 				6B6616A728D0B40B00146E75 /* BasicNavigationViewController.swift in Sources */,
 				D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */,
 				6B6616A928D0B58700146E75 /* SearchViewController.swift in Sources */,
@@ -601,14 +640,19 @@
 				6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
 				D572251028A6794700112751 /* Color.swift in Sources */,
+				D5540FAF28E4545F003737D7 /* SubView.swift in Sources */,
+				D5540FB628E45A5D003737D7 /* HomeUserResponse.swift in Sources */,
 				D571105E28B5FCE800B24812 /* MoyaLoggingPlugin.swift in Sources */,
 				6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */,
 				6B6616B228D0C27600146E75 /* UITabBar+Extension.swift in Sources */,
+				D5540FAD28E4543D003737D7 /* HomeBook.swift in Sources */,
 				6B6616A128D0B2EB00146E75 /* SearchNavigationViewController.swift in Sources */,
+				D5540FB228E455B6003737D7 /* HomeUserNameAPI.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
 				D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */,
 				6B6616AD28D0B93600146E75 /* UITabBarItem+Extension.swift in Sources */,
 				6B6616AB28D0B59000146E75 /* MyViewController.swift in Sources */,
+				D5540FAB28E45410003737D7 /* HomeTitle.swift in Sources */,
 				D572251328A67A5D00112751 /* Strings.swift in Sources */,
 				6B66169F28D0B2C100146E75 /* HomeNavigationViewController.swift in Sources */,
 				D571105828B5E72F00B24812 /* LogInResponse.swift in Sources */,

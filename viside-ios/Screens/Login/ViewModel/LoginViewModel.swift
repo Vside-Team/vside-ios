@@ -22,9 +22,6 @@ extension LoginViewModel {
             // 데이터 추출
             let userIdentifier =  credential.user
             var email = credential.email ?? ""
-            //            let fullName = credential.fullName
-            //            let name = (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
-            
             let name: String?
             if let nameProvided = credential.fullName {
                 let firstName = nameProvided.givenName ?? ""

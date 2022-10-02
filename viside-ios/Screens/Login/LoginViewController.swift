@@ -3,7 +3,6 @@
 //  viside-ios
 //
 //  Created by ✨EUGENE✨ on 2022/08/14.
-//
 
 import UIKit
 import Then
