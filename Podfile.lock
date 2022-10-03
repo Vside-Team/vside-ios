@@ -738,6 +738,12 @@ PODS:
   - R.swift (6.1.0):
     - R.swift.Library (~> 5.3.0)
   - R.swift.Library (5.3.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
   - SnapKit (5.6.0)
   - SwiftKeychainWrapper (4.0.1)
   - Then (3.0.0)
@@ -752,6 +758,8 @@ DEPENDENCIES:
   - KakaoSDKUser
   - Moya
   - R.swift
+  - RxCocoa
+  - RxSwift
   - SnapKit
   - SwiftKeychainWrapper
   - Then
@@ -782,6 +790,9 @@ SPEC REPOS:
     - PromisesObjC
     - R.swift
     - R.swift.Library
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SwiftKeychainWrapper
     - Then
@@ -811,10 +822,13 @@ SPEC CHECKSUMS:
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
   R.swift: ec98ff71c4ab2f6fd01dd077e5afd15e63a4834c
   R.swift.Library: 0fc583cb55a99e28901299cc451614cad1161962
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 2941956f4fdbb81e7bc4988dd7689b3a7dcbc6d7
+PODFILE CHECKSUM: 6af02ba353a2ae93000fa35e2628fc0326a2060c
 
 COCOAPODS: 1.11.2

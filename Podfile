@@ -19,4 +19,6 @@ pod 'R.swift'
 pod 'SwiftKeychainWrapper'
 pod 'Moya'
 pod 'Alamofire'
+pod 'RxSwift'
+pod 'RxCocoa'
 end
