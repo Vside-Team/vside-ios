@@ -29,4 +29,15 @@ public final class Utils {
             return R.font.montserratExtraBold(size: size.rawValue) ?? .systemFont(ofSize: size.rawValue, weight: .bold)
         }
     }
+    class func layoutAnimate(_ delegate: UIViewController,
+                             withDuration duration: TimeInterval = 0.3,
+                             delay: TimeInterval = 0,
+                             options: UIView.AnimationOptions = [.curveEaseIn]) {
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: options,
+                       animations: ({
+            delegate.view.layoutIfNeeded()
+        }), completion: nil)
+    }
 }

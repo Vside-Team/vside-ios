@@ -629,6 +629,35 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.icon` struct is generated, and contains static references to 0 images.
+    struct icon {
+      /// This `R.image.icon.bookmark` struct is generated, and contains static references to 2 images.
+      struct bookmark {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon/bookmark/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "icon/bookmark/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.icon.bookmark.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.icon.bookmark.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.tab` struct is generated, and contains static references to 0 images.
     struct tab {
       /// This `R.image.tab.home` struct is generated, and contains static references to 2 images.

@@ -14,7 +14,6 @@ class BasicNavigationViewController: UINavigationController {
         self.configure()
         self.push()
     }
-    
     private func configure() {
         self.navigationBar.isHidden = true
     }
