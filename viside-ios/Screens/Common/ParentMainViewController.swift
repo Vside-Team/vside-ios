@@ -9,11 +9,9 @@ import UIKit
 import Then
 import SnapKit
 
-class ParentMainViewController: UIViewController {
+class ParentMainViewController: ParentViewController {
     
     let navigationView = NavigationView()
-    
-    lazy var safeArea = self.view.safeAreaLayoutGuide
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -59,6 +59,9 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Utils.push(nav: self.navigationController, vc: DetailViewController())
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 166
     }
