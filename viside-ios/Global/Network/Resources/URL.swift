@@ -10,7 +10,8 @@ import Foundation
 extension Const {
     struct URL {
         //baseURL
-        static let baseURL = "http://43.200.221.188:8080"
+        //static let baseURL = "http://43.200.221.188:8080"
+        static let baseURL = "http://api.github.com/"
     }
 }
 

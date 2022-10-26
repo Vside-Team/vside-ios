@@ -9,8 +9,8 @@ import Foundation
 import Moya
 import Alamofire
 
-public class  HomeUserNameAPI{
-    static let shared = HomeUserNameAPI()
+public class  HomeUserAPI{
+    static let shared = HomeUserAPI()
     var homeUserProvider = MoyaProvider<HomeUserService>(plugins : [MoyaLoggingPlugin()])
     public init() {}
     
@@ -31,8 +31,29 @@ public class  HomeUserNameAPI{
             case .failure(let error):
                 print(error)
             }
-
-            }
+            
         }
     }
+    
+    func homeBookList(completion: @escaping (NetworkResult<Any>) -> Void) {
+        homeUserProvider.request(.homeBookList){ (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let data = try filteredResponse.map([Content].self)
+                    completion(.success(data))
+                    print("success login : \(data)")
+                } catch let error {
+                    print("login error: \(error)")
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+    
+}
 

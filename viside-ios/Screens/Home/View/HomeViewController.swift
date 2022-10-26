@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import Then
+import SnapKit
+import Combine
 
 final class HomeViewController: UIViewController {
-   
+    @Published var contents : [Content] = []
+    var subscriptions = Set<AnyCancellable>()
+    typealias Item = AnyHashable
     private lazy var subView = SubView(frame : self.view.bounds).then {
         $0.frame.size.height = 108
     }
     
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout()).then {
+        $0.backgroundColor = Color.g25
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.register(HomeTitle.self, forCellWithReuseIdentifier: HomeTitle.reuseId)
         $0.register(HomeBook.self, forCellWithReuseIdentifier: HomeBook.reuseId)
         $0.delegate = self
     }
 
-    enum Sections: Int, CaseIterable {
+    enum Sections: Int, CaseIterable, Hashable {
         case titleList, bookList
     }
-    var dataSource: UICollectionViewDiffableDataSource<Sections, Int>! = nil
+    var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +37,11 @@ final class HomeViewController: UIViewController {
         reloadData()
         setViews()
         setConstraints()
+        bind()
+        homeBook()
         toastMessage(withDuration: 2.0, delay: 0)
     }
+    
     
     func setViews(){
         view.addSubview(subView)
@@ -52,12 +61,11 @@ final class HomeViewController: UIViewController {
             $0.trailing.equalToSuperview()
             $0.top.equalTo(self.subView.snp.bottom)
             $0.bottom.equalToSuperview()
-        }
-       
-        
+        }  
     }
+   
     private func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Sections, Int>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, intValue) -> UICollectionViewCell? in
+        dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             let section = Sections(rawValue: indexPath.section)!
             switch section {
             case .titleList:
@@ -65,19 +73,33 @@ final class HomeViewController: UIViewController {
                 return cell
                 
             case .bookList:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBook.reuseId, for: indexPath) as! HomeBook
-                return cell
-                
+                if let content = item as? Content {
+                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBook.reuseId, for: indexPath) as! HomeBook
+                    cell.updataData(item: content)
+                    return cell
+                }else { return nil}
             }
         })
     }
     
     func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<Sections, Int>()
+        var snapshot = NSDiffableDataSourceSnapshot<Sections, Item>()
         snapshot.appendSections([.titleList,.bookList])
-        snapshot.appendItems(Array(1..<8), toSection: .bookList) // array(1..<8) 가 section에 item으로 들어감
+        snapshot.appendItems([], toSection: .bookList)
         snapshot.appendItems(Array(1..<2), toSection: .titleList)
         dataSource.apply(snapshot, animatingDifferences: false)
+    }
+    private func updateData( item : [Content]){
+        var snapshot = dataSource.snapshot()
+        snapshot.appendItems(item, toSection: .bookList)
+        dataSource.apply(snapshot)
+    }
+    private func bind(){
+        $contents
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] result in
+               self.updateData(item: result)
+            }.store(in: &subscriptions)
     }
     
     private func createLayout() -> UICollectionViewLayout {
@@ -90,8 +112,6 @@ final class HomeViewController: UIViewController {
                 return self.bookListSection()
             }
         }
-        
-        
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.interSectionSpacing = 32
         layout.configuration = config
@@ -128,15 +148,18 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
     
     func toastMessage( withDuration: Double, delay: Double){
-             lazy var toastMessage = PaddingLabel(padding: UIEdgeInsets(top: 17, left: 31, bottom: 15, right: 31)).then {
-                $0.frame = CGRect(x: 0, y: 0, width: 260, height: 56)
-                $0.alpha = 0.8
-                $0.layer.backgroundColor = Color.main500?.cgColor
-                $0.layer.cornerRadius = 16
-                 $0.textColor = .white
-                 $0.font = Font.xl.extraBold
-                 $0.attributedText = NSMutableAttributedString(string: "Welcome to Vi side!", attributes: [NSAttributedString.Key.kern: -0.8])
-            }
+        lazy var toastMessage = PaddingLabel(padding: UIEdgeInsets(top: 17, left: 31, bottom: 15, right: 31)).then {
+            $0.frame = CGRect(x: 0, y: 0, width: 260, height: 56)
+            $0.alpha = 0.8
+            $0.layer.backgroundColor = Color.main500?.cgColor
+            $0.layer.cornerRadius = 16
+            $0.textColor = .white
+            $0.font = Font.xl.extraBold
+            let shadow = NSShadow()
+            shadow.shadowBlurRadius = 4
+            shadow.shadowColor = Color.g500
+            $0.attributedText = NSMutableAttributedString(string: "Welcome to V side!", attributes: [NSAttributedString.Key.kern: -0.8, .shadow : shadow])
+        }
         self.view.addSubview(toastMessage)
         
             toastMessage.snp.makeConstraints {
@@ -161,5 +184,26 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+extension HomeViewController{
+    func homeBook(){
+        HomeUserAPI.shared.homeBookList { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? [Content]{
+                    self.contents = data
+                    print("\(self.contents)")
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }

@@ -1,37 +1,37 @@
 //
-//  HomeUserService.swift
+//  MyAPI.swift
 //  viside-ios
 //
-//  Created by 김정은 on 2022/09/28.
+//  Created by JEONGEUN KIM on 2022/10/26.
 //
 
 import Foundation
 import Moya
 
-enum HomeUserService {
-    case homeuserName
-    case homeBookList
+enum MyUserService {
+    case logOut
+    case linkOut(snsId : String )
 }
 
-extension HomeUserService : TargetType {
+extension MyUserService : TargetType {
     var baseURL: URL {
         return URL(string: Const.URL.baseURL)!
     }
     var path: String {
         switch self {
-        case .homeuserName :
-           return "/profile"
-        case .homeBookList :
-            return "/homelist"
+        case .logOut :
+           return "/logout1"
+        case .linkOut :
+            return "/withdrawal"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .homeuserName :
-            return .get
-        case .homeBookList :
-            return .get
+        case .logOut :
+            return .post
+        case .linkOut :
+            return .post
         }
     }
     
@@ -41,15 +41,14 @@ extension HomeUserService : TargetType {
     
     var task: Task {
         switch self {
-        case .homeuserName :
+        case .logOut :
             return .requestPlain
-        case .homeBookList :
-            return .requestPlain
+        case .linkOut(let snsId) :
+            return .requestParameters(parameters: ["snsId" : snsId], encoding: JSONEncoding.default)
         }
     }
     var validationType: Moya.ValidationType {
            return .successAndRedirectCodes
-        
        }
     
     var headers: [String: String]? {

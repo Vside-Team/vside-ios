@@ -18,7 +18,7 @@ class HomeTitle: UICollectionViewCell {
        
     }
   private lazy  var titleLabel = UILabel().then {
-        $0.attributedText = NSMutableAttributedString(string: "Inside, Vi side", attributes: [NSAttributedString.Key.kern: -0.8])
+        $0.attributedText = NSMutableAttributedString(string: "Inside, V side", attributes: [NSAttributedString.Key.kern: -0.8])
         $0.numberOfLines = 0
         $0.font = Font.xl.extraBold
         $0.textColor = Color.g950
@@ -42,8 +42,7 @@ class HomeTitle: UICollectionViewCell {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        backgroundColor = .white
-        
+        backgroundColor = Color.g25
         setViews()
         setConstraints()
     }
@@ -68,8 +67,8 @@ class HomeTitle: UICollectionViewCell {
             $0.trailing.equalTo(contentView)
             $0.top.equalTo(stackView.snp.bottom).offset(16)
         }
-        
     }
+  
 }
 
 

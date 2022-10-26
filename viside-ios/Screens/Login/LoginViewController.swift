@@ -54,7 +54,15 @@ final class LoginViewController: UIViewController, Layout {
     private func kakaoButtonDidTap() {
         self.viewModel.setLoginType(.kakao)
         self.kakaoAuth.KaKaoLogin()
+        presentToThirdVC()
+        
     }
+    private func presentToThirdVC(){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            Utils.setRootViewController(TabBarController())
+           
+        }
+       }
     @objc
     private func appleButtonDidTap() {
         self.viewModel.setLoginType(.apple)

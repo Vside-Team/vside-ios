@@ -1,8 +1,8 @@
 //
-//  SubView.swift
+//  MySubView.swift
 //  viside-ios
 //
-//  Created by 김정은 on 2022/09/28.
+//  Created by JEONGEUN KIM on 2022/10/12.
 //
 
 import UIKit
@@ -10,20 +10,18 @@ import Combine
 import Then
 import SnapKit
 
-class SubView: UIView {
+class MySubView: UIView {
     
     @Published private (set) var username : HomeUserResponse?
     var subscriptions = Set<AnyCancellable>()
     
     private lazy  var titleLabel = UILabel().then  {
         $0.numberOfLines = 0
-        $0.font = Font.xl2.medium
-        $0.textColor = Color.g900
+        $0.font = Font.xl2.extraBold
+        $0.textColor = Color.g950
         $0.textAlignment = .left
     }
-    private lazy var titleBackImage = UIImageView().then {
-        $0.image = UIImage(named: "home/title/title")
-    }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = .white
@@ -37,18 +35,12 @@ class SubView: UIView {
     }
     
     func setViews(){
-        self.addSubview(titleBackImage)
         self.addSubview(titleLabel)
     }
     func  setConstraints(){
-        
-        titleBackImage.snp.makeConstraints {
-            $0.leading.equalTo(self)
-            $0.top.equalTo(self).offset(52)
-        }
         titleLabel.snp.makeConstraints {
-            $0.leading.equalTo(self).offset(20)
-            $0.top.equalTo(self).offset(58)
+            $0.leading.equalTo(self).offset(21.67)
+            $0.top.equalTo(self).offset(62)
         }
     }
     private func bind(){
@@ -60,19 +52,19 @@ class SubView: UIView {
     }
     
     func updataData(data : HomeUserResponse?){
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineHeightMultiple = 1.31
+      
         
         guard let data = data else {
-            self.titleLabel.attributedText = NSMutableAttributedString(string: "안녕하세요, Visder님!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            self.titleLabel.text = "V sider's Bookshelf"
             return
         }
-        self.titleLabel.attributedText = NSMutableAttributedString(string: "안녕하세요, \(data.username)님!", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        self.titleLabel.text = "\(data.username)'s Bookshelf"
+       
     }
 }
-extension SubView {
+extension MySubView {
     func homeUserName(){
-        HomeUserNameAPI.shared.homeUserName { (response) in
+        HomeUserAPI.shared.homeUserName { (response) in
             switch response {
             case .success(let data):
                 

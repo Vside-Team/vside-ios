@@ -19,4 +19,5 @@ pod 'R.swift'
 pod 'SwiftKeychainWrapper'
 pod 'Moya'
 pod 'Alamofire'
+pod 'Kingfisher', '~> 7.0'
 end
