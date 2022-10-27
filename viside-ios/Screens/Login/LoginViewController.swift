@@ -54,15 +54,9 @@ final class LoginViewController: UIViewController, Layout {
     private func kakaoButtonDidTap() {
         self.viewModel.setLoginType(.kakao)
         self.kakaoAuth.KaKaoLogin()
-        presentToThirdVC()
-        
+        Utils.setRootViewController(TabBarController())
     }
-    private func presentToThirdVC(){
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            Utils.setRootViewController(TabBarController())
-           
-        }
-       }
+
     @objc
     private func appleButtonDidTap() {
         self.viewModel.setLoginType(.apple)
@@ -74,6 +68,8 @@ final class LoginViewController: UIViewController, Layout {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        Utils.setRootViewController(TabBarController())
+
     }
 }
 // MARK: - Apple

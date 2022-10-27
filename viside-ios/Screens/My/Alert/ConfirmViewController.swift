@@ -27,7 +27,8 @@ class ConfirmViewController: UIViewController,AlertConfirm {
         }
     }
     func action() {
-        Utils.setRootViewController(TabBarController())
+        
+        Utils.setRootViewController(SplashViewController())
     }
     required init?(coder: NSCoder) { fatalError() }
 }

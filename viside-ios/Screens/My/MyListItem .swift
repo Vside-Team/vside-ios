@@ -42,6 +42,16 @@ extension MyBookListItem {
                                           MyBookListItem(imgURl: "20"),
                                           MyBookListItem(imgURl: "21"),
                                           MyBookListItem(imgURl: "22"),
+                                          MyBookListItem(imgURl: "134"),
+                                          MyBookListItem(imgURl: "144"),
+                                          MyBookListItem(imgURl: "154"),
+                                          MyBookListItem(imgURl: "164"),
+                                          MyBookListItem(imgURl: "174"),
+                                          MyBookListItem(imgURl: "184"),
+                                          MyBookListItem(imgURl: "194"),
+                                          MyBookListItem(imgURl: "204"),
+                                          MyBookListItem(imgURl: "214"),
+                                          MyBookListItem(imgURl: "224"),
                                           MyBookListItem(imgURl: "23"),
                                           MyBookListItem(imgURl: "24")
 

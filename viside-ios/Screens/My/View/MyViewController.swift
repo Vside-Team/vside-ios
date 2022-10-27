@@ -9,12 +9,16 @@ import UIKit
 import Then
 import SnapKit
 import SafariServices
+import Combine
 
 final class MyViewController: UIViewController {
+    @Published private (set) var username : HomeUserResponse?
+    var subscriptions = Set<AnyCancellable>()
     static let background = "background-element-kind"
-    let list : [MyPageListItem] = MyPageListItem.list
+    var list : [MyPageListItem] = MyPageListItem.list
     let imgList : [MyBookListItem] = MyBookListItem.list
     let myBookList : MyBookList? = nil
+    let alertView : AlertView? = nil
     private lazy var headerView = HeaderView(frame: self.view.bounds).then {
         $0.backgroundColor = .clear
         $0.frame.size.height = 35
@@ -41,6 +45,22 @@ final class MyViewController: UIViewController {
         reloadData()
         setViews()
         setConstraints()
+        homeUserName()
+        bind()
+    }
+    private func bind(){
+        $username
+            .receive(on: RunLoop.main)
+            .sink { [unowned self] result in
+                self.updataData(data: result)
+            }.store(in: &subscriptions)
+    }
+
+    func updataData(data : HomeUserResponse?){
+        guard let data = data else {
+            return
+        }
+        self.alertView?.title.text = "계정을 삭제하면 \(data.username)님의\n기록이 모두 사라져요."
     }
     
     func setViews(){
@@ -94,7 +114,7 @@ final class MyViewController: UIViewController {
             case .bookList:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyBookList.reuseId, for: indexPath) as! MyBookList
                 cell.configure(item as! MyBookListItem )
-                cell.imageView.isHidden = (indexPath.row > 23)
+               // cell.imageView.isHidden = (indexPath.row > 23)
                 return cell
             case .mypageList:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyPageList.reuseId, for: indexPath) as! MyPageList
@@ -112,36 +132,30 @@ final class MyViewController: UIViewController {
         snapshot.appendSections([.bookList,.mypageList])
         snapshot.appendItems(imgList, toSection: .bookList)
         snapshot.appendItems(list, toSection: .mypageList)
-        
         dataSource.apply(snapshot, animatingDifferences: false)
     }
-    
+
     private func MyBookListSection() -> NSCollectionLayoutSection {
-        let spacing = 18.0
-        if  imgList.count <= 6 {
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalWidth(0.4))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: .fractionalWidth(0.4))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
-            group.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.interGroupSpacing = spacing
+        let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(128), heightDimension: .absolute(148))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(1700),heightDimension: .absolute(148))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 13)
+        let group1 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
+        let group2 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
+        if imgList.count <= 12 {
+            let section = NSCollectionLayoutSection(group: group1)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
+            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            return section
+        } else {
+            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [group1,group2])
+            containerGroup.interItemSpacing = .fixed(18)
+            let section = NSCollectionLayoutSection(group: containerGroup)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
+            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             return section
         }
-        else {
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(148))
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(1.0),heightDimension: .absolute(314))
-                let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item , count: 2)
-                group.interItemSpacing = .fixed(18)
-                let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 20, bottom: 0, trailing: 20)
-                section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-                section.interGroupSpacing = 20
-                return section
-            }
-        }
+    }
     
     private func MylistSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
@@ -154,6 +168,7 @@ final class MyViewController: UIViewController {
     }
 }
 extension MyViewController: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             print(indexPath)
@@ -176,11 +191,32 @@ extension MyViewController: UICollectionViewDelegate {
                 self.present(logOut, animated: false)
             }
             else {
-                let linkOut = AlertViewController(type: .linkOut, title: AlertType.linkOut.title, subTitle: AlertType.linkOut.subTitle)
+            
+                let linkOut = AlertViewController(type: .linkOut, title: self.alertView?.title.text ?? AlertType.linkOut.title, subTitle: AlertType.linkOut.subTitle)
                 linkOut.modalPresentationStyle = .overFullScreen
                 self.present(linkOut, animated: false)
             }
         }
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+extension MyViewController {
+    func homeUserName(){
+        HomeUserAPI.shared.homeUserName { [self] (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? HomeUserResponse{
+                    self.updataData(data: data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }

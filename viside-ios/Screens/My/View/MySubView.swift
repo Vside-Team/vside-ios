@@ -52,8 +52,6 @@ class MySubView: UIView {
     }
     
     func updataData(data : HomeUserResponse?){
-      
-        
         guard let data = data else {
             self.titleLabel.text = "V sider's Bookshelf"
             return
@@ -67,7 +65,6 @@ extension MySubView {
         HomeUserAPI.shared.homeUserName { (response) in
             switch response {
             case .success(let data):
-                
                 if let data = data as? HomeUserResponse{
                     self.updataData(data: data)
                 }

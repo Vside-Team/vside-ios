@@ -9,6 +9,7 @@ import Foundation
 import Then
 import SnapKit
 
+
 protocol AlertConfirm {
     func action()
 }
@@ -26,6 +27,7 @@ final class ConfirmView : UIView {
     }
     lazy var title = UILabel().then {
         $0.numberOfLines = 0
+        $0.textColor = Color.g900
         $0.lineBreakMode = .byWordWrapping
         $0.font = Font.base.medium
         var paragraphStyle = NSMutableParagraphStyle()

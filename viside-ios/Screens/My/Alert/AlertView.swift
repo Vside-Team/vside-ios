@@ -35,6 +35,7 @@ final class AlertView: UIView {
         $0.numberOfLines = 0
         $0.lineBreakMode = .byWordWrapping
         $0.font = Font.base.medium
+        $0.textColor = Color.g900
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.3
         $0.attributedText = NSMutableAttributedString(string: "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
@@ -95,7 +96,7 @@ final class AlertView: UIView {
         }
         titleStack.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.directionalHorizontalEdges.equalToSuperview().inset(61)
+            $0.directionalHorizontalEdges.equalToSuperview().inset(40)
             $0.top.equalToSuperview().offset(27)
         }
         btnStack.snp.makeConstraints {

@@ -58,7 +58,6 @@ class SubView: UIView {
                 self.updataData(data: result)
             }.store(in: &subscriptions)
     }
-    
     func updataData(data : HomeUserResponse?){
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.31

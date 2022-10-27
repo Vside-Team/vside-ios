@@ -31,6 +31,7 @@ final class HomeViewController: UIViewController {
     }
     var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDataSource()
@@ -145,6 +146,33 @@ final class HomeViewController: UIViewController {
         return section
     }
 }
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+}
+extension HomeViewController{
+    func homeBook(){
+        HomeUserAPI.shared.homeBookList { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? [Content]{
+                    self.contents = data
+                    print("\(self.contents)")
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}
 extension HomeViewController {
     
     func toastMessage( withDuration: Double, delay: Double){
@@ -179,31 +207,4 @@ extension HomeViewController {
 
         }
       
-}
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
-}
-extension HomeViewController{
-    func homeBook(){
-        HomeUserAPI.shared.homeBookList { (response) in
-            switch response {
-            case .success(let data):
-                if let data = data as? [Content]{
-                    self.contents = data
-                    print("\(self.contents)")
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-            }
-        }
-    }
 }

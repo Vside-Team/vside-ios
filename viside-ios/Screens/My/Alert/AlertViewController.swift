@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 import Then
-
+import AuthenticationServices
 class AlertViewController: UIViewController, AlertDelegate {
     let alertView: AlertView
     init(type : AlertType , title : String, subTitle : String ){
@@ -32,10 +32,12 @@ class AlertViewController: UIViewController, AlertDelegate {
             print("action")
             myLogout()
             UserDefaults.standard.removeObject(forKey: Const.DefaultKeys.jwtToken)
-            Utils.setRootViewController(TabBarController())
+            KakaoAuthVM().kakaoLogout()
+            Utils.setRootViewController(SplashViewController())
         } else {
             myLinkout()
             UserDefaults.standard.removeObject(forKey: Const.DefaultKeys.jwtToken)
+            KakaoAuthVM().kakaoLinkOut()
             let confirm = ConfirmViewController(type: .confirm, title: AlertType.confirm.title)
             confirm.modalPresentationStyle = .overFullScreen
             self.present(confirm, animated: false)

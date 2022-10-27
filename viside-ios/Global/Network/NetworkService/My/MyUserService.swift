@@ -29,7 +29,7 @@ extension MyUserService : TargetType {
     var method: Moya.Method {
         switch self {
         case .logOut :
-            return .post
+            return .delete
         case .linkOut :
             return .post
         }
