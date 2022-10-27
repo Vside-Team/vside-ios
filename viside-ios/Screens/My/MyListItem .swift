@@ -41,8 +41,6 @@ extension MyBookListItem {
                                           MyBookListItem(imgURl: "19"),
                                           MyBookListItem(imgURl: "20"),
                                           MyBookListItem(imgURl: "21"),
-                                          MyBookListItem(imgURl: "22"),
-                                          MyBookListItem(imgURl: "24")
-
+                                          MyBookListItem(imgURl: "22")
     ]
 }
