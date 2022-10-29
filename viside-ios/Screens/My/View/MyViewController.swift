@@ -68,6 +68,9 @@ final class MyViewController: UIViewController {
         components.forEach {
             self.view.addSubview($0 as! UIView)
         }
+        if imgList.count > 1 {
+            headerView.titleBtn.isHidden = false 
+        }
     }
     func setConstraints(){
         

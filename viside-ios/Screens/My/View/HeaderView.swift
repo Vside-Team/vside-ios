@@ -18,8 +18,7 @@ class HeaderView: UIView {
         $0.setTitleColor(Color.g800, for: .normal)
         $0.titleLabel?.font = Font.sm.regular
         $0.addTarget(self, action: #selector(tappedBtn), for: .touchUpInside)
-        //btn hidden
-       // $0.layer.isHidden = true
+        $0.layer.isHidden = true
     }
     override init(frame: CGRect){
         super.init(frame: frame)
