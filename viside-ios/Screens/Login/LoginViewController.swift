@@ -3,7 +3,6 @@
 //  viside-ios
 //
 //  Created by ✨EUGENE✨ on 2022/08/14.
-//
 
 import UIKit
 import Then
@@ -55,7 +54,9 @@ final class LoginViewController: UIViewController, Layout {
     private func kakaoButtonDidTap() {
         self.viewModel.setLoginType(.kakao)
         self.kakaoAuth.KaKaoLogin()
+        Utils.setRootViewController(TabBarController())
     }
+
     @objc
     private func appleButtonDidTap() {
         self.viewModel.setLoginType(.apple)
@@ -67,6 +68,8 @@ final class LoginViewController: UIViewController, Layout {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
+        Utils.setRootViewController(TabBarController())
+
     }
 }
 // MARK: - Apple

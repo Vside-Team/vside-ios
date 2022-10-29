@@ -629,6 +629,74 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    /// This `R.image.home` struct is generated, and contains static references to 0 images.
+    struct home {
+      /// This `R.image.home.bookmark` struct is generated, and contains static references to 2 images.
+      struct bookmark {
+        /// Image `normal`.
+        static let normal = Rswift.ImageResource(bundle: R.hostingBundle, name: "home/bookmark/normal")
+        /// Image `selected`.
+        static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "home/bookmark/selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "normal", bundle: ..., traitCollection: ...)`
+        static func normal(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.home.bookmark.normal, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "selected", bundle: ..., traitCollection: ...)`
+        static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.home.bookmark.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      /// This `R.image.home.title` struct is generated, and contains static references to 2 images.
+      struct title {
+        /// Image `icon`.
+        static let icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "home/title/icon")
+        /// Image `title`.
+        static let title = Rswift.ImageResource(bundle: R.hostingBundle, name: "home/title/title")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "icon", bundle: ..., traitCollection: ...)`
+        static func icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.home.title.icon, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "title", bundle: ..., traitCollection: ...)`
+        static func title(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.home.title.title, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.my` struct is generated, and contains static references to 1 images.
+    struct my {
+      /// Image `arrow`.
+      static let arrow = Rswift.ImageResource(bundle: R.hostingBundle, name: "My/arrow")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "arrow", bundle: ..., traitCollection: ...)`
+      static func arrow(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.my.arrow, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     /// This `R.image.tab` struct is generated, and contains static references to 0 images.
     struct tab {
       /// This `R.image.tab.home` struct is generated, and contains static references to 2 images.

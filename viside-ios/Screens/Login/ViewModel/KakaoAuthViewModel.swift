@@ -40,6 +40,7 @@ class KakaoAuthVM : ObservableObject {
                         UserDefaults.standard.set(true, forKey: Const.DefaultKeys.isKakaoLogin)
                     }
                     continuation.resume(returning : true)
+                    
                 }
             }
         }

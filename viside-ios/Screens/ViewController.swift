@@ -21,7 +21,7 @@ class ViewController: UIViewController ,Layout{
         super.viewDidLoad()
         setViews()
         setConstraints()
-    }//viewDidLoad
+    }
     func setViews() {
         self.view.addSubview(button)
     }
