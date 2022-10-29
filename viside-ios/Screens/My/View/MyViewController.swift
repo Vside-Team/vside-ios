@@ -144,21 +144,6 @@ final class MyViewController: UIViewController {
         let verticalItem = NSCollectionLayoutItem(layoutSize: verticalItemSize)
         verticalItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 13)
         let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(296))
-//        let group1 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
-//        let group2 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
-//        if imgList.count <= 12 {
-//            let section = NSCollectionLayoutSection(group: group1)
-//            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
-//            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-//            return section
-//        } else {
-//            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [group1,group2])
-//            containerGroup.interItemSpacing = .fixed(18)
-//            let section = NSCollectionLayoutSection(group: containerGroup)
-//            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
-//            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-//            return section
-//        }
         let group1 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 6)
         let group2 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 6)
         let vgroup1 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
