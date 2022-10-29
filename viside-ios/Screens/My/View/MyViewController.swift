@@ -68,6 +68,9 @@ final class MyViewController: UIViewController {
         components.forEach {
             self.view.addSubview($0 as! UIView)
         }
+        if imgList.count > 1 {
+            headerView.titleBtn.isHidden = false 
+        }
     }
     func setConstraints(){
         
@@ -138,19 +141,36 @@ final class MyViewController: UIViewController {
     private func MyBookListSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .estimated(128), heightDimension: .absolute(148))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(1700),heightDimension: .absolute(148))
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 13)
-        let group1 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
-        let group2 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 12)
-        if imgList.count <= 12 {
+        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(850),heightDimension: .absolute(148))
+        let verticalItemSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(148))
+        let verticalItem = NSCollectionLayoutItem(layoutSize: verticalItemSize)
+        verticalItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 13)
+        let verticalGroupSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(296))
+        let group1 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 6)
+        let group2 = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 6)
+        let vgroup1 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
+        let vgroup2 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
+        let vgroup3 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
+        let vgroup4 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
+        let vgroup5 = NSCollectionLayoutGroup.vertical(layoutSize: verticalGroupSize, subitem: verticalItem , count: 2)
+        if imgList.count <= 6 {
             let section = NSCollectionLayoutSection(group: group1)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             return section
-        } else {
+        } else if imgList.count <= 12{
             let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [group1,group2])
             containerGroup.interItemSpacing = .fixed(18)
             let section = NSCollectionLayoutSection(group: containerGroup)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
+            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            return section
+        }else {
+            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [group1,group2])
+            let containerGroup1 =  NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [containerGroup,vgroup1,vgroup2,vgroup3,vgroup4,vgroup5])
+            containerGroup.interItemSpacing = .fixed(18)
+            let section = NSCollectionLayoutSection(group: containerGroup1)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 2)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
             return section
