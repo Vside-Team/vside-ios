@@ -20,4 +20,6 @@ pod 'SwiftKeychainWrapper'
 pod 'Moya'
 pod 'Alamofire'
 pod 'Kingfisher', '~> 7.0'
+pod 'RxSwift'
+pod 'RxCocoa'
 end

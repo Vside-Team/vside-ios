@@ -14,6 +14,24 @@ public final class Utils {
         UIApplication.shared.windows.first?.rootViewController = viewController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
+    class func push(nav: UINavigationController?, vc: UIViewController, animated: Bool = true) {
+        DispatchQueue.main.async {
+            vc.hidesBottomBarWhenPushed = true
+            nav?.pushViewController(vc, animated: animated)
+        }
+        
+    }
+    class func layoutAnimate(_ delegate: UIViewController,
+                             withDuration duration: TimeInterval = 0.3,
+                             delay: TimeInterval = 0,
+                             options: UIView.AnimationOptions = [.curveEaseIn]) {
+        UIView.animate(withDuration: duration,
+                       delay: delay,
+                       options: options,
+                       animations: ({
+            delegate.view.layoutIfNeeded()
+        }), completion: nil)
+    }
     // MARK: - Font
     class func setMontserratSpoqa(size: Typography.Size, weight: Typography.Weight) -> UIFont {
         switch weight {
