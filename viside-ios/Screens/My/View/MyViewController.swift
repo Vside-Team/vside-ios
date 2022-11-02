@@ -153,7 +153,6 @@ final class MyViewController: UIViewController {
     }
     
     private func MyBookListSection() -> NSCollectionLayoutSection {
-        let spacing = 18.0
         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(148))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         if imgList.count <= 1 {
