@@ -42,5 +42,5 @@ extension MyBookListItem {
                                           MyBookListItem(imgURl: "20"),
                                           MyBookListItem(imgURl: "21"),
                                           MyBookListItem(imgURl: "22")
-    ]
+   ]
 }

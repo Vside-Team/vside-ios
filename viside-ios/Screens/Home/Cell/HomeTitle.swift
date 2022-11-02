@@ -10,12 +10,9 @@ import UIKit
 class HomeTitle: UICollectionViewCell {
     static var reuseId: String = "HomeTitle"
     
-    private lazy var stackView = UIStackView().then {
+    private lazy var stackView = UIStackView(arrangedSubviews:[titleLabel,titleIcon]).then {
         $0.axis = .horizontal
         $0.distribution = .equalSpacing
-        $0.addArrangedSubview(titleLabel)
-        $0.addArrangedSubview(titleIcon)
-       
     }
   private lazy  var titleLabel = UILabel().then {
         $0.attributedText = NSMutableAttributedString(string: "Inside, V side", attributes: [NSAttributedString.Key.kern: -0.8])

@@ -11,6 +11,7 @@ import Moya
 enum MyUserService {
     case logOut
     case linkOut(snsId : String )
+    case content
 }
 
 extension MyUserService : TargetType {
@@ -23,6 +24,8 @@ extension MyUserService : TargetType {
            return "/logout1"
         case .linkOut :
             return "/withdrawal"
+        case .content :
+            return "/scrap/contents"
         }
     }
     
@@ -32,6 +35,8 @@ extension MyUserService : TargetType {
             return .delete
         case .linkOut :
             return .post
+        case .content :
+            return .get
         }
     }
     
@@ -45,6 +50,8 @@ extension MyUserService : TargetType {
             return .requestPlain
         case .linkOut(let snsId) :
             return .requestParameters(parameters: ["snsId" : snsId], encoding: JSONEncoding.default)
+        case .content :
+            return .requestPlain
         }
     }
     var validationType: Moya.ValidationType {

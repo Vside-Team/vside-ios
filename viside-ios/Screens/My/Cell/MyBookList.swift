@@ -17,8 +17,6 @@ class MyBookList: UICollectionViewCell {
         $0.layer.cornerRadius = 20
         $0.backgroundColor = Color.main300
         $0.contentMode = .scaleAspectFill
-
-        
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -26,10 +24,12 @@ class MyBookList: UICollectionViewCell {
     }
     override init(frame: CGRect){
         super.init(frame: frame)
-        self.layer.shadowColor = UIColor(red: 0.78, green: 0.792, blue: 0.82, alpha: 1).cgColor
+        self.layer.shadowColor = Color.g200?.cgColor
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 14
         self.layer.shadowOffset = CGSize(width: 0, height: 4)
+        self.contentView.backgroundColor = .white
+        self.contentView.layer.cornerRadius = 20
         setView()
         setConstraints()
     }
