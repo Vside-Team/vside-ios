@@ -54,5 +54,8 @@ final class FilterTableViewCell: UITableViewCell, ReusableView, Layout {
         self.selectionStyle = .none
         self.contentView.backgroundColor = Color.g25
     }
-    
+    func bind(_ keyword: Keyword) {
+        self.titleLabel.text = keyword.category?.first
+        
+    }
 }

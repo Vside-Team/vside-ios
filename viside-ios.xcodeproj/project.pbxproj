@@ -55,6 +55,10 @@
 		6B81638F290FF810006D2628 /* BookmarkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81638E290FF810006D2628 /* BookmarkStatus.swift */; };
 		6B816391290FFA65006D2628 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B816390290FFA65006D2628 /* UIView+Extension.swift */; };
 		6B816393290FFA6F006D2628 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B816392290FFA6F006D2628 /* UILabel+Extension.swift */; };
+		6B81639529114397006D2628 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81639429114396006D2628 /* SearchService.swift */; };
+		6B81639829114A53006D2628 /* NetworkWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81639729114A53006D2628 /* NetworkWrapper.swift */; };
+		6B81639A29114AAD006D2628 /* SeachModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81639929114AAD006D2628 /* SeachModel.swift */; };
+		6B81639D291204C4006D2628 /* KeywordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B81639C291204C4006D2628 /* KeywordModel.swift */; };
 		6B849B7A28BE38B800A57222 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7528BE38B800A57222 /* Montserrat-SemiBold.otf */; };
 		6B849B7B28BE38B800A57222 /* Montserrat-Spoqa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7628BE38B800A57222 /* Montserrat-Spoqa-Bold.otf */; };
 		6B849B7C28BE38B800A57222 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7728BE38B800A57222 /* Montserrat-ExtraBold.otf */; };
@@ -146,6 +150,10 @@
 		6B81638E290FF810006D2628 /* BookmarkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStatus.swift; sourceTree = "<group>"; };
 		6B816390290FFA65006D2628 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		6B816392290FFA6F006D2628 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		6B81639429114396006D2628 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		6B81639729114A53006D2628 /* NetworkWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWrapper.swift; sourceTree = "<group>"; };
+		6B81639929114AAD006D2628 /* SeachModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachModel.swift; sourceTree = "<group>"; };
+		6B81639C291204C4006D2628 /* KeywordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordModel.swift; sourceTree = "<group>"; };
 		6B849B7528BE38B800A57222 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
 		6B849B7628BE38B800A57222 /* Montserrat-Spoqa-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Bold.otf"; sourceTree = "<group>"; };
 		6B849B7728BE38B800A57222 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
@@ -389,6 +397,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6B8163962911439D006D2628 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6B81639429114396006D2628 /* SearchService.swift */,
+				6B81639729114A53006D2628 /* NetworkWrapper.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		6B81639B291204B0006D2628 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6B81639929114AAD006D2628 /* SeachModel.swift */,
+				6B81639C291204C4006D2628 /* KeywordModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		6BA8052D28A9413200B899A5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -617,6 +643,7 @@
 				0973344F290842CE00694466 /* My */,
 				D5540FB028E45572003737D7 /* Home */,
 				D575395628B3667D006645F7 /* User */,
+				6B8163962911439D006D2628 /* Search */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -627,6 +654,7 @@
 				D575394628B3367A006645F7 /* NetworkResult.swift */,
 				D5540FB728E45DAA003737D7 /* Home */,
 				D575394828B336A6006645F7 /* User */,
+				6B81639B291204B0006D2628 /* Search */,
 			);
 			path = NetworkModel;
 			sourceTree = "<group>";
@@ -862,6 +890,7 @@
 				D5540FB628E45A5D003737D7 /* HomeUserResponse.swift in Sources */,
 				6B81637B290FF600006D2628 /* Bookmark.swift in Sources */,
 				09587B8F28FEB4F9000E27F4 /* HomeBookResponse.swift in Sources */,
+				6B81639A29114AAD006D2628 /* SeachModel.swift in Sources */,
 				D571105E28B5FCE800B24812 /* MoyaLoggingPlugin.swift in Sources */,
 				6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */,
 				6B6616B228D0C27600146E75 /* UITabBar+Extension.swift in Sources */,
@@ -871,11 +900,14 @@
 				6B816377290FF594006D2628 /* ViewModelType.swift in Sources */,
 				6B816385290FF689006D2628 /* FilterCollectionView.swift in Sources */,
 				6B6616A128D0B2EB00146E75 /* SearchNavigationViewController.swift in Sources */,
+				6B81639D291204C4006D2628 /* KeywordModel.swift in Sources */,
 				09587B1628F5E875000E27F4 /* MyBookList.swift in Sources */,
 				6B816375290FF585006D2628 /* ReusableView.swift in Sources */,
+				6B81639829114A53006D2628 /* NetworkWrapper.swift in Sources */,
 				09587B1228F5E3C4000E27F4 /* MySubView.swift in Sources */,
 				09587B1828F5E8A5000E27F4 /* MyListItem .swift in Sources */,
 				6B81636D290FF4BA006D2628 /* ParentViewController.swift in Sources */,
+				6B81639529114397006D2628 /* SearchService.swift in Sources */,
 				D5540FB228E455B6003737D7 /* HomeUserAPI.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
 				D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */,

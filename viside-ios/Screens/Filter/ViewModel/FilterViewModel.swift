@@ -15,6 +15,12 @@ final class FilterViewModel: ViewModelType {
     
     private let disposeBag = DisposeBag()
     
+    private let data: [Keyword] = [
+        Keyword(category: ["분위기"], keywords: ["다채로운", "여름"]),
+        Keyword(category: ["장르"], keywords: ["에세이", "SF", "몽환", "야경", "책방", "성장", "친구", "꿈"]),
+        Keyword(category: ["소재"], keywords: ["폭력", "우울증", "인생의 지혜"]),
+        Keyword(category: ["국가"], keywords: ["이집트", "비", "친구", "비", "친구", "비", "친구", "비", "친구", "비", "친구", "비", "친구", "비", "친구", "비", "친구", "다채로운", "여름"])
+    ]
     private var stateObserver = BehaviorSubject<CardState>(value: .collapsed)
     init() {
         self.input = Input(stateObserver: stateObserver.asObserver())
@@ -30,6 +36,7 @@ final class FilterViewModel: ViewModelType {
                 self.output.state = $0
             })
             .disposed(by: disposeBag)
+        self.output.data = self.data
     }
 }
 extension FilterViewModel {
@@ -44,6 +51,10 @@ extension FilterViewModel {
     struct Output {
         var showOpen: Driver<Bool>?
         var state: CardState = .collapsed
+        var data: [Keyword] = []
+        var numberOfData: Int {
+            self.data.count
+        }
     }
     func changeState(_ state: CardState) {
         self.input.stateObserver.onNext(state)

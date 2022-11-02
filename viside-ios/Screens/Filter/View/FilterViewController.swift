@@ -143,10 +143,11 @@ final class FilterViewController: UIViewController, Layout {
 }
 extension FilterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.viewModel.output.numberOfData
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as FilterTableViewCell
+        cell.bind(self.viewModel.output.data[indexPath.row])
         return cell
     }
 }
