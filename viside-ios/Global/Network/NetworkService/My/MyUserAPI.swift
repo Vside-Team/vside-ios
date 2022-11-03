@@ -55,6 +55,24 @@ public class  MyUserAPI{
             
         }
     }
-    
+    func myContents(completion: @escaping (NetworkResult<Any>) -> Void){
+        myUserProvider.request(.content){ (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let filteredResponse = try response.filterSuccessfulStatusCodes()
+                    let data = try filteredResponse.map(MyContentsResponse.self)
+                    completion(.success(data))
+                    print("success login : \(data)")
+                } catch let error {
+                    print("login error: \(error)")
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
 }
 

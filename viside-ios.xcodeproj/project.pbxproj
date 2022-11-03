@@ -21,6 +21,12 @@
 		09733451290842EB00694466 /* MyUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09733450290842EB00694466 /* MyUserService.swift */; };
 		097334532908447D00694466 /* MyUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097334522908447D00694466 /* MyUserAPI.swift */; };
 		0984B1E8290845FD00441F32 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1E7290845FD00441F32 /* MyResponse.swift */; };
+		0984B1EC2910AF0B00441F32 /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */; };
+		0984B1EE2910AF1C00441F32 /* MyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1ED2910AF1C00441F32 /* MyDetail.swift */; };
+		0984B1F22910D1C300441F32 /* tagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1F12910D1C300441F32 /* tagLabel.swift */; };
+		0984B1F62910E68000441F32 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1F52910E68000441F32 /* Empty.swift */; };
+		0984B1FC2912B53A00441F32 /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1FB2912B53A00441F32 /* NavTitle.swift */; };
+		0984B1FE2913533500441F32 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1FD2913533500441F32 /* BackgroundSupplementaryView.swift */; };
 		2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */; };
 		6B66169928D0AF6C00146E75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B66169828D0AF6C00146E75 /* TabBarController.swift */; };
 		6B66169F28D0B2C100146E75 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B66169E28D0B2C100146E75 /* HomeNavigationViewController.swift */; };
@@ -112,6 +118,12 @@
 		09733450290842EB00694466 /* MyUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserService.swift; sourceTree = "<group>"; };
 		097334522908447D00694466 /* MyUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserAPI.swift; sourceTree = "<group>"; };
 		0984B1E7290845FD00441F32 /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
+		0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
+		0984B1ED2910AF1C00441F32 /* MyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetail.swift; sourceTree = "<group>"; };
+		0984B1F12910D1C300441F32 /* tagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tagLabel.swift; sourceTree = "<group>"; };
+		0984B1F52910E68000441F32 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		0984B1FB2912B53A00441F32 /* NavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
+		0984B1FD2913533500441F32 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
 		1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viside_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B66169828D0AF6C00146E75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6B66169E28D0B2C100146E75 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +235,7 @@
 				6B6616AA28D0B59000146E75 /* MyViewController.swift */,
 				09587B9028FED511000E27F4 /* HeaderView.swift */,
 				09587B1128F5E3C4000E27F4 /* MySubView.swift */,
+				0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,7 +244,12 @@
 			isa = PBXGroup;
 			children = (
 				09587B1328F5E863000E27F4 /* MyPageList.swift */,
+				0984B1F52910E68000441F32 /* Empty.swift */,
 				09587B1528F5E875000E27F4 /* MyBookList.swift */,
+				0984B1ED2910AF1C00441F32 /* MyDetail.swift */,
+				0984B1F12910D1C300441F32 /* tagLabel.swift */,
+				0984B1FB2912B53A00441F32 /* NavTitle.swift */,
+				0984B1FD2913533500441F32 /* BackgroundSupplementaryView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -825,6 +843,7 @@
 				D5540FB428E455CB003737D7 /* HomeUserService.swift in Sources */,
 				D575393F28B330F3006645F7 /* URL.swift in Sources */,
 				09587B1428F5E863000E27F4 /* MyPageList.swift in Sources */,
+				0984B1F62910E68000441F32 /* Empty.swift in Sources */,
 				D575394428B33502006645F7 /* UserService.swift in Sources */,
 				D59E013028A7D7D50071E0CA /* KakaoAuthViewModel.swift in Sources */,
 				097334532908447D00694466 /* MyUserAPI.swift in Sources */,
@@ -838,6 +857,7 @@
 				6B6616A728D0B40B00146E75 /* BasicNavigationViewController.swift in Sources */,
 				6B81638F290FF810006D2628 /* BookmarkStatus.swift in Sources */,
 				6B816391290FFA65006D2628 /* UIView+Extension.swift in Sources */,
+				0984B1FE2913533500441F32 /* BackgroundSupplementaryView.swift in Sources */,
 				6B816383290FF67A006D2628 /* FilterTableViewCell.swift in Sources */,
 				09733451290842EB00694466 /* MyUserService.swift in Sources */,
 				D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */,
@@ -854,6 +874,7 @@
 				D575395528B36338006645F7 /* Header.swift in Sources */,
 				6BA8053A28A9424B00B899A5 /* LoginButton.swift in Sources */,
 				097334432907A14B00694466 /* AlertViewController.swift in Sources */,
+				0984B1F22910D1C300441F32 /* tagLabel.swift in Sources */,
 				6B6616B028D0BD5F00146E75 /* SplashViewController.swift in Sources */,
 				6BA8053E28A9F2AE00B899A5 /* LoginViewModel.swift in Sources */,
 				D572250A28A6774700112751 /* R.generated.swift in Sources */,
@@ -876,11 +897,14 @@
 				09587B1228F5E3C4000E27F4 /* MySubView.swift in Sources */,
 				09587B1828F5E8A5000E27F4 /* MyListItem .swift in Sources */,
 				6B81636D290FF4BA006D2628 /* ParentViewController.swift in Sources */,
+				0984B1FC2912B53A00441F32 /* NavTitle.swift in Sources */,
 				D5540FB228E455B6003737D7 /* HomeUserAPI.swift in Sources */,
+				0984B1EE2910AF1C00441F32 /* MyDetail.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
 				D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */,
 				6B6616AD28D0B93600146E75 /* UITabBarItem+Extension.swift in Sources */,
 				0984B1E8290845FD00441F32 /* MyResponse.swift in Sources */,
+				0984B1EC2910AF0B00441F32 /* MyDetailViewController.swift in Sources */,
 				6B6616AB28D0B59000146E75 /* MyViewController.swift in Sources */,
 				0973344A290836E000694466 /* ConfirmView.swift in Sources */,
 				6B816387290FF69F006D2628 /* LeftAlignmentCollectionViewFlowLayout.swift in Sources */,

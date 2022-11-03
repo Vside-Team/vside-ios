@@ -63,6 +63,7 @@ class KakaoAuthVM : ObservableObject {
                         self.getUserInfo()
                         UserDefaults.standard.set(false, forKey: Const.DefaultKeys.isAppleLogin)
                         UserDefaults.standard.set(true, forKey: Const.DefaultKeys.isKakaoLogin)
+                        
                     }
                     continuation.resume(returning: true)
                 }
@@ -76,6 +77,8 @@ class KakaoAuthVM : ObservableObject {
                 print("----------Error :\(error)----------")
             } else {
                 print("-------getUserInfo() success-------")
+                Utils.setRootViewController(TabBarController())
+
                 let name = user?.kakaoAccount?.profile?.nickname ?? ""
                 let email = user?.kakaoAccount?.email
                 let userID = String((user?.id)!)
@@ -190,7 +193,6 @@ class KakaoAuthVM : ObservableObject {
             if (UserApi.isKakaoTalkLoginAvailable()){
                 //카카오톡 앱으로 로그인 인증
                 isLoggedIn = await kakaoLoginWithApp()
-                
             }else{// 카카오톡 설치가 안되어 있으면
                 //웹에서 카카오 계정으로 로그인
                 isLoggedIn = await kakaoLoginWithWeb()

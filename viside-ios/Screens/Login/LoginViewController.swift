@@ -54,7 +54,7 @@ final class LoginViewController: UIViewController, Layout {
     private func kakaoButtonDidTap() {
         self.viewModel.setLoginType(.kakao)
         self.kakaoAuth.KaKaoLogin()
-        Utils.setRootViewController(TabBarController())
+       
     }
 
     @objc
@@ -68,7 +68,6 @@ final class LoginViewController: UIViewController, Layout {
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
-        Utils.setRootViewController(TabBarController())
 
     }
 }
