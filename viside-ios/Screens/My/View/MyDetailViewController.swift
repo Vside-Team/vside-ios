@@ -39,7 +39,6 @@ class MyDetailViewController: UIViewController {
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.title = "hello"
         self.navigationController?.navigationBar.isHidden = true
         self.view.backgroundColor = .white
         setViews()
