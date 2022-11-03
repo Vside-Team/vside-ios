@@ -11,6 +11,16 @@ import SnapKit
 import Combine
 
 class MyDetailViewController: UIViewController {
+    let navTitle  = NavTitleView().then {
+        $0.setTitle("Books")
+        $0.setNumTitle("1")
+        $0.setFont(Font.xl2.extraBold)
+        $0.iconBtn.addTarget(self, action: #selector(buttonDidTap), for : .touchUpInside)
+    }
+    @objc
+    private func buttonDidTap() {
+        self.navigationController?.popViewController(animated: true)
+    }
     @Published private (set) var contents : [MyContentsResponse.Content] = []
     var myDetail : MyDetail!
     var subscriptions = Set<AnyCancellable>()
@@ -21,29 +31,42 @@ class MyDetailViewController: UIViewController {
         case main
     }
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout()).then {
-        $0.backgroundColor = Color.g25
+        $0.backgroundColor = .white
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.register(MyDetail.self, forCellWithReuseIdentifier: MyDetail.reuseId)
         $0.delegate = self
     }
+    private lazy var safeArea = self.view.safeAreaLayoutGuide
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = Color.g25
-        setupDataSource()
-        reloadData()
+//        self.navigationItem.title = "hello"
+        self.navigationController?.navigationBar.isHidden = true
+        self.view.backgroundColor = .white
         setViews()
         setConstraints()
+        setupDataSource()
+        reloadData()
         bind()
         myContents()
     }
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     func setViews(){
-        view.addSubview(collectionView)
+        self.view.addSubview(navTitle)
+        self.view.addSubview(collectionView)
     }
     func setConstraints(){
+        navTitle.snp.makeConstraints {
+            $0.top.equalTo(safeArea)
+            $0.directionalHorizontalEdges.equalTo(safeArea)
+            $0.height.equalTo(64)
+        }
         collectionView.snp.makeConstraints {
-            $0.directionalHorizontalEdges.equalToSuperview()
-            $0.top.bottom.equalToSuperview()
+            $0.directionalHorizontalEdges.equalTo(safeArea)
+            $0.top.equalTo(navTitle.snp.bottom)
+            $0.bottom.equalTo(safeArea)
         }
     }
    

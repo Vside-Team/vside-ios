@@ -59,20 +59,20 @@ class MyDetail: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     func setViews(){
-        self.addSubview(bookImage)
-        self.addSubview(titleLabel)
-        self.addSubview(tagStack)
+        self.contentView.addSubview(bookImage)
+        self.contentView.addSubview(titleLabel)
+        self.contentView.addSubview(tagStack)
         bookImage.addSubview(bookMarkBtn)
     }
     func setConstrainsts(){
         bookImage.snp.makeConstraints {
-            $0.leading.equalToSuperview()
-            $0.top.bottom.equalToSuperview()
+            $0.leading.equalTo(contentView)
+            $0.top.bottom.equalTo(contentView)
         }
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(bookImage).offset(16)
             $0.top.equalTo(bookImage)
-            $0.trailing.equalToSuperview().offset(-30)
+            $0.trailing.equalTo(contentView).offset(-30)
         }
         tagStack.snp.makeConstraints {
             $0.leading.equalTo(titleLabel)

@@ -27,12 +27,11 @@ final class MyViewController: UIViewController {
         $0.frame.size.height = 108
     }
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout()).then {
-        $0.backgroundColor = Color.g25
+        $0.backgroundColor = .white
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         $0.register(MyPageList.self, forCellWithReuseIdentifier: MyPageList.reuseId)
         $0.register(MyBookList.self, forCellWithReuseIdentifier: MyBookList.reuseId)
         $0.register(Empty.self, forCellWithReuseIdentifier: Empty.reuseId)
-        $0.isScrollEnabled = false
         $0.delegate = self
     }
     enum Sections: Int, CaseIterable ,Hashable{
@@ -110,6 +109,7 @@ final class MyViewController: UIViewController {
                 return nil
             }
         })
+         layout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
                 return layout
     }
     func setupDataSource() {
@@ -160,6 +160,8 @@ final class MyViewController: UIViewController {
             let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 1 )
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 20, bottom: 46, trailing: 20)
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if imgList.count <= 2 {
             let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .estimated(280))
@@ -167,6 +169,8 @@ final class MyViewController: UIViewController {
             group.interItemSpacing = .fixed(18)
             let section = NSCollectionLayoutSection(group: group)
             section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 20, bottom: 46, trailing: 20)
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if imgList.count <= 4 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(250), heightDimension: .estimated(220))
@@ -180,6 +184,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 6 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(380), heightDimension: .estimated(220))
@@ -193,6 +199,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 8 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(530), heightDimension: .estimated(220))
@@ -206,6 +214,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 10 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(680), heightDimension: .estimated(220))
@@ -219,6 +229,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 12 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(830), heightDimension: .estimated(220))
@@ -232,6 +244,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 14 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension:  .estimated(980) ,heightDimension: .estimated(220))
@@ -245,6 +259,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 16 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1130), heightDimension: .estimated(220))
@@ -258,6 +274,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 18 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1250), heightDimension: .estimated(220))
@@ -271,6 +289,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else if  imgList.count <= 20 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(1430) , heightDimension: .estimated(220))
@@ -284,6 +304,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         } else if  imgList.count <= 22 {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1580), heightDimension: .estimated(220))
@@ -297,6 +319,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }else {
             let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(1730), heightDimension: .estimated(220))
@@ -310,6 +334,8 @@ final class MyViewController: UIViewController {
             let section = NSCollectionLayoutSection(group: containerGroup)
             section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
             section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
+            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+            section.decorationItems = [backgroundItem]
             return section
         }
     }
@@ -330,7 +356,10 @@ final class MyViewController: UIViewController {
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem : item ,count: 1)
         let section = NSCollectionLayoutSection(group: group)
         section.supplementariesFollowContentInsets = false
+        let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
+        section.decorationItems = [backgroundItem]
         return section
+       
     }
 }
 extension MyViewController: UICollectionViewDelegate {
@@ -389,7 +418,7 @@ extension MyViewController {
     }
 extension MyViewController: btnDelegate {
     func presentVC() {
-       
+        Utils.push(nav: self.navigationController, vc: MyDetailViewController())
     }
 }
 
