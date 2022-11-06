@@ -32,8 +32,7 @@ extension SearchService: TargetType {
     var task: Task {
         switch self {
         case .search(keywords: let keywords):
-            return .requestParameters(parameters: ["keywords": keywords],
-                                      encoding: JSONEncoding.default)
+            return .requestJSONEncodable(["keywords": keywords])
         }
     }
     var validationType: Moya.ValidationType {
@@ -42,6 +41,6 @@ extension SearchService: TargetType {
        }
     
     var headers: [String: String]? {
-        return Const.Header.bearerHeader()
+        return Const.Header.header
       }
 }

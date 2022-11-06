@@ -31,13 +31,13 @@ final class SearchViewController: ParentMainViewController, Layout {
         self.configure()
         
         
-        wrapper.requestSuccessRes(target: .search(keywords: ["성장"]),
+        wrapper.requestSuccessRes(target: .search(keywords: ["여름"]),
                                   instance: Feed.self) { result in
             switch result {
             case .success(let data):
-                print("성공 \(data)")
+                print("검색 성공 \(data)")
             case .failure(let error):
-                print("실패 \(error)")
+                print("검색 실패 \(error)")
             }
         }
     }

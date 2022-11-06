@@ -28,6 +28,7 @@ class NetworkWrapper<Provider: TargetType>: MoyaProvider<Provider> {
         self.request(target) { result in
             switch result {
             case .success(let response):
+                print("네트워크 결과 success \(response.statusCode)")
                 switch response.statusCode {
                 case 200..<300:
                     if let decodeData = try? JSONDecoder().decode(instance, from: response.data) {
@@ -40,6 +41,7 @@ class NetworkWrapper<Provider: TargetType>: MoyaProvider<Provider> {
                 }
                 completion(.failure(.statusCode(response)))
             case .failure(let error):
+                print("네트워크 결과 failure \(error)")
                 completion(.failure(error))
             }
         }
