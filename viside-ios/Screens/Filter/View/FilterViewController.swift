@@ -70,6 +70,8 @@ final class FilterViewController: UIViewController, Layout {
         $0.register(FilterTableViewCell.self)
         $0.dataSource = self
     }
+    private lazy var doneButton = RectangleButton(title: Strings.Search.Filter.done)
+    
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     var delegate: FilterViewControllerDelegate?
@@ -88,6 +90,7 @@ final class FilterViewController: UIViewController, Layout {
         self.view.addSubview(handle)
         self.view.addSubview(titleView)
         self.view.addSubview(tableView)
+        self.view.addSubview(doneButton)
     }
     
     func setConstraints() {
@@ -129,7 +132,12 @@ final class FilterViewController: UIViewController, Layout {
         }
         tableView.snp.makeConstraints {
             $0.top.equalTo(titleView.snp.bottom)
+            $0.leading.trailing.equalTo(safeArea)
+            $0.bottom.equalTo(doneButton.snp.top)
+        }
+        doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(safeArea)
+            $0.height.equalTo(60)
         }
     }
     private func configure() {
@@ -141,6 +149,20 @@ final class FilterViewController: UIViewController, Layout {
                 self.openLabel.isHidden = $0
             })
             .disposed(by: disposeBag)
+        self.viewModel.output.reload?
+            .drive(onNext: {
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        self.viewModel.output.isCategorySelected?
+            .drive(onNext: {
+                $0 == true ? self.doneButton.selected() : self.doneButton.deselected()
+            })
+            .disposed(by: disposeBag)
+        // 완료 비활
+    }
+    func bind(categories: [String]) {
+        self.viewModel.input.selectedCategoryObserver.onNext(categories)
     }
 }
 extension FilterViewController: UITableViewDataSource {
@@ -149,7 +171,8 @@ extension FilterViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as FilterTableViewCell
-        cell.bind(self.viewModel.output.data[indexPath.row])
+        cell.bind(self.viewModel.output.data[indexPath.row], indexPath: indexPath)
+        cell.delegate = self
         return cell
     }
 }
@@ -179,5 +202,10 @@ extension FilterViewController {
                 break
             }
         }
+    }
+}
+extension FilterViewController: SelectFilterDelegate {
+    func selectCategory(in collectionIndexPath: IndexPath, on tableIndexPath: IndexPath) {
+        self.viewModel.input.selectedIndexObserver.onNext((collectionIndexPath, tableIndexPath))
     }
 }

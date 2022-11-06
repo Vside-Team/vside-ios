@@ -9,6 +9,9 @@ import UIKit
 import Then
 import SnapKit
 
+protocol SelectFilterDelegate {
+    func selectCategory(in collectionIndexPath: IndexPath, on tableIndexPath: IndexPath)
+}
 final class FilterTableViewCell: UITableViewCell, ReusableView, Layout {
     private lazy var titleLabel = UILabel().then {
         $0.font = Font.base.bold
@@ -24,6 +27,8 @@ final class FilterTableViewCell: UITableViewCell, ReusableView, Layout {
     }
     
     private var data: Keyword?
+    private var indexPath: IndexPath?
+    var delegate: SelectFilterDelegate?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -60,9 +65,10 @@ final class FilterTableViewCell: UITableViewCell, ReusableView, Layout {
         self.selectionStyle = .none
         self.contentView.backgroundColor = Color.g25
     }
-    func bind(_ keyword: Keyword) {
+    func bind(_ keyword: Keyword, indexPath: IndexPath) {
         self.titleLabel.text = keyword.category?.first
         self.data = keyword
+        self.indexPath = indexPath
         self.collectionView.reloadData()
         self.resize()
     }
@@ -89,5 +95,11 @@ extension FilterTableViewCell: UICollectionViewDataSource {
 extension FilterTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return self.data?.keywords?[indexPath.row].insetSize() ?? CGSize(width: 50, height: 36)
+    }
+}
+extension FilterTableViewCell: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("\(self.indexPath) 테이블 셀의 \(indexPath) 컬렉션 뷰 선택 ")
+        self.delegate?.selectCategory(in: indexPath, on: self.indexPath!)
     }
 }

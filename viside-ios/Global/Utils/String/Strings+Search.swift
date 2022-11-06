@@ -16,6 +16,7 @@ extension Strings {
             static let open = "OPEN"
             static let title = "어떤 책을 찾고 계신가요?"
             static let description = "원하는 카테고리를 선택해보세요!"
+            static let done = "완료"
         }
     }
 }

@@ -88,6 +88,7 @@ extension SearchViewController: SearchTableViewCellDelegate {
 }
 extension SearchViewController: FilterViewControllerDelegate {
     func showFilter() {
+        self.filter.bind(categories: [])
         self.filter.view.snp.updateConstraints {
             $0.top.equalTo(safeArea.snp.bottom).inset(UIScreen.main.bounds.height - 134)
         }
