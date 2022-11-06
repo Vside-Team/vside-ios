@@ -8,8 +8,11 @@
 import UIKit
 import Then
 import SnapKit
-
-class HeaderView: UIView {
+protocol btnDelegate {
+    func presentVC()
+}
+class HeaderView: UIView{
+    var delegate :btnDelegate?
     lazy var titleBtn = UIButton().then {
         $0.setTitle("전체 보기", for: .normal)
         $0.setImage(UIImage(named:"My/arrow"), for : .normal)
@@ -41,5 +44,6 @@ class HeaderView: UIView {
     }
     @objc func tappedBtn(){
         print("Tapped")
+        delegate?.presentVC()
     }
 }
