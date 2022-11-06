@@ -104,6 +104,8 @@ final class FilterViewController: UIViewController, Layout {
             $0.top.equalTo(barView.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
         }
+        
+        
         titleView.snp.makeConstraints {
             $0.top.equalTo(handle.snp.bottom).offset(-2)
             $0.leading.trailing.equalTo(safeArea)
