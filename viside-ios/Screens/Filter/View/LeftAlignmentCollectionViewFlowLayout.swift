@@ -10,7 +10,7 @@ import UIKit
 final class LeftAlignmentCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     private let interItemSpacing: CGFloat = 12
-    private let lineSpacing: CGFloat = 12
+    private let lineSpacing: CGFloat = 10
     private let xInset: CGFloat = 0
     private let yInset: CGFloat = 0
 

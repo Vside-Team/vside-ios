@@ -70,6 +70,11 @@ final class FilterViewController: UIViewController, Layout {
         $0.register(FilterTableViewCell.self)
         $0.dataSource = self
     }
+    private lazy var refreshButton = RefreshButton().then {
+        $0.isHidden = true
+    }
+    private lazy var doneButton = RectangleButton(title: Strings.Search.Filter.done)
+    
     private lazy var safeArea = self.view.safeAreaLayoutGuide
     
     var delegate: FilterViewControllerDelegate?
@@ -88,6 +93,8 @@ final class FilterViewController: UIViewController, Layout {
         self.view.addSubview(handle)
         self.view.addSubview(titleView)
         self.view.addSubview(tableView)
+        self.view.addSubview(refreshButton)
+        self.view.addSubview(doneButton)
     }
     
     func setConstraints() {
@@ -104,6 +111,8 @@ final class FilterViewController: UIViewController, Layout {
             $0.top.equalTo(barView.snp.bottom).offset(8)
             $0.centerX.equalToSuperview()
         }
+        
+        
         titleView.snp.makeConstraints {
             $0.top.equalTo(handle.snp.bottom).offset(-2)
             $0.leading.trailing.equalTo(safeArea)
@@ -127,7 +136,17 @@ final class FilterViewController: UIViewController, Layout {
         }
         tableView.snp.makeConstraints {
             $0.top.equalTo(titleView.snp.bottom)
+            $0.leading.trailing.equalTo(safeArea)
+            $0.bottom.equalTo(doneButton.snp.top)
+        }
+        refreshButton.snp.makeConstraints {
+            $0.trailing.equalTo(safeArea).inset(16)
+            $0.bottom.equalTo(doneButton.snp.top).offset(-22)
+            $0.size.equalTo(CGSize(width: 96, height: 36))
+        }
+        doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(safeArea)
+            $0.height.equalTo(60)
         }
     }
     private func configure() {
@@ -139,14 +158,30 @@ final class FilterViewController: UIViewController, Layout {
                 self.openLabel.isHidden = $0
             })
             .disposed(by: disposeBag)
+        self.viewModel.output.reload?
+            .drive(onNext: {
+                self.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)
+        self.viewModel.output.isCategorySelected?
+            .drive(onNext: {
+                $0 == true ? self.doneButton.selected() : self.doneButton.deselected()
+                $0 == true ? (self.refreshButton.isHidden = false) : (self.refreshButton.isHidden = true)
+            })
+            .disposed(by: disposeBag)
+    }
+    func bind(categories: [String]) {
+        self.viewModel.input.selectedCategoryObserver.onNext(categories)
     }
 }
 extension FilterViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.viewModel.output.numberOfData
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as FilterTableViewCell
+        cell.bind(self.viewModel.output.data[indexPath.row], indexPath: indexPath)
+        cell.delegate = self
         return cell
     }
 }
@@ -176,5 +211,10 @@ extension FilterViewController {
                 break
             }
         }
+    }
+}
+extension FilterViewController: SelectFilterDelegate {
+    func selectCategory(in collectionIndexPath: IndexPath, on tableIndexPath: IndexPath) {
+        self.viewModel.input.selectedIndexObserver.onNext((collectionIndexPath, tableIndexPath))
     }
 }
