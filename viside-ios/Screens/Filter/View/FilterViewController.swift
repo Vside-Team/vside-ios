@@ -70,6 +70,9 @@ final class FilterViewController: UIViewController, Layout {
         $0.register(FilterTableViewCell.self)
         $0.dataSource = self
     }
+    private lazy var refreshButton = RefreshButton().then {
+        $0.isHidden = true
+    }
     private lazy var doneButton = RectangleButton(title: Strings.Search.Filter.done)
     
     private lazy var safeArea = self.view.safeAreaLayoutGuide
@@ -90,6 +93,7 @@ final class FilterViewController: UIViewController, Layout {
         self.view.addSubview(handle)
         self.view.addSubview(titleView)
         self.view.addSubview(tableView)
+        self.view.addSubview(refreshButton)
         self.view.addSubview(doneButton)
     }
     
@@ -135,6 +139,11 @@ final class FilterViewController: UIViewController, Layout {
             $0.leading.trailing.equalTo(safeArea)
             $0.bottom.equalTo(doneButton.snp.top)
         }
+        refreshButton.snp.makeConstraints {
+            $0.trailing.equalTo(safeArea).inset(16)
+            $0.bottom.equalTo(doneButton.snp.top).offset(-22)
+            $0.size.equalTo(CGSize(width: 96, height: 36))
+        }
         doneButton.snp.makeConstraints {
             $0.leading.trailing.bottom.equalTo(safeArea)
             $0.height.equalTo(60)
@@ -157,9 +166,9 @@ final class FilterViewController: UIViewController, Layout {
         self.viewModel.output.isCategorySelected?
             .drive(onNext: {
                 $0 == true ? self.doneButton.selected() : self.doneButton.deselected()
+                $0 == true ? (self.refreshButton.isHidden = false) : (self.refreshButton.isHidden = true)
             })
             .disposed(by: disposeBag)
-        // 완료 비활
     }
     func bind(categories: [String]) {
         self.viewModel.input.selectedCategoryObserver.onNext(categories)

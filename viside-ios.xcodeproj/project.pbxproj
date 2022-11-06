@@ -67,7 +67,7 @@
 		6B849B7D28BE38B800A57222 /* Montserrat-Spoqa-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7828BE38B800A57222 /* Montserrat-Spoqa-Medium.otf */; };
 		6B849B7E28BE38B800A57222 /* Montserrat-Spoqa-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B849B7928BE38B800A57222 /* Montserrat-Spoqa-Regular.otf */; };
 		6BA3203D2917C41800328E87 /* RectangleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3203C2917C41800328E87 /* RectangleButton.swift */; };
-		6BA3203F2917C89D00328E87 /* refreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3203E2917C89D00328E87 /* refreshButton.swift */; };
+		6BA3203F2917C89D00328E87 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA3203E2917C89D00328E87 /* RefreshButton.swift */; };
 		6BA8053128A9415300B899A5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053028A9415300B899A5 /* LoginViewController.swift */; };
 		6BA8053528A9418700B899A5 /* LoginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053428A9418700B899A5 /* LoginType.swift */; };
 		6BA8053728A941DA00B899A5 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA8053628A941DA00B899A5 /* Layout.swift */; };
@@ -166,7 +166,7 @@
 		6B849B7828BE38B800A57222 /* Montserrat-Spoqa-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Medium.otf"; sourceTree = "<group>"; };
 		6B849B7928BE38B800A57222 /* Montserrat-Spoqa-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Spoqa-Regular.otf"; sourceTree = "<group>"; };
 		6BA3203C2917C41800328E87 /* RectangleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleButton.swift; sourceTree = "<group>"; };
-		6BA3203E2917C89D00328E87 /* refreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = refreshButton.swift; sourceTree = "<group>"; };
+		6BA3203E2917C89D00328E87 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		6BA8053028A9415300B899A5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6BA8053428A9418700B899A5 /* LoginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginType.swift; sourceTree = "<group>"; };
 		6BA8053628A941DA00B899A5 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
@@ -396,7 +396,7 @@
 				6B81639E29120C71006D2628 /* KeywordCollectionViewCell.swift */,
 				6B8163A029120EBE006D2628 /* CategoryCollectionView.swift */,
 				6BA3203C2917C41800328E87 /* RectangleButton.swift */,
-				6BA3203E2917C89D00328E87 /* refreshButton.swift */,
+				6BA3203E2917C89D00328E87 /* RefreshButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -862,7 +862,7 @@
 				D57224E728A6645400112751 /* ViewController.swift in Sources */,
 				6B66169928D0AF6C00146E75 /* TabBarController.swift in Sources */,
 				6B81638D290FF800006D2628 /* CardState.swift in Sources */,
-				6BA3203F2917C89D00328E87 /* refreshButton.swift in Sources */,
+				6BA3203F2917C89D00328E87 /* RefreshButton.swift in Sources */,
 				D5540FB428E455CB003737D7 /* HomeUserService.swift in Sources */,
 				6B8163A329121073006D2628 /* String+Extension.swift in Sources */,
 				6B8163A129120EBF006D2628 /* CategoryCollectionView.swift in Sources */,
