@@ -37,8 +37,8 @@ class MyBookList: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func configure(_ item : MyBookListItem){
-        imageView.kf.setImage(with: URL(string: item.imgURl), placeholder: UIImage(systemName: "hands.sparkles.fill"))
+    func configure(_ item : Contents){
+        imageView.kf.setImage(with: URL(string: item.img), placeholder: UIImage(systemName: "hands.sparkles.fill"))
     }
     func setView(){
         self.addSubview(imageView)

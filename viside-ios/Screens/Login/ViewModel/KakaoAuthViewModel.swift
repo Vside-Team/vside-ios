@@ -77,7 +77,6 @@ class KakaoAuthVM : ObservableObject {
                 print("----------Error :\(error)----------")
             } else {
                 print("-------getUserInfo() success-------")
-                Utils.setRootViewController(TabBarController())
 
                 let name = user?.kakaoAccount?.profile?.nickname ?? ""
                 let email = user?.kakaoAccount?.email
@@ -115,6 +114,7 @@ class KakaoAuthVM : ObservableObject {
                                 if data.memberStatus == true {
                                     print("-------------------Kakao Login Success------------------- : \(data)")
                                     UserDefaults.standard.setValue(data.jwt, forKey: Const.DefaultKeys.jwtToken)
+                                    Utils.setRootViewController(TabBarController())
                                 } else {
                                     //memberStatus = false -> kakao signIn
                                     UserAPI.shared.kakaoSignIn(ageRange: ageRange, email: email!, gender: gender, loginType: "kakao", name: name, snsId: userID){ (response) in

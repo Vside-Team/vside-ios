@@ -51,7 +51,7 @@ class Empty: UICollectionViewCell {
     func setConstraints(){
         mainTitle.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(8)
+            $0.top.equalToSuperview().offset(48)
         }
         iconLabel.snp.makeConstraints {
             $0.leading.equalTo(mainTitle.snp.trailing)
@@ -60,6 +60,7 @@ class Empty: UICollectionViewCell {
         subTitle.snp.makeConstraints {
             $0.top.equalTo(mainTitle.snp.bottom).offset(28)
             $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(48)
         }
     }
     

@@ -93,8 +93,10 @@ final class SearchTableViewCell: UITableViewCell, ReusableView, Layout {
     /// bookmark icon size가 normal/selected 다름 26, 32
     private func updateBookmarkInset() {
         bookmark.snp.updateConstraints {
-            $0.top.equalToSuperview().inset(bookmarkYInset)
-            $0.leading.equalToSuperview().inset(bookmarkXInset)
+            $0.top.equalToSuperview().inset(26)
+            $0.leading.equalToSuperview().inset(26)
+//            $0.top.equalToSuperview().inset(bookmarkYInset)
+//            $0.leading.equalToSuperview().inset(bookmarkXInset)
         }
     }
     @objc

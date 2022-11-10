@@ -8,9 +8,9 @@
 import UIKit
 import Then
 import SnapKit
-import Combine
-
+import Moya
 class MyDetailViewController: UIViewController {
+    var myData : MyContentsResponse?
     let navTitle  = NavTitleView().then {
         $0.setTitle("Books")
         $0.setNumTitle("1")
@@ -21,12 +21,10 @@ class MyDetailViewController: UIViewController {
     private func buttonDidTap() {
         self.navigationController?.popViewController(animated: true)
     }
-    @Published private (set) var contents : [MyContentsResponse.Content] = []
     var myDetail : MyDetail!
-    var subscriptions = Set<AnyCancellable>()
 
     var dataSource : UICollectionViewDiffableDataSource<Section, Item>!
-    typealias Item = MyContentsResponse.Content
+    typealias Item = Int
     enum Section{
         case main
     }
@@ -45,8 +43,7 @@ class MyDetailViewController: UIViewController {
         setConstraints()
         setupDataSource()
         reloadData()
-        bind()
-        myContents()
+        contentsCount()
     }
     override func viewDidDisappear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -78,22 +75,21 @@ class MyDetailViewController: UIViewController {
     private func reloadData(){
         var snapshot = NSDiffableDataSourceSnapshot<Section,Item>()
         snapshot.appendSections([.main])
-        snapshot.appendItems([], toSection: .main)
+        snapshot.appendItems(Array(0..<1), toSection: .main)
         dataSource.apply(snapshot)
     }
-    func bind(){
-        $contents
-            .receive(on: RunLoop.main)
-            .sink { [unowned self] result in
-                self.updataData(data: result)
-            }.store(in: &subscriptions)
+   
+//    func updataData(count: Int){
+//        var snapshot = dataSource.snapshot()
+//        snapshot.appendItems(count, toSection: .main)
+//        dataSource.apply(snapshot)
+//    }
+    func updataData(count: Int){
+        if count == 0 {
+            navTitle.setNumTitle("")
+        }
+            self.navTitle.setNumTitle("\(count)")
     }
-    func updataData(data:  [MyContentsResponse.Content] ){
-        var snapshot = dataSource.snapshot()
-        snapshot.appendItems(data, toSection: .main)
-        dataSource.apply(snapshot)
-    }
-
     private func createLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(150))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -110,21 +106,21 @@ extension MyDetailViewController : UICollectionViewDelegate{
     }
 }
 extension MyDetailViewController {
-    func myContents(){
-        MyUserAPI.shared.myContents { (response) in
+    func contentsCount(){
+        MyAPI().myProvider.request(.content) { response in
             switch response {
-            case .success(let data):
-                if let data = data as? [MyContentsResponse.Content]{
-                    self.contents = data
+            case .success(let result):
+                do{
+                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+                    self.myData = try filteredResponse.map(MyContentsResponse.self)
+                    if let result = self.myData?.count{
+                        self.updataData(count: result)
+                    }
+                }catch(let error){
+                    print("catch error :\(error.localizedDescription)")
                 }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+            case .failure(let error):
+                print("failure :\(error.localizedDescription)")
             }
         }
     }
