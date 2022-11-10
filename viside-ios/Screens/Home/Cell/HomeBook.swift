@@ -106,12 +106,12 @@ class HomeBook: UICollectionViewCell {
         if sender.isSelected {
             print("sender tapped")
             bookMark.image = UIImage(named: "home/bookmark/normal")
-            bookMarkStauts(status: false)
+            bookMarkStauts(status: self.isScrap)
             bookScrap(contentId: self.contentID )
             sender.isSelected = false
         }else {
             bookMark.image = UIImage(named: "home/bookmark/selected")
-            bookMarkStauts(status: true)
+            bookMarkStauts(status: self.isScrap)
             bookScrap(contentId: self.contentID )
             sender.isSelected = true
         }
