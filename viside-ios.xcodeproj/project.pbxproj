@@ -12,7 +12,6 @@
 		09587B1628F5E875000E27F4 /* MyBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B1528F5E875000E27F4 /* MyBookList.swift */; };
 		09587B1828F5E8A5000E27F4 /* MyListItem .swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B1728F5E8A5000E27F4 /* MyListItem .swift */; };
 		09587B8F28FEB4F9000E27F4 /* HomeBookResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B8E28FEB4F9000E27F4 /* HomeBookResponse.swift */; };
-		09587B9128FED511000E27F4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B9028FED511000E27F4 /* HeaderView.swift */; };
 		0973344129069DB000694466 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973344029069DB000694466 /* AlertView.swift */; };
 		097334432907A14B00694466 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097334422907A14B00694466 /* AlertViewController.swift */; };
 		097334452907A4A800694466 /* AlertType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097334442907A4A800694466 /* AlertType.swift */; };
@@ -20,13 +19,19 @@
 		0973344C290836EC00694466 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0973344B290836EC00694466 /* ConfirmViewController.swift */; };
 		09733451290842EB00694466 /* MyUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09733450290842EB00694466 /* MyUserService.swift */; };
 		097334532908447D00694466 /* MyUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097334522908447D00694466 /* MyUserAPI.swift */; };
-		0984B1E8290845FD00441F32 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1E7290845FD00441F32 /* MyResponse.swift */; };
 		0984B1EC2910AF0B00441F32 /* MyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */; };
 		0984B1EE2910AF1C00441F32 /* MyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1ED2910AF1C00441F32 /* MyDetail.swift */; };
 		0984B1F22910D1C300441F32 /* tagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1F12910D1C300441F32 /* tagLabel.swift */; };
 		0984B1F62910E68000441F32 /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1F52910E68000441F32 /* Empty.swift */; };
 		0984B1FC2912B53A00441F32 /* NavTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1FB2912B53A00441F32 /* NavTitle.swift */; };
 		0984B1FE2913533500441F32 /* BackgroundSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0984B1FD2913533500441F32 /* BackgroundSupplementaryView.swift */; };
+		0988DFF7291D5149002EF5E9 /* MyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988DFF6291D5149002EF5E9 /* MyHeaderView.swift */; };
+		0988DFFE291D55BF002EF5E9 /* BookContentsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988DFFD291D55BF002EF5E9 /* BookContentsAPI.swift */; };
+		0988E000291D55E4002EF5E9 /* BookContentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988DFFF291D55E4002EF5E9 /* BookContentsResponse.swift */; };
+		0988E002291D55F8002EF5E9 /* BookContentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988E001291D55F8002EF5E9 /* BookContentsService.swift */; };
+		0988E006291D57B6002EF5E9 /* MyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988E005291D57B6002EF5E9 /* MyResponse.swift */; };
+		0988E008291D5BB2002EF5E9 /* ToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988E007291D5BB2002EF5E9 /* ToastMessage.swift */; };
+		0988E00C291D5E7C002EF5E9 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0988E00B291D5E7C002EF5E9 /* AlertViewModel.swift */; };
 		2D1BF299F23FC2F7C2D2BC1A /* Pods_viside_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */; };
 		6B66169928D0AF6C00146E75 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B66169828D0AF6C00146E75 /* TabBarController.swift */; };
 		6B66169F28D0B2C100146E75 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B66169E28D0B2C100146E75 /* HomeNavigationViewController.swift */; };
@@ -117,7 +122,6 @@
 		09587B1528F5E875000E27F4 /* MyBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookList.swift; sourceTree = "<group>"; };
 		09587B1728F5E8A5000E27F4 /* MyListItem .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyListItem .swift"; sourceTree = "<group>"; };
 		09587B8E28FEB4F9000E27F4 /* HomeBookResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBookResponse.swift; sourceTree = "<group>"; };
-		09587B9028FED511000E27F4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0973344029069DB000694466 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		097334422907A14B00694466 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		097334442907A4A800694466 /* AlertType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertType.swift; sourceTree = "<group>"; };
@@ -125,13 +129,19 @@
 		0973344B290836EC00694466 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		09733450290842EB00694466 /* MyUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserService.swift; sourceTree = "<group>"; };
 		097334522908447D00694466 /* MyUserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUserAPI.swift; sourceTree = "<group>"; };
-		0984B1E7290845FD00441F32 /* MyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyResponse.swift; sourceTree = "<group>"; };
 		0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailViewController.swift; sourceTree = "<group>"; };
 		0984B1ED2910AF1C00441F32 /* MyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetail.swift; sourceTree = "<group>"; };
 		0984B1F12910D1C300441F32 /* tagLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tagLabel.swift; sourceTree = "<group>"; };
 		0984B1F52910E68000441F32 /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
 		0984B1FB2912B53A00441F32 /* NavTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTitle.swift; sourceTree = "<group>"; };
 		0984B1FD2913533500441F32 /* BackgroundSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSupplementaryView.swift; sourceTree = "<group>"; };
+		0988DFF6291D5149002EF5E9 /* MyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyHeaderView.swift; sourceTree = "<group>"; };
+		0988DFFD291D55BF002EF5E9 /* BookContentsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContentsAPI.swift; sourceTree = "<group>"; };
+		0988DFFF291D55E4002EF5E9 /* BookContentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContentsResponse.swift; sourceTree = "<group>"; };
+		0988E001291D55F8002EF5E9 /* BookContentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookContentsService.swift; sourceTree = "<group>"; };
+		0988E005291D57B6002EF5E9 /* MyResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyResponse.swift; path = "../../../../../../viside-ios 복사본 2/viside-ios/Global/Network/NetworkModel/My/MyResponse.swift"; sourceTree = "<group>"; };
+		0988E007291D5BB2002EF5E9 /* ToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastMessage.swift; sourceTree = "<group>"; };
+		0988E00B291D5E7C002EF5E9 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
 		1D98CEE709AFA9A03F507E60 /* Pods_viside_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_viside_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B66169828D0AF6C00146E75 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6B66169E28D0B2C100146E75 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +249,7 @@
 			children = (
 				0973344029069DB000694466 /* AlertView.swift */,
 				097334422907A14B00694466 /* AlertViewController.swift */,
+				0988E00B291D5E7C002EF5E9 /* AlertViewModel.swift */,
 				09733449290836E000694466 /* ConfirmView.swift */,
 				0973344B290836EC00694466 /* ConfirmViewController.swift */,
 			);
@@ -249,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6616AA28D0B59000146E75 /* MyViewController.swift */,
-				09587B9028FED511000E27F4 /* HeaderView.swift */,
+				0988DFF6291D5149002EF5E9 /* MyHeaderView.swift */,
 				09587B1128F5E3C4000E27F4 /* MySubView.swift */,
 				0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */,
 			);
@@ -284,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6616A428D0B32B00146E75 /* HomeViewController.swift */,
+				0988E007291D5BB2002EF5E9 /* ToastMessage.swift */,
 				D5540FAE28E4545F003737D7 /* SubView.swift */,
 			);
 			path = View;
@@ -292,11 +304,21 @@
 		0973344F290842CE00694466 /* My */ = {
 			isa = PBXGroup;
 			children = (
-				0984B1E7290845FD00441F32 /* MyResponse.swift */,
+				0988E005291D57B6002EF5E9 /* MyResponse.swift */,
 				09733450290842EB00694466 /* MyUserService.swift */,
 				097334522908447D00694466 /* MyUserAPI.swift */,
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		0988DFFC291D5584002EF5E9 /* BookContents */ = {
+			isa = PBXGroup;
+			children = (
+				0988DFFD291D55BF002EF5E9 /* BookContentsAPI.swift */,
+				0988DFFF291D55E4002EF5E9 /* BookContentsResponse.swift */,
+				0988E001291D55F8002EF5E9 /* BookContentsService.swift */,
+			);
+			path = BookContents;
 			sourceTree = "<group>";
 		};
 		3856F61E359BCF8DB8658957 /* Frameworks */ = {
@@ -669,6 +691,7 @@
 		D575394028B333A2006645F7 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				0988DFFC291D5584002EF5E9 /* BookContents */,
 				D571105D28B5FCE800B24812 /* MoyaLoggingPlugin.swift */,
 				0973344F290842CE00694466 /* My */,
 				D5540FB028E45572003737D7 /* Home */,
@@ -897,6 +920,7 @@
 				D575394228B334F4006645F7 /* UserAPI.swift in Sources */,
 				6B816373290FF569006D2628 /* UICollectionView+Extension.swift in Sources */,
 				D54312E028E9BB9000F0EAC8 /* PaddingLabel.swift in Sources */,
+				0988E00C291D5E7C002EF5E9 /* AlertViewModel.swift in Sources */,
 				6B6616A728D0B40B00146E75 /* BasicNavigationViewController.swift in Sources */,
 				6B81638F290FF810006D2628 /* BookmarkStatus.swift in Sources */,
 				6B816391290FFA65006D2628 /* UIView+Extension.swift in Sources */,
@@ -905,13 +929,14 @@
 				09733451290842EB00694466 /* MyUserService.swift in Sources */,
 				D58C64DA28AD6D1F00B07C9C /* DefaultKeys.swift in Sources */,
 				6B6616A928D0B58700146E75 /* SearchViewController.swift in Sources */,
+				0988E006291D57B6002EF5E9 /* MyResponse.swift in Sources */,
+				0988DFFE291D55BF002EF5E9 /* BookContentsAPI.swift in Sources */,
 				6BA8053C28A9E80700B899A5 /* Utils.swift in Sources */,
 				6B6616A328D0B30B00146E75 /* MyNavigationViewController.swift in Sources */,
 				D572250E28A678D400112751 /* Font.swift in Sources */,
 				D571105428B5DCBB00B24812 /* Const.swift in Sources */,
 				6B81637F290FF651006D2628 /* DetailViewController.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
-				09587B9128FED511000E27F4 /* HeaderView.swift in Sources */,
 				6BA8053728A941DA00B899A5 /* Layout.swift in Sources */,
 				6B81637D290FF638006D2628 /* FilterViewController.swift in Sources */,
 				D575395528B36338006645F7 /* Header.swift in Sources */,
@@ -933,9 +958,11 @@
 				6B816393290FFA6F006D2628 /* UILabel+Extension.swift in Sources */,
 				6B816366290FF422006D2628 /* SearchTableViewCell.swift in Sources */,
 				D5540FAD28E4543D003737D7 /* HomeBook.swift in Sources */,
+				0988E008291D5BB2002EF5E9 /* ToastMessage.swift in Sources */,
 				6B816377290FF594006D2628 /* ViewModelType.swift in Sources */,
 				6B6616A128D0B2EB00146E75 /* SearchNavigationViewController.swift in Sources */,
 				6B81639D291204C4006D2628 /* KeywordModel.swift in Sources */,
+				0988E000291D55E4002EF5E9 /* BookContentsResponse.swift in Sources */,
 				6BA3203D2917C41800328E87 /* RectangleButton.swift in Sources */,
 				09587B1628F5E875000E27F4 /* MyBookList.swift in Sources */,
 				6B816375290FF585006D2628 /* ReusableView.swift in Sources */,
@@ -949,9 +976,9 @@
 				D5540FB228E455B6003737D7 /* HomeUserAPI.swift in Sources */,
 				0984B1EE2910AF1C00441F32 /* MyDetail.swift in Sources */,
 				6BA8053528A9418700B899A5 /* LoginType.swift in Sources */,
+				0988DFF7291D5149002EF5E9 /* MyHeaderView.swift in Sources */,
 				D571105A28B5E75600B24812 /* JoinResponse.swift in Sources */,
 				6B6616AD28D0B93600146E75 /* UITabBarItem+Extension.swift in Sources */,
-				0984B1E8290845FD00441F32 /* MyResponse.swift in Sources */,
 				0984B1EC2910AF0B00441F32 /* MyDetailViewController.swift in Sources */,
 				6B6616AB28D0B59000146E75 /* MyViewController.swift in Sources */,
 				0973344A290836E000694466 /* ConfirmView.swift in Sources */,
@@ -963,6 +990,7 @@
 				6B81636B290FF49B006D2628 /* ParentMainViewController.swift in Sources */,
 				6B66169F28D0B2C100146E75 /* HomeNavigationViewController.swift in Sources */,
 				D571105828B5E72F00B24812 /* LogInResponse.swift in Sources */,
+				0988E002291D55F8002EF5E9 /* BookContentsService.swift in Sources */,
 				D575394728B3367A006645F7 /* NetworkResult.swift in Sources */,
 				6B816368290FF469006D2628 /* SearchViewModel.swift in Sources */,
 			);
