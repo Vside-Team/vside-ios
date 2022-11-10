@@ -8,16 +8,21 @@
 import UIKit
 import Then
 import SnapKit
-import Combine
+import Moya
 
 final class HomeViewController: UIViewController {
-    @Published var contents : [Content] = []
-    var subscriptions = Set<AnyCancellable>()
+    var bookData: HomeBookResponse?
+    var contents : Content?
     typealias Item = AnyHashable
+    enum Sections: Int, CaseIterable, Hashable {
+        case titleList, bookList
+    }
+    var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
+    
+    // MARK: - view
     private lazy var subView = SubView(frame : self.view.bounds).then {
         $0.frame.size.height = 108
     }
-    
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout()).then {
         $0.backgroundColor = Color.g25
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -25,29 +30,22 @@ final class HomeViewController: UIViewController {
         $0.register(HomeBook.self, forCellWithReuseIdentifier: HomeBook.reuseId)
         $0.delegate = self
     }
-
-    enum Sections: Int, CaseIterable, Hashable {
-        case titleList, bookList
-    }
-    var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupDataSource()
         reloadData()
+        homeBookList()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setViews()
         setConstraints()
-        bind()
-        homeBook()
         toastMessage(withDuration: 2.0, delay: 0)
     }
-    
     
     func setViews(){
         view.addSubview(subView)
         view.addSubview(collectionView)
-       
     }
     func setConstraints(){
         subView.snp.makeConstraints {
@@ -55,7 +53,6 @@ final class HomeViewController: UIViewController {
             $0.trailing.equalToSuperview()
             $0.top.equalToSuperview()
             $0.height.equalTo(108)
-            
         }
         collectionView.snp.makeConstraints {
             $0.leading.equalToSuperview()
@@ -64,8 +61,8 @@ final class HomeViewController: UIViewController {
             $0.bottom.equalToSuperview()
         }  
     }
-   
-    private func setupDataSource() {
+   // MARK: - data
+     func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
             let section = Sections(rawValue: indexPath.section)!
             switch section {
@@ -82,27 +79,20 @@ final class HomeViewController: UIViewController {
             }
         })
     }
-    
-    func reloadData() {
+   private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Sections, Item>()
         snapshot.appendSections([.titleList,.bookList])
         snapshot.appendItems([], toSection: .bookList)
         snapshot.appendItems(Array(1..<2), toSection: .titleList)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
-    private func updateData( item : [Content]){
+    private func updateData(item : [Content]){
+       print("item : \(item)")
         var snapshot = dataSource.snapshot()
         snapshot.appendItems(item, toSection: .bookList)
         dataSource.apply(snapshot)
     }
-    private func bind(){
-        $contents
-            .receive(on: RunLoop.main)
-            .sink { [unowned self] result in
-               self.updateData(item: result)
-            }.store(in: &subscriptions)
-    }
-    
+   
     private func createLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvirnment) -> NSCollectionLayoutSection? in
             let section = Sections(rawValue: sectionIndex)!
@@ -119,7 +109,7 @@ final class HomeViewController: UIViewController {
         
         return layout
     }
-    
+    // MARK: - layout
     private func titleListSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -152,59 +142,28 @@ extension HomeViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
+// MARK: - connect home network
 extension HomeViewController{
-    func homeBook(){
-        HomeUserAPI.shared.homeBookList { (response) in
+    func homeBookList(){
+        HomeAPI().homeProvider.request(.homeBookList){ (response) in
             switch response {
-            case .success(let data):
-                if let data = data as? [Content]{
-                    self.contents = data
-                    print("\(self.contents)")
-                }
-            case .requestErr(let message):
-                print("requestErr", message)
-            case .pathErr:
-                print(".pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
+            case .success(let result):
+                    do {
+                        let filteredResponse = try result.filterSuccessfulStatusCodes()
+                        self.bookData = try filteredResponse.map(HomeBookResponse.self)
+                        if let result = self.bookData?.contents {
+                            print("update data :\(result)")
+                                self.updateData(item: result)
+                        }
+                        if let data = self.contents?.contentId{
+                            print("result contend id:\(data)")
+                        }
+                    }catch(let error){
+                        print("catch error :\(error.localizedDescription)")
+                    }
+            case .failure(let error):
+                print("failure :\(error.localizedDescription)")
             }
         }
     }
-}
-extension HomeViewController {
-    
-    func toastMessage( withDuration: Double, delay: Double){
-        lazy var toastMessage = PaddingLabel(padding: UIEdgeInsets(top: 17, left: 31, bottom: 15, right: 31)).then {
-            $0.frame = CGRect(x: 0, y: 0, width: 260, height: 56)
-            $0.alpha = 0.8
-            $0.layer.backgroundColor = Color.main500?.cgColor
-            $0.layer.cornerRadius = 16
-            $0.textColor = .white
-            $0.font = Font.xl.extraBold
-            let shadow = NSShadow()
-            shadow.shadowBlurRadius = 4
-            shadow.shadowColor = Color.g500
-            $0.attributedText = NSMutableAttributedString(string: "Welcome to V side!", attributes: [NSAttributedString.Key.kern: -0.8, .shadow : shadow])
-        }
-        self.view.addSubview(toastMessage)
-        
-            toastMessage.snp.makeConstraints {
-                $0.leading.equalToSuperview().offset(65)
-                $0.top.equalToSuperview().offset(394)
-                $0.height.equalTo(56)
-                $0.width.equalTo(260)
-                
-            }
-            
-            UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
-                toastMessage.alpha = 0.0
-
-               }, completion: {(isCompleted) in
-                   toastMessage.removeFromSuperview()
-               })
-
-        }
-      
 }

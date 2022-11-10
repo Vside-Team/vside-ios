@@ -8,71 +8,7 @@
 
 import Foundation
 import Moya
-import Alamofire
 
-public class  MyUserAPI{
-    static let shared = MyUserAPI()
-    var myUserProvider = MoyaProvider<MyUserService>(plugins : [MoyaLoggingPlugin()])
-    public init() {}
-    
-    func myLogOut(completion: @escaping (NetworkResult<Any>) -> Void) {
-        myUserProvider.request(.logOut){ (result) in
-            switch result {
-            case .success(let response):
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let data = try filteredResponse.map(MyResponse.self)
-                    print("loginResposedata : \(data)")
-                    completion(.success(data))
-                    print("success login : \(data)")
-                } catch let error {
-                    print("login error: \(error)")
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
-    }
-    
-    func myLinkOut(snsId : String,completion: @escaping (NetworkResult<Any>) -> Void) {
-        myUserProvider.request(.linkOut(snsId: snsId)){ (result) in
-            switch result {
-            case .success(let response):
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let data = try filteredResponse.map(MyResponse.self)
-                    completion(.success(data))
-                    print("success login : \(data)")
-                } catch let error {
-                    print("login error: \(error)")
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
-    }
-    func myContents(completion: @escaping (NetworkResult<Any>) -> Void){
-        myUserProvider.request(.content){ (result) in
-            switch result {
-            case .success(let response):
-                do {
-                    let filteredResponse = try response.filterSuccessfulStatusCodes()
-                    let data = try filteredResponse.map(MyContentsResponse.self)
-                    completion(.success(data))
-                    print("success login : \(data)")
-                } catch let error {
-                    print("login error: \(error)")
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
-            
-        }
-    }
+public class MyAPI {
+    var myProvider = MoyaProvider<MyUserService>(plugins : [MoyaLoggingPlugin()])
 }
-

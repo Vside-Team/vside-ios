@@ -84,7 +84,7 @@ class MyDetail: UICollectionViewCell {
             $0.top.equalTo(bookImage).offset(22)
         }
     }
-    func congifure(_ item : MyContentsResponse.Content){
+    func congifure(_ item : Contents){
         bookImage.kf.setImage(with: URL(string: item.img), placeholder: UIImage(systemName: "hands.sparkles.fill"))
         titleLabel.text = item.title
         if item.keywords.isEmpty == true {

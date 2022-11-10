@@ -20,27 +20,38 @@ struct MyResponse: Codable {
 // MARK: - MyContentsResponse
 struct MyContentsResponse: Codable ,Hashable{
     let count: Int
-    let contents: [Content]
-    
+    let contents: [Contents]
     enum CodingKeys: String, CodingKey {
         case count
-        case contents = "Contents"
+        case contents = "contents"
     }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         count = (try? values.decode(Int.self, forKey: .count)) ?? 0
         contents = (try? values.decode(Array.self, forKey: .contents)) ?? []
     }
-    // MARK: - Content
-    struct Content: Codable, Hashable {
-        let contentID: Int
-        let title, img: String
-        let keywords: [String]
-        let scrap: Bool
-        
-        enum CodingKeys: String, CodingKey {
-            case contentID = "contentId"
-            case title, img, keywords, scrap
-        }
+}
+// MARK: - Contents
+struct Contents: Codable, Hashable {
+    let contentID: Int
+    let title, img: String
+    let keywords: [String]
+    let scrap: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case contentID = "contentId"
+        case title
+        case img = "imgUrl"
+        case keywords, scrap
+    }
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        contentID = (try? values.decode(Int.self, forKey: .contentID)) ?? 0
+        title = (try? values.decode(String.self, forKey: .title)) ?? ""
+        img = (try? values.decode(String.self, forKey: .img)) ?? ""
+        keywords = (try? values.decode(Array.self, forKey: .keywords)) ?? []
+        scrap = (try? values.decode(Bool.self, forKey: .scrap)) ?? false
+
     }
 }
+
