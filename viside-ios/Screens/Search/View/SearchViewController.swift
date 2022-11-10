@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import Moya
 
 final class SearchViewController: ParentMainViewController, Layout {
     
@@ -22,11 +23,23 @@ final class SearchViewController: ParentMainViewController, Layout {
         $0.delegate = self
     }
     
+    private let wrapper = NetworkWrapper<SearchService>(plugins: [MoyaLoggingPlugin()])
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setViews()
         self.setConstraints()
         self.configure()
+        
+        
+        wrapper.requestSuccessRes(target: .search(keywords: ["여름"]),
+                                  instance: Feed.self) { result in
+            switch result {
+            case .success(let data):
+                print("검색 성공 \(data)")
+            case .failure(let error):
+                print("검색 실패 \(error)")
+            }
+        }
     }
     
     func setViews() {
@@ -75,6 +88,7 @@ extension SearchViewController: SearchTableViewCellDelegate {
 }
 extension SearchViewController: FilterViewControllerDelegate {
     func showFilter() {
+        self.filter.bind(categories: [])
         self.filter.view.snp.updateConstraints {
             $0.top.equalTo(safeArea.snp.bottom).inset(UIScreen.main.bounds.height - 134)
         }

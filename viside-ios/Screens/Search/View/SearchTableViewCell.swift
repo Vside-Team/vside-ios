@@ -88,19 +88,10 @@ final class SearchTableViewCell: UITableViewCell, ReusableView, Layout {
     func bind(location: IndexPath) {
         self.location = location
         self.setTitleStyle()
-        self.updateBookmarkInset()
-    }
-    /// bookmark icon size가 normal/selected 다름 26, 32
-    private func updateBookmarkInset() {
-        bookmark.snp.updateConstraints {
-            $0.top.equalToSuperview().inset(bookmarkYInset)
-            $0.leading.equalToSuperview().inset(bookmarkXInset)
-        }
     }
     @objc
     private func bookmarkDidTap() {
         self.bookmark.toggle()
-        self.updateBookmarkInset()
         self.delegate?.updateBookmark(on: location)
     }
 }
