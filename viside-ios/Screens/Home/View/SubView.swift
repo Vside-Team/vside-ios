@@ -21,6 +21,9 @@ class SubView: UIView {
     private lazy var titleBackImage = UIImageView().then {
         $0.image = UIImage(named: "home/title/title")
     }
+    private lazy var titleIcon = UIImageView().then {
+        $0.image = UIImage(named: "home/title/mainIcon")
+    }
     override init(frame: CGRect){
         super.init(frame: frame)
         backgroundColor = .white
@@ -35,6 +38,7 @@ class SubView: UIView {
     func setViews(){
         self.addSubview(titleBackImage)
         self.addSubview(titleLabel)
+        self.addSubview(titleIcon)
     }
     func  setConstraints(){
         
@@ -45,6 +49,11 @@ class SubView: UIView {
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(self).offset(20)
             $0.top.equalTo(self).offset(58)
+        }
+        titleIcon.snp.makeConstraints {
+            $0.leading.equalTo(titleBackImage.snp.trailing)
+            $0.centerY.equalTo(titleBackImage)
+            $0.height.width.equalTo(20)
         }
     }
    

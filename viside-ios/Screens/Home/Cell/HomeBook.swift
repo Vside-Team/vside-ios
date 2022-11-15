@@ -103,17 +103,14 @@ class HomeBook: UICollectionViewCell {
     }
     @objc func btnTapped(_ sender : UIButton){
         print("btn Tapped")
-        if sender.isSelected {
-            print("sender tapped")
-            bookMark.image = UIImage(named: "home/bookmark/normal")
-            bookMarkStauts(status: true)
-            bookScrap(contentId: self.contentID )
-            sender.isSelected = false
-        }else {
-            bookMark.image = UIImage(named: "home/bookmark/selected")
-            bookMarkStauts(status: false)
-            bookScrap(contentId: self.contentID )
-            sender.isSelected = true
+        if isScrap == true{
+            print("isScrap == true ")
+            self.bookMark.image = UIImage(named: "home/bookmark/normal")
+            self.bookScrap(contentId: self.contentID )
+        } else {
+            print ("isScrap == false")
+            self.bookMark.image = UIImage(named: "home/bookmark/selected")
+            self.bookScrap(contentId: self.contentID )
         }
     }
     func bookMarkStauts(status : Bool) {
@@ -146,7 +143,9 @@ extension HomeBook {
                     if let result = self.scrapData{
                         self.bookMarkStauts(status: result.status)
                         print("bookmark status :\(result.status)")
-                        self.isScrap = result.status
+                       if result.status == true {
+                           self.isScrap = result.status
+                       }
                     }
                 }catch(let error){
                     print("catch error :\(error.localizedDescription)")
