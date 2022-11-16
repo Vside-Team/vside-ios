@@ -411,6 +411,7 @@ extension MyViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             print(indexPath)
+            Utils.push(nav: self.navigationController, vc: DetailViewController())
         } else {
             if indexPath.row == 0{
                 let openKakao = URL(string: "https://pf.kakao.com/_xjDxabxj")
