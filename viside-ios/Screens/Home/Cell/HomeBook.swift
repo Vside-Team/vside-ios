@@ -10,10 +10,12 @@ import Then
 import SnapKit
 import Kingfisher
 import Moya
+
 class HomeBook: UICollectionViewCell {
     var  contentID : Int!
     var scrapData : ContentScrapResponse?
     var isScrap : Bool!
+    var isTapped : Bool = false
     static var reuseId: String = "HomeBook"
     
     private lazy var imageView = UIImageView().then {
@@ -78,6 +80,7 @@ class HomeBook: UICollectionViewCell {
             self.contentView.addSubview($0 as! UIView)
         }
         self.bookMarkBtn.addSubview(bookMark)
+      
     }
     func  setConstraints(){
         imageView.snp.makeConstraints {
@@ -101,25 +104,6 @@ class HomeBook: UICollectionViewCell {
             $0.edges.equalToSuperview()
         }
     }
-    @objc func btnTapped(_ sender : UIButton){
-        print("btn Tapped")
-        if isScrap == true{
-            print("isScrap == true ")
-            self.bookMark.image = UIImage(named: "home/bookmark/normal")
-            self.bookScrap(contentId: self.contentID )
-        } else {
-            print ("isScrap == false")
-            self.bookMark.image = UIImage(named: "home/bookmark/selected")
-            self.bookScrap(contentId: self.contentID )
-        }
-    }
-    func bookMarkStauts(status : Bool) {
-        if (status == true){
-           print("true")
-        }else {
-           print("false")
-        }
-    }
     func updataData(item: Content?){
         guard let item = item else{
             tagLabel.text = "V Side"
@@ -130,22 +114,29 @@ class HomeBook: UICollectionViewCell {
         tagLabel.text = item.mainKeyword
         textLabel.text = item.title
         self.contentID = item.contentId
+        self.isScrap = item.scrap
+        if self.isScrap == true {
+            self.bookMark.image = UIImage(named: "home/bookmark/selected")
+        }else {
+            self.bookMark.image = UIImage(named: "home/bookmark/normal")
+        }
+    }
+    @objc func btnTapped(_ sender : UIButton){
+        self.bookMark.image =  isTapped == true ?  UIImage(named: "home/bookmark/selected") : UIImage(named: "home/bookmark/normal")
+        self.isTapped.toggle()
+        self.bookScrap(contentId: self.contentID )
     }
 }
 extension HomeBook {
     private func bookScrap(contentId : Int){
-        ContentAPI().contentProvider.request(.scrap(contentId: contentId)){ response in
+        ContentAPI().contentProvider.request(.scrap(contentId: contentId)){ [self] response in
             switch response {
             case .success(let result):
                 do{
                     let filteredResponse = try result.filterSuccessfulStatusCodes()
                     self.scrapData = try filteredResponse.map(ContentScrapResponse.self)
                     if let result = self.scrapData{
-                        self.bookMarkStauts(status: result.status)
-                        print("bookmark status :\(result.status)")
-                       if result.status == true {
-                           self.isScrap = result.status
-                       }
+                        print("bookmark status :\(result.status),message :\(result.message)")
                     }
                 }catch(let error){
                     print("catch error :\(error.localizedDescription)")

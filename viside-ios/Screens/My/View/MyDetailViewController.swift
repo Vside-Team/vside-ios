@@ -78,12 +78,6 @@ class MyDetailViewController: UIViewController {
         snapshot.appendItems(Array(0..<1), toSection: .main)
         dataSource.apply(snapshot)
     }
-   
-//    func updataData(count: Int){
-//        var snapshot = dataSource.snapshot()
-//        snapshot.appendItems(count, toSection: .main)
-//        dataSource.apply(snapshot)
-//    }
     func updataData(count: Int){
         if count == 0 {
             navTitle.setNumTitle("")

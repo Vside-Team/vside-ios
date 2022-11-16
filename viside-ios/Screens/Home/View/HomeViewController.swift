@@ -13,6 +13,7 @@ import Moya
 final class HomeViewController: UIViewController {
     var bookData: HomeBookResponse?
     var contents : Content?
+    var isScrap : Bool!
     typealias Item = AnyHashable
     enum Sections: Int, CaseIterable, Hashable {
         case titleList, bookList
@@ -140,8 +141,10 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath)
         collectionView.deselectItem(at: indexPath, animated: true)
+            Utils.push(nav: self.navigationController, vc: DetailViewController())
     }
 }
+    
 // MARK: - connect home network
 extension HomeViewController{
     func homeBookList(){
