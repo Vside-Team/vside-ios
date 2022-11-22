@@ -16,7 +16,7 @@ final class HomeViewController: UIViewController {
     var isScrap : Bool!
     typealias Item = AnyHashable
     enum Sections: Int, CaseIterable, Hashable {
-        case titleList, bookList
+        case  bookList
     }
     var dataSource: UICollectionViewDiffableDataSource<Sections, Item>! = nil
     
@@ -27,7 +27,6 @@ final class HomeViewController: UIViewController {
     private lazy var collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: createLayout()).then {
         $0.backgroundColor = Color.g25
         $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        $0.register(HomeTitle.self, forCellWithReuseIdentifier: HomeTitle.reuseId)
         $0.register(HomeBook.self, forCellWithReuseIdentifier: HomeBook.reuseId)
         $0.delegate = self
     }
@@ -63,28 +62,17 @@ final class HomeViewController: UIViewController {
         }  
     }
    // MARK: - data
-     func setupDataSource() {
-        dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
-            let section = Sections(rawValue: indexPath.section)!
-            switch section {
-            case .titleList:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeTitle.reuseId, for: indexPath) as! HomeTitle
-                return cell
-                
-            case .bookList:
-                if let content = item as? Content {
-                    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBook.reuseId, for: indexPath) as! HomeBook
-                    cell.updataData(item: content)
-                    return cell
-                }else { return nil}
-            }
+    func setupDataSource() {
+        dataSource = UICollectionViewDiffableDataSource<Sections, Item>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item) in
+            guard  let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeBook.reuseId, for: indexPath) as? HomeBook else { return UICollectionViewCell()}
+            cell.updataData(item: item as? Content)
+            return cell
         })
     }
    private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Sections, Item>()
-        snapshot.appendSections([.titleList,.bookList])
+        snapshot.appendSections([.bookList])
         snapshot.appendItems([], toSection: .bookList)
-        snapshot.appendItems(Array(1..<2), toSection: .titleList)
         dataSource.apply(snapshot, animatingDifferences: false)
     }
     private func updateData(item : [Content]){
@@ -94,47 +82,21 @@ final class HomeViewController: UIViewController {
         dataSource.apply(snapshot)
     }
    
-    private func createLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvirnment) -> NSCollectionLayoutSection? in
-            let section = Sections(rawValue: sectionIndex)!
-            switch section {
-            case .titleList:
-                return self.titleListSection()
-            case .bookList:
-                return self.bookListSection()
-            }
-        }
-        let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 32
-        layout.configuration = config
-        
-        return layout
-    }
     // MARK: - layout
-    private func titleListSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(180))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        let spacing = CGFloat(20)
-        group.interItemSpacing = .fixed(spacing)
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: spacing, bottom: 0, trailing: spacing)
-        
-        return section
-    }
-    
-    private func bookListSection() -> NSCollectionLayoutSection {
+    private func createLayout() -> UICollectionViewCompositionalLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(408))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 20
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 30, trailing: 20)
+        section.contentInsets = .init(top: 38, leading: 20, bottom: 0, trailing: 20)
         section.supplementariesFollowContentInsets = false
-        return section
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 38
+        layout.configuration = config
+        return layout
     }
 }
 extension HomeViewController: UICollectionViewDelegate {
