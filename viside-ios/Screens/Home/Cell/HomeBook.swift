@@ -93,7 +93,7 @@ class HomeBook: UICollectionViewCell {
         }
         bookMarkBtn.snp.makeConstraints {
             $0.trailing.equalTo(imageView).offset(-20)
-            $0.top.equalTo(imageView).offset(22)
+            $0.top.equalTo(imageView).offset(21)
         }
         textLabel.snp.makeConstraints {
             $0.leading.equalTo(imageView).offset(28)
