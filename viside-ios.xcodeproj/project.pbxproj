@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092E6AC129310A01007C2D70 /* CompositionalLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092E6AC029310A01007C2D70 /* CompositionalLayout.swift */; };
 		09587B1228F5E3C4000E27F4 /* MySubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B1128F5E3C4000E27F4 /* MySubView.swift */; };
 		09587B1428F5E863000E27F4 /* MyPageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B1328F5E863000E27F4 /* MyPageList.swift */; };
 		09587B1628F5E875000E27F4 /* MyBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09587B1528F5E875000E27F4 /* MyBookList.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		092E6AC029310A01007C2D70 /* CompositionalLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalLayout.swift; sourceTree = "<group>"; };
 		09587B1128F5E3C4000E27F4 /* MySubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySubView.swift; sourceTree = "<group>"; };
 		09587B1328F5E863000E27F4 /* MyPageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageList.swift; sourceTree = "<group>"; };
 		09587B1528F5E875000E27F4 /* MyBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookList.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				6B6616AA28D0B59000146E75 /* MyViewController.swift */,
+				092E6AC029310A01007C2D70 /* CompositionalLayout.swift */,
 				0988DFF6291D5149002EF5E9 /* MyHeaderView.swift */,
 				09587B1128F5E3C4000E27F4 /* MySubView.swift */,
 				0984B1EB2910AF0B00441F32 /* MyDetailViewController.swift */,
@@ -934,6 +937,7 @@
 				D571105428B5DCBB00B24812 /* Const.swift in Sources */,
 				6B81637F290FF651006D2628 /* DetailViewController.swift in Sources */,
 				D57224E528A6645400112751 /* SceneDelegate.swift in Sources */,
+				092E6AC129310A01007C2D70 /* CompositionalLayout.swift in Sources */,
 				6BA8053728A941DA00B899A5 /* Layout.swift in Sources */,
 				6B81637D290FF638006D2628 /* FilterViewController.swift in Sources */,
 				D575395528B36338006645F7 /* Header.swift in Sources */,

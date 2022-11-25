@@ -35,6 +35,7 @@ final class HomeViewController: UIViewController {
         setupDataSource()
         reloadData()
         homeBookList()
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
