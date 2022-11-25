@@ -23,7 +23,6 @@ class HomeBook: UICollectionViewCell {
         $0.layer.cornerRadius = 34
         $0.backgroundColor = Color.main300
         $0.contentMode = .scaleAspectFill
-        
     }
     
     private lazy var tagLabel = PaddingLabel(padding: UIEdgeInsets(top: 8.0, left: 15.0, bottom: 8.0, right: 15.0)).then {
@@ -54,15 +53,12 @@ class HomeBook: UICollectionViewCell {
         $0.textAlignment = .left
         $0.numberOfLines = 0
     }
-    private let bookMark = UIImageView().then {
-        $0.image = UIImage(named: "home/bookmark/normal")
+     lazy var bookMarkBtn = UIButton().then {
         $0.backgroundColor = .clear
-    }
-    private lazy var bookMarkBtn = UIButton().then {
-        $0.backgroundColor = .clear
+        $0.setImage(R.image.home.bookmark.normal(), for: .normal)
+        $0.setImage(R.image.home.bookmark.selected(), for: .selected)
         $0.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
-    }
-    
+    }    
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = Color.main300
@@ -75,12 +71,9 @@ class HomeBook: UICollectionViewCell {
     }
     
     func setViews(){
-        let components: [Any] = [imageView, tagLabel, textLabel,bookMarkBtn]
-        components.forEach {
+        [imageView, tagLabel, textLabel,bookMarkBtn].forEach {
             self.contentView.addSubview($0 as! UIView)
-        }
-        self.bookMarkBtn.addSubview(bookMark)
-      
+        }      
     }
     func  setConstraints(){
         imageView.snp.makeConstraints {
@@ -100,9 +93,6 @@ class HomeBook: UICollectionViewCell {
             $0.bottom.equalTo(imageView).offset(-24)
             $0.trailing.equalTo(imageView).offset(-43)
         }
-        bookMark.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
     func updataData(item: Content?){
         guard let item = item else{
@@ -115,15 +105,9 @@ class HomeBook: UICollectionViewCell {
         textLabel.text = item.title
         self.contentID = item.contentId
         self.isScrap = item.scrap
-        if self.isScrap == true {
-            self.bookMark.image = UIImage(named: "home/bookmark/selected")
-        }else {
-            self.bookMark.image = UIImage(named: "home/bookmark/normal")
-        }
     }
     @objc func btnTapped(_ sender : UIButton){
-        self.bookMark.image =  isTapped == true ?  UIImage(named: "home/bookmark/selected") : UIImage(named: "home/bookmark/normal")
-        self.isTapped.toggle()
+        sender.isSelected.toggle()
         self.bookScrap(contentId: self.contentID )
     }
 }

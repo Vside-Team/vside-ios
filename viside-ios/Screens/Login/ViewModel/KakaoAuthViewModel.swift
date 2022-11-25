@@ -116,6 +116,7 @@ class KakaoAuthVM : ObservableObject {
                                     UserDefaults.standard.setValue(data.jwt, forKey: Const.DefaultKeys.jwtToken)
                                     Utils.setRootViewController(TabBarController())
                                 } else {
+                                    //로그인 api쏴서 token 받아서 tabbar로 넘어가기
                                     //memberStatus = false -> kakao signIn
                                     UserAPI.shared.kakaoSignIn(ageRange: ageRange, email: email!, gender: gender, loginType: "kakao", name: name, snsId: userID){ (response) in
                                         switch response {

@@ -58,20 +58,17 @@ final class MyViewController: UIViewController {
     }
    
     func setViews(){
-        let components: [Any] = [subView, collectionView]
-        components.forEach {
+        [subView, collectionView].forEach {
             self.view.addSubview($0 as! UIView)
         }
     }
     func setConstraints(){
-        
         subView.snp.makeConstraints {
             $0.leading.equalTo(safeArea)
             $0.trailing.equalTo(safeArea)
             $0.top.equalToSuperview()
             $0.height.equalTo(108)
         }
-        
         collectionView.snp.makeConstraints {
             $0.leading.equalTo(safeArea)
             $0.trailing.equalTo(safeArea)
@@ -79,7 +76,6 @@ final class MyViewController: UIViewController {
             $0.bottom.equalTo(safeArea)
         }
     }
-
     // MARK: - data
     func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Sections, AnyHashable>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, item ) -> UICollectionViewCell? in
@@ -118,7 +114,6 @@ final class MyViewController: UIViewController {
                 return header
         }
     }
-    
     private func updateData(user : String?){
         if user == nil {
             self.text = AlertType.confirm.title
@@ -138,7 +133,6 @@ final class MyViewController: UIViewController {
             snapshot.appendSections([.mypageList])
             snapshot.appendItems(list , toSection: .mypageList)
         }
-
     }
     //MARK: - layout
     private func createLayout() -> UICollectionViewLayout {
@@ -158,247 +152,44 @@ final class MyViewController: UIViewController {
                 return layout
     }
     // MARK: - section layout
-     func MyBookListSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .absolute(148))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-         if contentsData?.count ?? 1 == 1 {
-            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .estimated(220))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item , count: 1 )
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 20, bottom: 46, trailing: 20)
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+    func MyBookListSection() -> NSCollectionLayoutSection {
+        if contentsData?.count ?? 1 == 1 {
+            return MyViewLayout.compositional_horizontal(gWidth:.absolute(128), gHeight: .estimated(220), count: 1)
         }else if contentsData?.count ?? 2 <= 2 {
-            let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(128), heightDimension: .estimated(280))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item , count: 2 )
-            group.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 20, bottom: 46, trailing: 20)
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return MyViewLayout.compositional_vertical(gWidth:.absolute(128), gHeight: .estimated(280), count: 2)
         }else if self.contentsData?.count ?? 4 <= 4 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(250), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 2)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(250), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 2)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(250), gHeight: .estimated(220), count: 2)
         }else if  self.contentsData?.count ?? 6 <= 6 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(380), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 3)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(380), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 3)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(380), gHeight:  .estimated(220), count: 3)
         }else if  self.contentsData?.count ?? 8 <= 8 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(530), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 4)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(530), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 4)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(530), gHeight: .estimated(220), count: 4)
         }else if self.contentsData?.count ?? 10 <= 10 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(680), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 5)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(680), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 5)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(680), gHeight:  .estimated(220), count: 5)
         }else if  self.contentsData?.count ?? 12 <= 12 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(830), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 6)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension:  .estimated(830), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 6)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return   MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(830), gHeight: .estimated(220), count: 6)
         }else if self.contentsData?.count ?? 14 <= 14 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension:  .estimated(980) ,heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 7)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension:  .estimated(980), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 7)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
-        }else if self.contentsData?.count ?? 16 <= 16 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1130), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 8)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(1130), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 8)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(980), gHeight: .estimated(220),  count: 7)
         }else if self.contentsData?.count ?? 18  <= 18 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1250), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 9)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(1250), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 9)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(1250), gHeight:  .estimated(220), count: 9)
         }else if self.contentsData?.count ?? 20  <= 20 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(1430) , heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 10)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(1430), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 10)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(1430), gHeight:  .estimated(220),  count: 10)
         } else if self.contentsData?.count ?? 22  <= 22 {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension:.estimated(1580), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 11)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(1580), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 11)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(1580), gHeight: .estimated(220), count: 11)
         }else {
-            let hgroupSize1 = NSCollectionLayoutSize(widthDimension: .estimated(1730), heightDimension: .estimated(220))
-            let hgroup1 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize1, subitem: item , count: 12)
-            hgroup1.interItemSpacing = .fixed(18)
-            let hgroupSize2 = NSCollectionLayoutSize(widthDimension: .estimated(1730), heightDimension: .estimated(220))
-            let hgroup2 = NSCollectionLayoutGroup.horizontal(layoutSize: hgroupSize2, subitem: item ,count: 12)
-            hgroup2.interItemSpacing = .fixed(18)
-            let containerGroup =  NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .estimated(600), heightDimension: .absolute(316)), subitems: [hgroup1,hgroup2])
-            containerGroup.interItemSpacing = .fixed(18)
-            let section = NSCollectionLayoutSection(group: containerGroup)
-            section.contentInsets = NSDirectionalEdgeInsets(top: 18, leading: 20, bottom: 0, trailing: 20)
-            section.orthogonalScrollingBehavior = .continuousGroupLeadingBoundary
-            let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
-            section.decorationItems = [backgroundItem]
-            let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(44))
-            let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,elementKind: UICollectionView.elementKindSectionHeader,alignment: .top)
-            section.boundarySupplementaryItems = [header]
-            return section
+            return  MyViewLayout.compositionalLayoutWithContain(gWidth:.estimated(1730), gHeight: .estimated(220),count: 12)
         }
     }
 
      func MylistSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(48))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(48)), subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         section.supplementariesFollowContentInsets = false
         return section
     }
      func EmptySection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem : item ,count: 1)
+        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)))
+         let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200)), subitem : item ,count: 1)
         let section = NSCollectionLayoutSection(group: group)
         section.supplementariesFollowContentInsets = false
         let backgroundItem = NSCollectionLayoutDecorationItem.background(elementKind: "background")
