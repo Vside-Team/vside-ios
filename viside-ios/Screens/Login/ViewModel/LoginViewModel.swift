@@ -53,26 +53,14 @@ extension LoginViewModel {
                                     switch response {
                                     case .success(let joinData):
                                         print("-------------------Apple Join Success -------------------: \(joinData)")
-                                    case .requestErr(let message):
-                                        print("-------------------requestErr:\(message)------------------- ")
-                                    case .pathErr:
-                                        print("-------------------pathErr-------------------")
-                                    case .serverErr:
-                                        print("-------------------serverErr-------------------")
-                                    case .networkFail:
-                                        print("-------------------networkFail-------------------")
+                                    case .failure(let error):
+                                        print("error:\(error)")
                                     }
                                 }
                             }
                         }
-                    case .requestErr(let message):
-                        print("-------------------requestErr:\(message)------------------- ")
-                    case .pathErr:
-                        print("-------------------pathErr-------------------")
-                    case .serverErr:
-                        print("-------------------serverErr-------------------")
-                    case .networkFail:
-                        print("-------------------networkFail-------------------")
+                    case .failure(let error):
+                        print("error:\(error)")
                     }
                 }
                 UserDefaults.standard.set(true, forKey: Const.DefaultKeys.isAppleLogin)
