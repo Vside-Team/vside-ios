@@ -112,7 +112,7 @@ class KakaoAuthVM : ObservableObject {
                         case .success(let loginData):
                             if let data = loginData as? LogInResponse {
                                 if data.memberStatus == true {
-                                    print("-------------------Kakao Login Success------------------- : \(data)")
+                                    print("Kakao Login Success------------------- : \(data)")
                                     UserDefaults.standard.setValue(data.jwt, forKey: Const.DefaultKeys.jwtToken)
                                     Utils.setRootViewController(TabBarController())
                                 } else {
@@ -121,31 +121,20 @@ class KakaoAuthVM : ObservableObject {
                                     UserAPI.shared.kakaoSignIn(ageRange: ageRange, email: email!, gender: gender, loginType: "kakao", name: name, snsId: userID){ (response) in
                                         switch response {
                                         case .success(let joinData):
-                                            print("-------------------Kakao Join Success------------------- : \(joinData)")
-                                        case .requestErr(let message):
-                                            print("-------------------requestErr:\(message)------------------- ")
-                                        case .pathErr:
-                                            print("-------------------pathErr-------------------")
-                                        case .serverErr:
-                                            print("-------------------serverErr-------------------")
-                                        case .networkFail:
-                                            print("-------------------networkFail-------------------")
+                                            print("Kakao Join Success : \(joinData)")
+                                            return self.getUserInfo()
+                                        case .failure(let error):
+                                            print("error:\(error)")
                                         }
                                     }
                                 }
                             }
-                        case .requestErr(let message):
-                            print("-------------------requestErr:\(message)------------------- ")
-                        case .pathErr:
-                            print("-------------------pathErr-------------------")
-                        case .serverErr:
-                            print("-------------------serverErr-------------------")
-                        case .networkFail:
-                            print("-------------------networkFail-------------------")
+                        case .failure(let error):
+                            print("error:\(error)")
                         }
                     }
                 } else {
-                    print("----------------network connected error-------------")
+                    print("error:\(error?.localizedDescription)")
                 }
              //    Create Firebase User (이메일로 회원가입)
                 Auth.auth().createUser(withEmail: (email)!,
